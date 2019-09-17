@@ -18,9 +18,7 @@
       
       <guid>http://drewstud.com/posts/2016-01-19-query-chef-rest-api/</guid>
       <description>If you want to talk to the chef API without using some wrapper like Ridley, knife, etc.., this is how you do it:
-Note: This is taken from here but modified to use httparty {% highlight ruby %} require &amp;lsquo;base64&amp;rsquo; require &amp;lsquo;time&amp;rsquo; require &amp;lsquo;digest/sha1&amp;rsquo; require &amp;lsquo;openssl&amp;rsquo; require &amp;lsquo;net/https&amp;rsquo; require &amp;lsquo;json&amp;rsquo; require &amp;lsquo;pry&amp;rsquo; require &amp;lsquo;httparty&amp;rsquo;
-class ChefAPI # Public: Gets/Sets the String path for the HTTP request. attr_accessor :path
-# Public: Gets/Sets the String client_name containing the Chef client name.</description>
+Note: This is taken from here but modified to use httparty require &amp;#39;base64&amp;#39; require &amp;#39;time&amp;#39; require &amp;#39;digest/sha1&amp;#39; require &amp;#39;openssl&amp;#39; require &amp;#39;net/https&amp;#39; require &amp;#39;json&amp;#39; require &amp;#39;pry&amp;#39; require &amp;#39;httparty&amp;#39; class ChefAPI # Public: Gets/Sets the String path for the HTTP request. attr_accessor :path # Public: Gets/Sets the String client_name containing the Chef client name.</description>
     </item>
     
   </channel>

@@ -39,7 +39,7 @@
 
 <meta itemprop="datePublished" content="2015-02-13T07:35:48&#43;00:00" />
 <meta itemprop="dateModified" content="2015-02-13T07:35:48&#43;00:00" />
-<meta itemprop="wordCount" content="307">
+<meta itemprop="wordCount" content="297">
 
 
 
@@ -115,20 +115,18 @@ the amount of false positives of mail identified as spam.</p>
 Many people I have seen just install spamassassin, run sa-update, then complain
 that they are getting a ton of spam. Spamassassin needs tuned, and tuning is quite
 easy. The quick and easy way is with sa-learn.
-{% highlight bash %}
-sa-learn &ndash;ham &ndash;username=vscan  &ndash;nosync /path/to/maildir/directory/cur
-sa-learn &ndash;sync
-sa-learn &ndash;spam &ndash;nosync &ndash;username=vscan /path/to/maildir/directory/.Junk/cur
-sa-learn &ndash;sync
-{% endhighlight %}
-You MUST train both ham and spam to be effective.  I have to use the vscan user, as I run amavis. sa-learn will add the bayesian
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sa-learn --ham --username<span style="color:#f92672">=</span>vscan  --nosync /path/to/maildir/directory/cur
+sa-learn --sync
+sa-learn --spam --nosync --username<span style="color:#f92672">=</span>vscan /path/to/maildir/directory/.Junk/cur
+sa-learn --sync</code></pre></div></p>
+
+<p>You MUST train both ham and spam to be effective.  I have to use the vscan user, as I run amavis. sa-learn will add the bayesian
 tokens to the datbase of the user executing spamassassin.</p>
 
 <p>A nice thing to do is to report mail that you have found to be spam. If you have installed the Razmor moudle, it can be reported to
 Vipul&rsquo;s Razor. Assuming in a folder that is full of spam:
 {% highlight bash %}
-for i in <code>ls</code>; do spamassassin -r &lt; $i; done
-{% endhighlight %}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">for</span> i in <span style="color:#e6db74">`</span>ls<span style="color:#e6db74">`</span>; <span style="color:#66d9ef">do</span> spamassassin -r &lt; $i; <span style="color:#66d9ef">done</span></code></pre></div>
 <a href="http://wiki.apache.org/spamassassin/report_spam.pl">This</a> perl script can be run as a cron job. Just point it to a folder that contains only spam.</p>
 
 <p>Ensuring you are doing sa-update frequently, as well as the above, will help spamassassin properly identify spam/ham.

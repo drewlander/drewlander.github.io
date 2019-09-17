@@ -39,7 +39,7 @@ You have to edit the password export service yourself via orca, instEd, etc&hell
 
 <meta itemprop="datePublished" content="2015-10-19T08:00:48&#43;00:00" />
 <meta itemprop="dateModified" content="2015-10-19T08:00:48&#43;00:00" />
-<meta itemprop="wordCount" content="241">
+<meta itemprop="wordCount" content="227">
 
 
 
@@ -118,15 +118,11 @@ StartCredentials 0=1
 Then you can use this msi (or save a transform) and it will no longer prompt as a user to login as.</p>
 
 <p>Run the following
-{% highlight bash %}
-msiexec /i &ldquo;c:\password_export_server.msi&rdquo; /l*v &ldquo;c:\install.log&rdquo; /qn REBOOT=&ldquo;ReallySuppress&rdquo; SENCRYPTIONFILEPATH=&ldquo;c:\key.pes&rdquo; sKeyPassword=&ldquo;password&rdquo; sConfPassword=&ldquo;password&rdquo;
-{% endhighlight %}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">msiexec /i <span style="color:#e6db74">&#34;c:\password_export_server.msi&#34;</span> /l*v <span style="color:#e6db74">&#34;c:\install.log&#34;</span> /qn REBOOT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ReallySuppress&#34;</span> SENCRYPTIONFILEPATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;c:\key.pes&#34;</span> sKeyPassword<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span> sConfPassword<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span></code></pre></div>
 Though, you really do not need anything after REBOOT. It will NOT import any key at all. Also, you have to reboot anyway to get the service to start properly, otherwise
 you will get RPC errors connecting from the destination domain. After you install the service, reboot, then start the Password Export Service. Then run the following
 to actually have the key imported:
-{% highlight bash %}
-&ldquo;C:\Windows\system32\PesKey.exe C:\key.pes &ldquo;password&rdquo;
-{% endhighlight %}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#e6db74">&#34;C:\Windows\system32\PesKey.exe C:\key.pes &#34;</span>password<span style="color:#e6db74">&#34;</span></code></pre></div>
 Now ADMT <em>should</em> let you migrate the user, and you can do it all automatically. Yay!</p>
 <ul class="pa0">
   

@@ -37,7 +37,7 @@
 
 <meta itemprop="datePublished" content="2016-01-19T05:35:48&#43;00:00" />
 <meta itemprop="dateModified" content="2016-01-19T05:35:48&#43;00:00" />
-<meta itemprop="wordCount" content="419">
+<meta itemprop="wordCount" content="398">
 
 
 
@@ -119,25 +119,19 @@ To do so, you boot into a linux distro, download bsd.rd, add it to grub, and boo
 <li>Boot a Fedora 24 image into the size that you want.</li>
 <li>Login to the server.</li>
 <li>Download the freebsd installer that we will boot from
-{% highlight bash %}
-wget <a href="http://ftp.openbsd.org/pub/OpenBSD/6.0/amd64/bsd.rd">http://ftp.openbsd.org/pub/OpenBSD/6.0/amd64/bsd.rd</a>
-mv bsd.rd /openbsd.rd
-{% endhighlight %}</li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget http://ftp.openbsd.org/pub/OpenBSD/6.0/amd64/bsd.rd
+mv bsd.rd /openbsd.rd</code></pre></div></li>
 <li>Modify /etc/grub.d/40_custom and add:
-{% highlight bash %}
-menuentry &ldquo;Install OpenBSD from RAM disk&rdquo; {
-set root=(hd0,1)
-kopenbsd /openbsd.rd
-}
-{% endhighlight %}</li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  menuentry <span style="color:#e6db74">&#34;Install OpenBSD from RAM disk&#34;</span> <span style="color:#f92672">{</span>
+    set root<span style="color:#f92672">=(</span>hd0,1<span style="color:#f92672">)</span>
+    kopenbsd /openbsd.rd
+  <span style="color:#f92672">}</span></code></pre></div></li>
 <li>Edit /etc/default/grub and change GRUB_TIMEOUT=1 to GRUB_TIMEOUT=30</li>
 <li>I remove extlinux and use grub2, because reasons (I like grub2)
-{% highlight bash %}
-dnf -y remove syslinux-extlinux
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dnf -y remove syslinux-extlinux
 rm -f /boot/extlinux.conf
 dnf -y install grubby grub2
-grub2-mkconfig -o /boot/grub2/grub.cfg
-{% endhighlight %}</li>
+grub2-mkconfig -o /boot/grub2/grub.cfg</code></pre></div></li>
 <li>Issue the fantastical &ldquo;reboot&rdquo; command. It makes the unicorns appear</li>
 <li>Connect via their web interface to a console session of your server. It should be stuck at the grub menu</li>
 <li>Choose &ldquo;Install OpenBSD from RAM disk&rdquo;</li>
@@ -145,7 +139,7 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 <li>default keyboard is fine</li>
 <li>set your hostname</li>
 <li>xnf0 will correspond to eth0 settings (public interface). Configure that interface
-<img src="{{ site.url }}/assets/openbsd_network.png" alt="OpenBSD network config" /></li>
+<img src="/openbsd_network.png" alt="OpenBSD network config" /></li>
 <li>enter the ip address and netmask. You can enter in your ipv6 info if you feel you can not typo anything (copy/paste does NOT work for me in this virtual console java session)</li>
 <li>choose done (you can configure xnf1 later)</li>
 <li>enter in your default route (gateway)</li>
@@ -155,7 +149,7 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 <li>I did the auto layout</li>
 <li>for name(s) sets, I did not do anything with X (use - to deselect). Choose done when done</li>
 <li>reboot and enjoy your new system!
-<img src="{{ site.url }}/assets/openbsd_complete.png" alt="OpenBSD complete" /></li>
+<img src="/openbsd_complete.png" alt="OpenBSD complete" /></li>
 </ul>
 <ul class="pa0">
   

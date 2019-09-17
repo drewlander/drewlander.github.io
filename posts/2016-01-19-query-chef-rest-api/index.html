@@ -27,23 +27,19 @@
 
     <meta property="og:title" content="Querying Chef REST Api With pure Ruby" />
 <meta property="og:description" content="If you want to talk to the chef API without using some wrapper like Ridley, knife, etc.., this is how you do it:
-Note: This is taken from here but modified to use httparty {% highlight ruby %} require &lsquo;base64&rsquo; require &lsquo;time&rsquo; require &lsquo;digest/sha1&rsquo; require &lsquo;openssl&rsquo; require &lsquo;net/https&rsquo; require &lsquo;json&rsquo; require &lsquo;pry&rsquo; require &lsquo;httparty&rsquo;
-class ChefAPI # Public: Gets/Sets the String path for the HTTP request. attr_accessor :path
-# Public: Gets/Sets the String client_name containing the Chef client name." />
+Note: This is taken from here but modified to use httparty require &#39;base64&#39; require &#39;time&#39; require &#39;digest/sha1&#39; require &#39;openssl&#39; require &#39;net/https&#39; require &#39;json&#39; require &#39;pry&#39; require &#39;httparty&#39; class ChefAPI # Public: Gets/Sets the String path for the HTTP request. attr_accessor :path # Public: Gets/Sets the String client_name containing the Chef client name." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://drewstud.com/posts/2016-01-19-query-chef-rest-api/" />
 <meta property="article:published_time" content="2016-01-19T05:35:48+00:00" />
 <meta property="article:modified_time" content="2016-01-19T05:35:48+00:00" />
 <meta itemprop="name" content="Querying Chef REST Api With pure Ruby">
 <meta itemprop="description" content="If you want to talk to the chef API without using some wrapper like Ridley, knife, etc.., this is how you do it:
-Note: This is taken from here but modified to use httparty {% highlight ruby %} require &lsquo;base64&rsquo; require &lsquo;time&rsquo; require &lsquo;digest/sha1&rsquo; require &lsquo;openssl&rsquo; require &lsquo;net/https&rsquo; require &lsquo;json&rsquo; require &lsquo;pry&rsquo; require &lsquo;httparty&rsquo;
-class ChefAPI # Public: Gets/Sets the String path for the HTTP request. attr_accessor :path
-# Public: Gets/Sets the String client_name containing the Chef client name.">
+Note: This is taken from here but modified to use httparty require &#39;base64&#39; require &#39;time&#39; require &#39;digest/sha1&#39; require &#39;openssl&#39; require &#39;net/https&#39; require &#39;json&#39; require &#39;pry&#39; require &#39;httparty&#39; class ChefAPI # Public: Gets/Sets the String path for the HTTP request. attr_accessor :path # Public: Gets/Sets the String client_name containing the Chef client name.">
 
 
 <meta itemprop="datePublished" content="2016-01-19T05:35:48&#43;00:00" />
 <meta itemprop="dateModified" content="2016-01-19T05:35:48&#43;00:00" />
-<meta itemprop="wordCount" content="717">
+<meta itemprop="wordCount" content="715">
 
 
 
@@ -51,9 +47,7 @@ class ChefAPI # Public: Gets/Sets the String path for the HTTP request. attr_acc
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Querying Chef REST Api With pure Ruby"/>
 <meta name="twitter:description" content="If you want to talk to the chef API without using some wrapper like Ridley, knife, etc.., this is how you do it:
-Note: This is taken from here but modified to use httparty {% highlight ruby %} require &lsquo;base64&rsquo; require &lsquo;time&rsquo; require &lsquo;digest/sha1&rsquo; require &lsquo;openssl&rsquo; require &lsquo;net/https&rsquo; require &lsquo;json&rsquo; require &lsquo;pry&rsquo; require &lsquo;httparty&rsquo;
-class ChefAPI # Public: Gets/Sets the String path for the HTTP request. attr_accessor :path
-# Public: Gets/Sets the String client_name containing the Chef client name."/>
+Note: This is taken from here but modified to use httparty require &#39;base64&#39; require &#39;time&#39; require &#39;digest/sha1&#39; require &#39;openssl&#39; require &#39;net/https&#39; require &#39;json&#39; require &#39;pry&#39; require &#39;httparty&#39; class ChefAPI # Public: Gets/Sets the String path for the HTTP request. attr_accessor :path # Public: Gets/Sets the String client_name containing the Chef client name."/>
 
   </head>
 
@@ -112,209 +106,198 @@ class ChefAPI # Public: Gets/Sets the String path for the HTTP request. attr_acc
       
     </header>
 
-    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
-
-<p>If you want to talk to the chef API without using some wrapper like Ridley, knife, etc.., this is how you do it:</p>
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>If you want to talk to the chef API without using some wrapper like Ridley, knife, etc.., this is how you do it:</p>
 
 <p>Note: This is taken from <a href="https://gist.github.com/gmcmillan/3184964">here</a> but modified to use httparty
-{% highlight ruby %}
-require &lsquo;base64&rsquo;
-require &lsquo;time&rsquo;
-require &lsquo;digest/sha1&rsquo;
-require &lsquo;openssl&rsquo;
-require &lsquo;net/https&rsquo;
-require &lsquo;json&rsquo;
-require &lsquo;pry&rsquo;
-require &lsquo;httparty&rsquo;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;base64&#39;</span>
+require <span style="color:#e6db74">&#39;time&#39;</span>
+require <span style="color:#e6db74">&#39;digest/sha1&#39;</span>
+require <span style="color:#e6db74">&#39;openssl&#39;</span>
+require <span style="color:#e6db74">&#39;net/https&#39;</span>
+require <span style="color:#e6db74">&#39;json&#39;</span>
+require <span style="color:#e6db74">&#39;pry&#39;</span>
+require <span style="color:#e6db74">&#39;httparty&#39;</span>
 
-<p>class ChefAPI
-  # Public: Gets/Sets the String path for the HTTP request.
-  attr_accessor :path</p>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ChefAPI</span>
+  <span style="color:#75715e"># Public: Gets/Sets the String path for the HTTP request.</span>
+  <span style="color:#66d9ef">attr_accessor</span> <span style="color:#e6db74">:path</span>
 
-<p># Public: Gets/Sets the String client_name containing the Chef client name.
-  attr_accessor :client_name</p>
+  <span style="color:#75715e"># Public: Gets/Sets the String client_name containing the Chef client name.</span>
+  <span style="color:#66d9ef">attr_accessor</span> <span style="color:#e6db74">:client_name</span>
 
-<p># Public: Gets/Sets the String key_file that is path to the Chef client PEM file.
-  attr_accessor :key_file</p>
+  <span style="color:#75715e"># Public: Gets/Sets the String key_file that is path to the Chef client PEM file.</span>
+  <span style="color:#66d9ef">attr_accessor</span> <span style="color:#e6db74">:key_file</span>
 
-<p># Public: Initialize a Chef API call.
-  #
-  # opts - A Hash containing the settings desired for the HTTP session and auth.
-  #        :server       - The String server that is the Chef server name (required).
-  #        :port         - The String port for the Chef server (default: 443).
-  #        :use_ssl      - The Boolean use_ssl to use Net::HTTP SSL
-  #                        functionality or not (default: true).
-  #        :ssl_insecure - The Boolean ssl_insecure to skip strict SSL cert
-  #                        checking (default: OpenSSL::SSL::VERIFY_PEER).
-  #        :client_name  - The String client_name that is the name of the Chef
-  #                        client (required).
-  #        :key_file     - The String key_file that is the path to the Chef client
-  #                        PEM file (required).
-  def initialize(opts = {})
-    @server            = opts[:server]
-    port              = opts.fetch(:port, 443)
-    use_ssl           = opts.fetch(:use_ssl, true)
-    ssl_insecure      = opts[:ssl_insecure] ? OpenSSL::SSL::VERIFY_NONE : OpenSSL::SSL::VERIFY_PEER
-    @client_name      = opts[:client_name]
-    @key_file         = opts[:key_file]
-  end</p>
+  <span style="color:#75715e"># Public: Initialize a Chef API call.</span>
+  <span style="color:#75715e">#</span>
+  <span style="color:#75715e"># opts - A Hash containing the settings desired for the HTTP session and auth.</span>
+  <span style="color:#75715e">#        :server       - The String server that is the Chef server name (required).</span>
+  <span style="color:#75715e">#        :port         - The String port for the Chef server (default: 443).</span>
+  <span style="color:#75715e">#        :use_ssl      - The Boolean use_ssl to use Net::HTTP SSL</span>
+  <span style="color:#75715e">#                        functionality or not (default: true).</span>
+  <span style="color:#75715e">#        :ssl_insecure - The Boolean ssl_insecure to skip strict SSL cert</span>
+  <span style="color:#75715e">#                        checking (default: OpenSSL::SSL::VERIFY_PEER).</span>
+  <span style="color:#75715e">#        :client_name  - The String client_name that is the name of the Chef</span>
+  <span style="color:#75715e">#                        client (required).</span>
+  <span style="color:#75715e">#        :key_file     - The String key_file that is the path to the Chef client</span>
+  <span style="color:#75715e">#                        PEM file (required).</span>
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">initialize</span>(opts <span style="color:#f92672">=</span> {})
+    @server            <span style="color:#f92672">=</span> opts<span style="color:#f92672">[</span><span style="color:#e6db74">:server</span><span style="color:#f92672">]</span>
+    port              <span style="color:#f92672">=</span> opts<span style="color:#f92672">.</span>fetch(<span style="color:#e6db74">:port</span>, <span style="color:#ae81ff">443</span>)
+    use_ssl           <span style="color:#f92672">=</span> opts<span style="color:#f92672">.</span>fetch(<span style="color:#e6db74">:use_ssl</span>, <span style="color:#66d9ef">true</span>)
+    ssl_insecure      <span style="color:#f92672">=</span> opts<span style="color:#f92672">[</span><span style="color:#e6db74">:ssl_insecure</span><span style="color:#f92672">]</span> ? <span style="color:#66d9ef">OpenSSL</span><span style="color:#f92672">::</span><span style="color:#66d9ef">SSL</span><span style="color:#f92672">::</span><span style="color:#66d9ef">VERIFY_NONE</span> : <span style="color:#66d9ef">OpenSSL</span><span style="color:#f92672">::</span><span style="color:#66d9ef">SSL</span><span style="color:#f92672">::</span><span style="color:#66d9ef">VERIFY_PEER</span>
+    @client_name      <span style="color:#f92672">=</span> opts<span style="color:#f92672">[</span><span style="color:#e6db74">:client_name</span><span style="color:#f92672">]</span>
+    @key_file         <span style="color:#f92672">=</span> opts<span style="color:#f92672">[</span><span style="color:#e6db74">:key_file</span><span style="color:#f92672">]</span>
+  <span style="color:#66d9ef">end</span>
 
-<p># Public: Make the actual GET request to the Chef server.
-  #
-  # req_path - A String containing the server path you want to send with your
-  #            GET request (required).
-  #
-  # Examples
-  #
-  #   get_request(&lsquo;/environments/_default/nodes&rsquo;)
-  #   # =&gt; [&ldquo;server1.com&rdquo;,&ldquo;server2.com&rdquo;,&ldquo;server3.com&rdquo;]
-  #
-  # Returns different Object type depending on request.
-  def get_request(req_path, body)
-    @path = req_path
-    reqpath = @server + req_path
-    begin
-      response = HTTParty.get(reqpath, headers: headers(body, &lsquo;GET&rsquo;))
-      response.parsed_response
-      # JSON.parse(response.body).keys
-    rescue OpenSSL::SSL::SSLError =&gt; e
-      raise &ldquo;SSL error: #{e.message}.&rdquo;
-    end
-  end</p>
+  <span style="color:#75715e"># Public: Make the actual GET request to the Chef server.</span>
+  <span style="color:#75715e">#</span>
+  <span style="color:#75715e"># req_path - A String containing the server path you want to send with your</span>
+  <span style="color:#75715e">#            GET request (required).</span>
+  <span style="color:#75715e">#</span>
+  <span style="color:#75715e"># Examples</span>
+  <span style="color:#75715e">#</span>
+  <span style="color:#75715e">#   get_request(&#39;/environments/_default/nodes&#39;)</span>
+  <span style="color:#75715e">#   # =&gt; [&#34;server1.com&#34;,&#34;server2.com&#34;,&#34;server3.com&#34;]</span>
+  <span style="color:#75715e">#</span>
+  <span style="color:#75715e"># Returns different Object type depending on request.</span>
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_request</span>(req_path, body)
+    @path <span style="color:#f92672">=</span> req_path
+    reqpath <span style="color:#f92672">=</span> @server <span style="color:#f92672">+</span> req_path
+    <span style="color:#66d9ef">begin</span>
+      response <span style="color:#f92672">=</span> <span style="color:#66d9ef">HTTParty</span><span style="color:#f92672">.</span>get(reqpath, <span style="color:#e6db74">headers</span>: headers(body, <span style="color:#e6db74">&#39;GET&#39;</span>))
+      response<span style="color:#f92672">.</span>parsed_response
+      <span style="color:#75715e"># JSON.parse(response.body).keys</span>
+    <span style="color:#66d9ef">rescue</span> <span style="color:#66d9ef">OpenSSL</span><span style="color:#f92672">::</span><span style="color:#66d9ef">SSL</span><span style="color:#f92672">::</span><span style="color:#66d9ef">SSLError</span> <span style="color:#f92672">=&gt;</span> e
+      <span style="color:#66d9ef">raise</span> <span style="color:#e6db74">&#34;SSL error: </span><span style="color:#e6db74">#{</span>e<span style="color:#f92672">.</span>message<span style="color:#e6db74">}</span><span style="color:#e6db74">.&#34;</span>
+    <span style="color:#66d9ef">end</span>
+  <span style="color:#66d9ef">end</span>
 
-<p>def put_request(req_path, body)
-    @path = req_path
-    reqpath = @server + req_path
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">put_request</span>(req_path, body)
+    @path <span style="color:#f92672">=</span> req_path
+    reqpath <span style="color:#f92672">=</span> @server <span style="color:#f92672">+</span> req_path
     puts reqpath
-    begin
-      response = HTTParty.put(reqpath, headers: headers(body, &lsquo;PUT&rsquo;), body: body)
-      response.parsed_response
-    rescue OpenSSL::SSL::SSLError =&gt; e
-      raise &ldquo;SSL error: #{e.message}.&rdquo;
-    end
-  end</p>
+    <span style="color:#66d9ef">begin</span>
+      response <span style="color:#f92672">=</span> <span style="color:#66d9ef">HTTParty</span><span style="color:#f92672">.</span>put(reqpath, <span style="color:#e6db74">headers</span>: headers(body, <span style="color:#e6db74">&#39;PUT&#39;</span>), <span style="color:#e6db74">body</span>: body)
+      response<span style="color:#f92672">.</span>parsed_response
+    <span style="color:#66d9ef">rescue</span> <span style="color:#66d9ef">OpenSSL</span><span style="color:#f92672">::</span><span style="color:#66d9ef">SSL</span><span style="color:#f92672">::</span><span style="color:#66d9ef">SSLError</span> <span style="color:#f92672">=&gt;</span> e
+      <span style="color:#66d9ef">raise</span> <span style="color:#e6db74">&#34;SSL error: </span><span style="color:#e6db74">#{</span>e<span style="color:#f92672">.</span>message<span style="color:#e6db74">}</span><span style="color:#e6db74">.&#34;</span>
+    <span style="color:#66d9ef">end</span>
+  <span style="color:#66d9ef">end</span>
 
-<p>def post_request(req_path, body)
-    @path = req_path
-    reqpath = @server + req_path
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">post_request</span>(req_path, body)
+    @path <span style="color:#f92672">=</span> req_path
+    reqpath <span style="color:#f92672">=</span> @server <span style="color:#f92672">+</span> req_path
     puts reqpath
-    begin
-      puts headers(body, &lsquo;POST&rsquo;)
-      response = HTTParty.post(reqpath, headers: headers(body, &lsquo;POST&rsquo;), body: body)
-      response.parsed_response
-    rescue OpenSSL::SSL::SSLError =&gt; e
-      raise &ldquo;SSL error: #{e.message}.&rdquo;
-    end
-  end</p>
+    <span style="color:#66d9ef">begin</span>
+      puts headers(body, <span style="color:#e6db74">&#39;POST&#39;</span>)
+      response <span style="color:#f92672">=</span> <span style="color:#66d9ef">HTTParty</span><span style="color:#f92672">.</span>post(reqpath, <span style="color:#e6db74">headers</span>: headers(body, <span style="color:#e6db74">&#39;POST&#39;</span>), <span style="color:#e6db74">body</span>: body)
+      response<span style="color:#f92672">.</span>parsed_response
+    <span style="color:#66d9ef">rescue</span> <span style="color:#66d9ef">OpenSSL</span><span style="color:#f92672">::</span><span style="color:#66d9ef">SSL</span><span style="color:#f92672">::</span><span style="color:#66d9ef">SSLError</span> <span style="color:#f92672">=&gt;</span> e
+      <span style="color:#66d9ef">raise</span> <span style="color:#e6db74">&#34;SSL error: </span><span style="color:#e6db74">#{</span>e<span style="color:#f92672">.</span>message<span style="color:#e6db74">}</span><span style="color:#e6db74">.&#34;</span>
+    <span style="color:#66d9ef">end</span>
+  <span style="color:#66d9ef">end</span>
 
-<p>def delete_request(req_path, body)
-    @path = req_path
-    reqpath = @server + req_path
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">delete_request</span>(req_path, body)
+    @path <span style="color:#f92672">=</span> req_path
+    reqpath <span style="color:#f92672">=</span> @server <span style="color:#f92672">+</span> req_path
     puts reqpath
-    begin
-      response = HTTParty.delete(reqpath, headers: headers(body, &lsquo;DELETE&rsquo;), body: body)
-      response.parsed_response
-    rescue OpenSSL::SSL::SSLError =&gt; e
-      raise &ldquo;SSL error: #{e.message}.&rdquo;
-    end
-    end</p>
+    <span style="color:#66d9ef">begin</span>
+      response <span style="color:#f92672">=</span> <span style="color:#66d9ef">HTTParty</span><span style="color:#f92672">.</span>delete(reqpath, <span style="color:#e6db74">headers</span>: headers(body, <span style="color:#e6db74">&#39;DELETE&#39;</span>), <span style="color:#e6db74">body</span>: body)
+      response<span style="color:#f92672">.</span>parsed_response
+    <span style="color:#66d9ef">rescue</span> <span style="color:#66d9ef">OpenSSL</span><span style="color:#f92672">::</span><span style="color:#66d9ef">SSL</span><span style="color:#f92672">::</span><span style="color:#66d9ef">SSLError</span> <span style="color:#f92672">=&gt;</span> e
+      <span style="color:#66d9ef">raise</span> <span style="color:#e6db74">&#34;SSL error: </span><span style="color:#e6db74">#{</span>e<span style="color:#f92672">.</span>message<span style="color:#e6db74">}</span><span style="color:#e6db74">.&#34;</span>
+    <span style="color:#66d9ef">end</span>
+    <span style="color:#66d9ef">end</span>
 
-<p>private</p>
+  <span style="color:#66d9ef">private</span>
 
-<p># Private: Encode a String with SHA1.digest and then Base64.encode64 it.
-  #
-  # string - The String you want to encode.
-  #
-  # Examples
-  #
-  #   encode(&lsquo;hello&rsquo;)
-  #   # =&gt; &ldquo;qvTGHdzF6KLavt4PO0gs2a6pQ00=&rdquo;
-  #
-  # Returns the hashed String.
-  def encode(string)
-    ::Base64.encode64(Digest::SHA1.digest(string)).chomp
-  end</p>
+  <span style="color:#75715e"># Private: Encode a String with SHA1.digest and then Base64.encode64 it.</span>
+  <span style="color:#75715e">#</span>
+  <span style="color:#75715e"># string - The String you want to encode.</span>
+  <span style="color:#75715e">#</span>
+  <span style="color:#75715e"># Examples</span>
+  <span style="color:#75715e">#</span>
+  <span style="color:#75715e">#   encode(&#39;hello&#39;)</span>
+  <span style="color:#75715e">#   # =&gt; &#34;qvTGHdzF6KLavt4PO0gs2a6pQ00=&#34;</span>
+  <span style="color:#75715e">#</span>
+  <span style="color:#75715e"># Returns the hashed String.</span>
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">encode</span>(string)
+    <span style="color:#f92672">::</span><span style="color:#66d9ef">Base64</span><span style="color:#f92672">.</span>encode64(<span style="color:#66d9ef">Digest</span><span style="color:#f92672">::</span><span style="color:#66d9ef">SHA1</span><span style="color:#f92672">.</span>digest(string))<span style="color:#f92672">.</span>chomp
+  <span style="color:#66d9ef">end</span>
 
-<p># Private: Forms the HTTP headers required to authenticate and query data
-  # via Chef&rsquo;s REST API.
-  #
-  # Examples
-  #
-  #   headers
-  #   # =&gt; {
-  #     &ldquo;Accept&rdquo;                =&gt; &ldquo;application/json&rdquo;,
-  #     &ldquo;X-Ops-Sign&rdquo;            =&gt; &ldquo;version=1.0&rdquo;,
-  #     &ldquo;X-Ops-Userid&rdquo;          =&gt; &ldquo;client-name&rdquo;,
-  #     &ldquo;X-Ops-Timestamp&rdquo;       =&gt; &ldquo;2012-07-27T20:09:25Z&rdquo;,
-  #     &ldquo;X-Ops-Content-Hash&rdquo;    =&gt; &ldquo;JJKXjxksmsKXM=&rdquo;,
-  #     &ldquo;X-Ops-Authorization-1&rdquo; =&gt; &ldquo;JFKXjkmdkDMKCMDKd+&rdquo;,
-  #     &ldquo;X-Ops-Authorization-2&rdquo; =&gt; &ldquo;JFJXjxjJXXJ/FFjxjd&rdquo;,
-  #     &ldquo;X-Ops-Authorization-3&rdquo; =&gt; &ldquo;FFJfXffffhhJjxFJff&rdquo;,
-  #     &ldquo;X-Ops-Authorization-4&rdquo; =&gt; &ldquo;Fjxaaj2drg5wcZ8I7U&rdquo;,
-  #     &ldquo;X-Ops-Authorization-5&rdquo; =&gt; &ldquo;ffjXeiiiaHskkflllA&rdquo;,
-  #     &ldquo;X-Ops-Authorization-6&rdquo; =&gt; &ldquo;FjxJfjkskqkfjghAjQ==&rdquo;
-  #   }
-  #
-  # Returns a Hash with the necessary headers.
-  def headers(body, method)
-    body      = body
-    timestamp = Time.now.utc.iso8601
-    key       = OpenSSL::PKey::RSA.new(File.read(key_file))
-    canonical = &ldquo;Method:#{method}\nHashed Path:#{encode(path)}\nX-Ops-Content-Hash:#{encode(body)}\nX-Ops-Timestamp:#{timestamp}\nX-Ops-UserId:#{client_name}&rdquo;</p>
+  <span style="color:#75715e"># Private: Forms the HTTP headers required to authenticate and query data</span>
+  <span style="color:#75715e"># via Chef&#39;s REST API.</span>
+  <span style="color:#75715e">#</span>
+  <span style="color:#75715e"># Examples</span>
+  <span style="color:#75715e">#</span>
+  <span style="color:#75715e">#   headers</span>
+  <span style="color:#75715e">#   # =&gt; {</span>
+  <span style="color:#75715e">#     &#34;Accept&#34;                =&gt; &#34;application/json&#34;,</span>
+  <span style="color:#75715e">#     &#34;X-Ops-Sign&#34;            =&gt; &#34;version=1.0&#34;,</span>
+  <span style="color:#75715e">#     &#34;X-Ops-Userid&#34;          =&gt; &#34;client-name&#34;,</span>
+  <span style="color:#75715e">#     &#34;X-Ops-Timestamp&#34;       =&gt; &#34;2012-07-27T20:09:25Z&#34;,</span>
+  <span style="color:#75715e">#     &#34;X-Ops-Content-Hash&#34;    =&gt; &#34;JJKXjxksmsKXM=&#34;,</span>
+  <span style="color:#75715e">#     &#34;X-Ops-Authorization-1&#34; =&gt; &#34;JFKXjkmdkDMKCMDKd+&#34;,</span>
+  <span style="color:#75715e">#     &#34;X-Ops-Authorization-2&#34; =&gt; &#34;JFJXjxjJXXJ/FFjxjd&#34;,</span>
+  <span style="color:#75715e">#     &#34;X-Ops-Authorization-3&#34; =&gt; &#34;FFJfXffffhhJjxFJff&#34;,</span>
+  <span style="color:#75715e">#     &#34;X-Ops-Authorization-4&#34; =&gt; &#34;Fjxaaj2drg5wcZ8I7U&#34;,</span>
+  <span style="color:#75715e">#     &#34;X-Ops-Authorization-5&#34; =&gt; &#34;ffjXeiiiaHskkflllA&#34;,</span>
+  <span style="color:#75715e">#     &#34;X-Ops-Authorization-6&#34; =&gt; &#34;FjxJfjkskqkfjghAjQ==&#34;</span>
+  <span style="color:#75715e">#   }</span>
+  <span style="color:#75715e">#</span>
+  <span style="color:#75715e"># Returns a Hash with the necessary headers.</span>
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">headers</span>(body, method)
+    body      <span style="color:#f92672">=</span> body
+    timestamp <span style="color:#f92672">=</span> <span style="color:#66d9ef">Time</span><span style="color:#f92672">.</span>now<span style="color:#f92672">.</span>utc<span style="color:#f92672">.</span>iso8601
+    key       <span style="color:#f92672">=</span> <span style="color:#66d9ef">OpenSSL</span><span style="color:#f92672">::</span><span style="color:#66d9ef">PKey</span><span style="color:#f92672">::</span><span style="color:#66d9ef">RSA</span><span style="color:#f92672">.</span>new(<span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>read(key_file))
+    canonical <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Method:</span><span style="color:#e6db74">#{</span>method<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Hashed Path:</span><span style="color:#e6db74">#{</span>encode(path)<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">X-Ops-Content-Hash:</span><span style="color:#e6db74">#{</span>encode(body)<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">X-Ops-Timestamp:</span><span style="color:#e6db74">#{</span>timestamp<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">X-Ops-UserId:</span><span style="color:#e6db74">#{</span>client_name<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
 
-<pre><code>header_hash = {
-  'Accept'             =&gt; 'application/json',
-  'X-Ops-Sign'         =&gt; 'version=1.0',
-  'X-Chef-Version'     =&gt; '12.3.1',
-  'X-Ops-Userid'       =&gt; client_name,
-  'X-Ops-Timestamp'    =&gt; timestamp,
-  'X-Ops-Content-Hash' =&gt; encode(body),
-  'Content-Type' =&gt; 'application/json'
-}
+    header_hash <span style="color:#f92672">=</span> {
+      <span style="color:#e6db74">&#39;Accept&#39;</span>             <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;application/json&#39;</span>,
+      <span style="color:#e6db74">&#39;X-Ops-Sign&#39;</span>         <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;version=1.0&#39;</span>,
+      <span style="color:#e6db74">&#39;X-Chef-Version&#39;</span>     <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;12.3.1&#39;</span>,
+      <span style="color:#e6db74">&#39;X-Ops-Userid&#39;</span>       <span style="color:#f92672">=&gt;</span> client_name,
+      <span style="color:#e6db74">&#39;X-Ops-Timestamp&#39;</span>    <span style="color:#f92672">=&gt;</span> timestamp,
+      <span style="color:#e6db74">&#39;X-Ops-Content-Hash&#39;</span> <span style="color:#f92672">=&gt;</span> encode(body),
+      <span style="color:#e6db74">&#39;Content-Type&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;application/json&#39;</span>
+    }
 
-signature = Base64.encode64(key.private_encrypt(canonical))
-signature_lines = signature.split(/\n/)
-signature_lines.each_index do |idx|
-  key = &quot;X-Ops-Authorization-#{idx + 1}&quot;
-  header_hash[key] = signature_lines[idx]
-end
+    signature <span style="color:#f92672">=</span> <span style="color:#66d9ef">Base64</span><span style="color:#f92672">.</span>encode64(key<span style="color:#f92672">.</span>private_encrypt(canonical))
+    signature_lines <span style="color:#f92672">=</span> signature<span style="color:#f92672">.</span>split(<span style="color:#e6db74">/\n/</span>)
+    signature_lines<span style="color:#f92672">.</span>each_index <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>idx<span style="color:#f92672">|</span>
+      key <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;X-Ops-Authorization-</span><span style="color:#e6db74">#{</span>idx <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+      header_hash<span style="color:#f92672">[</span>key<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> signature_lines<span style="color:#f92672">[</span>idx<span style="color:#f92672">]</span>
+    <span style="color:#66d9ef">end</span>
 
-header_hash
-</code></pre>
+    header_hash
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+<span style="color:#75715e"># chef_url = &#39;https://&lt;ip&gt;/organizations/default&#39;</span>
+chef_url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://&lt;ip&gt;&#39;</span>
+chef <span style="color:#f92672">=</span> <span style="color:#66d9ef">ChefAPI</span><span style="color:#f92672">.</span>new(<span style="color:#e6db74">server</span>: chef_url, <span style="color:#e6db74">port</span>: <span style="color:#ae81ff">443</span>, <span style="color:#e6db74">ssl_insecure</span>: <span style="color:#66d9ef">true</span>, <span style="color:#e6db74">client_name</span>: <span style="color:#e6db74">&#39;pivotal&#39;</span>, <span style="color:#e6db74">key_file</span>: <span style="color:#e6db74">&#39;/etc/opscode/pivotal.pem&#39;</span>)
 
-<p>end
-end</p>
+puts chef<span style="color:#f92672">.</span>delete_request(<span style="color:#e6db74">&#39;/organizations/test1&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)
+<span style="color:#75715e"># puts chef.delete_request(&#39;/organizations/secure&#39;, &#34;&#34;)</span>
 
-<h1 id="chef-url-https-ip-organizations-default">chef_url = &lsquo;https://<ip>/organizations/default&rsquo;</h1>
+<span style="color:#75715e"># puts chef.get_request(&#39;/organizations/default/cookbooks&#39;, &#34;&#34;)</span>
+<span style="color:#75715e"># puts chef.get_request(&#39;/organizations/test1/nodes&#39;, &#34;&#34;)</span>
 
-<p>chef_url = &lsquo;https://<ip>&lsquo;
-chef = ChefAPI.new(server: chef_url, port: 443, ssl_insecure: true, client_name: &lsquo;pivotal&rsquo;, key_file: &lsquo;/etc/opscode/pivotal.pem&rsquo;)</p>
-
-<p>puts chef.delete_request(&lsquo;/organizations/test1&rsquo;, &ldquo;)</p>
-
-<h1 id="puts-chef-delete-request-organizations-secure">puts chef.delete_request(&lsquo;/organizations/secure&rsquo;, &ldquo;&rdquo;)</h1>
-
-<h1 id="puts-chef-get-request-organizations-default-cookbooks">puts chef.get_request(&lsquo;/organizations/default/cookbooks&rsquo;, &ldquo;&rdquo;)</h1>
-
-<h1 id="puts-chef-get-request-organizations-test1-nodes">puts chef.get_request(&lsquo;/organizations/test1/nodes&rsquo;, &ldquo;&rdquo;)</h1>
-
-<p>test = { &lsquo;name&rsquo; =&gt; &lsquo;test1&rsquo;, &lsquo;full_name&rsquo; =&gt; &lsquo;major test1&rsquo; }
-resp =  chef.post_request(&lsquo;/organizations&rsquo;, test.to_json)
+test <span style="color:#f92672">=</span> { <span style="color:#e6db74">&#39;name&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;test1&#39;</span>, <span style="color:#e6db74">&#39;full_name&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;major test1&#39;</span> }
+resp <span style="color:#f92672">=</span>  chef<span style="color:#f92672">.</span>post_request(<span style="color:#e6db74">&#39;/organizations&#39;</span>, test<span style="color:#f92672">.</span>to_json)
 puts resp
-File.open(&ldquo;#{resp[&lsquo;clientname&rsquo;]}.pem&rdquo;, &lsquo;w&rsquo;) { |file| file.write(resp[&lsquo;private_key&rsquo;]) }</p>
+<span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>resp<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;clientname&#39;</span><span style="color:#f92672">]</span><span style="color:#e6db74">}</span><span style="color:#e6db74">.pem&#34;</span>, <span style="color:#e6db74">&#39;w&#39;</span>) { <span style="color:#f92672">|</span>file<span style="color:#f92672">|</span> file<span style="color:#f92672">.</span>write(resp<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;private_key&#39;</span><span style="color:#f92672">]</span>) }
 
-<p>puts &lsquo;Users in org: &lsquo;
-puts chef.get_request(&lsquo;/organizations/test1/users&rsquo;, &ldquo;)
-puts chef.post_request(&lsquo;/organizations/test1/association_requests&rsquo;, { &lsquo;user&rsquo; =&gt; &lsquo;admin&rsquo; }.to_json)
-resp =  chef.get_request(&lsquo;/organizations/test1/association_requests&rsquo;, &ldquo;)
-id = resp.find { |x| x[&lsquo;username&rsquo;] == &lsquo;admin&rsquo; }[&lsquo;id&rsquo;]
-puts chef.put_request(&ldquo;/users/admin/association_requests/#{id}&ldquo;, { &lsquo;response&rsquo; =&gt; &lsquo;accept&rsquo; }.to_json)
-puts &lsquo;Users in org: &lsquo;
-puts chef.get_request(&lsquo;/organizations/test1/users&rsquo;, &ldquo;)</p>
+puts <span style="color:#e6db74">&#39;Users in org: &#39;</span>
+puts chef<span style="color:#f92672">.</span>get_request(<span style="color:#e6db74">&#39;/organizations/test1/users&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)
+puts chef<span style="color:#f92672">.</span>post_request(<span style="color:#e6db74">&#39;/organizations/test1/association_requests&#39;</span>, { <span style="color:#e6db74">&#39;user&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;admin&#39;</span> }<span style="color:#f92672">.</span>to_json)
+resp <span style="color:#f92672">=</span>  chef<span style="color:#f92672">.</span>get_request(<span style="color:#e6db74">&#39;/organizations/test1/association_requests&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)
+id <span style="color:#f92672">=</span> resp<span style="color:#f92672">.</span>find { <span style="color:#f92672">|</span>x<span style="color:#f92672">|</span> x<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;username&#39;</span><span style="color:#f92672">]</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;admin&#39;</span> }<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;id&#39;</span><span style="color:#f92672">]</span>
+puts chef<span style="color:#f92672">.</span>put_request(<span style="color:#e6db74">&#34;/users/admin/association_requests/</span><span style="color:#e6db74">#{</span>id<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>, { <span style="color:#e6db74">&#39;response&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;accept&#39;</span> }<span style="color:#f92672">.</span>to_json)
+puts <span style="color:#e6db74">&#39;Users in org: &#39;</span>
+puts chef<span style="color:#f92672">.</span>get_request(<span style="color:#e6db74">&#39;/organizations/test1/users&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)
 
-<h1 id="puts-chef-post-request-organizations-name-secure-full-name-secure-test1-to-json">puts chef.post_request(&lsquo;/organizations&rsquo;, {&ldquo;name&rdquo; =&gt; &ldquo;secure&rdquo;, &ldquo;full_name&rdquo; =&gt; &lsquo;secure test1&rsquo;}.to_json)</h1>
-
-<p>{% endhighlight %}</p>
+<span style="color:#75715e"># puts chef.post_request(&#39;/organizations&#39;, {&#34;name&#34; =&gt; &#34;secure&#34;, &#34;full_name&#34; =&gt; &#39;secure test1&#39;}.to_json)</span></code></pre></div></p>
 <ul class="pa0">
   
 </ul>

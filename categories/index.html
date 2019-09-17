@@ -202,9 +202,7 @@ Why? Why manage an api for yourself when chalice and AWS can handle it quite eas
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       If you want to talk to the chef API without using some wrapper like Ridley, knife, etc.., this is how you do it:
-Note: This is taken from here but modified to use httparty {% highlight ruby %} require &lsquo;base64&rsquo; require &lsquo;time&rsquo; require &lsquo;digest/sha1&rsquo; require &lsquo;openssl&rsquo; require &lsquo;net/https&rsquo; require &lsquo;json&rsquo; require &lsquo;pry&rsquo; require &lsquo;httparty&rsquo;
-class ChefAPI # Public: Gets/Sets the String path for the HTTP request. attr_accessor :path
-# Public: Gets/Sets the String client_name containing the Chef client name.
+Note: This is taken from here but modified to use httparty require &#39;base64&#39; require &#39;time&#39; require &#39;digest/sha1&#39; require &#39;openssl&#39; require &#39;net/https&#39; require &#39;json&#39; require &#39;pry&#39; require &#39;httparty&#39; class ChefAPI # Public: Gets/Sets the String path for the HTTP request. attr_accessor :path # Public: Gets/Sets the String client_name containing the Chef client name.
     </div>
   </div>
 </div>
@@ -271,16 +269,10 @@ I have a Fedora box that I use as a home personal server. It runs various servic
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      After updating my Fedora box, I noticed that the ZFS kernel module was no longer loaded. The error (from /var/lib/dkms/zfs/0.7.12/build/make.log) was:
-{% highlight bash %} /var/lib/dkms/zfs/0.7.12/build/include/zpios-ctl.h:186:11: error: implicit declaration of function ‘current_kernel_time’; did you mean ‘current_kernel_time64’? [-Werror=implicit-function-declaration]
-ts_now = current_kernel_time();
-^~~~~~~~~~~~~~~~~~~
-current_kernel_time64
-/var/lib/dkms/zfs/0.7.12/build/include/zpios-ctl.h:186:9: error: incompatible types when assigning to type ‘struct timespec’ from type ‘int’
-ts_now = current_kernel_time();
-{% endhighlight %}
-The easiest fix is to:
-Download zfs-linux_0.6.5.11-1ubuntu3.6.debian.tar.xz  extract and get debian/patches/3204-Add-4.
+      After updating my Fedora box, I noticed that the ZFS kernel module was no longer loaded. Error from: /var/lib/dkms/zfs/0.7.12/build/make.log
+/var/lib/dkms/zfs/0.7.12/build/include/zpios-ctl.h:186:11: error: implicit declaration of function ‘current_kernel_time’; did you mean ‘current_kernel_time64’? [-Werror=implicit-function-declaration] ts_now = current_kernel_time(); ^~~~~~~~~~~~~~~~~~~ current_kernel_time64 /var/lib/dkms/zfs/0.7.12/build/include/zpios-ctl.h:186:9: error: incompatible types when assigning to type ‘struct timespec’ from type ‘int’ ts_now = current_kernel_time();  The easiest fix is to:
+Download zfs-linux_0.6.5.11-1ubuntu3.6.debian.tar.xz  extract and get debian/patches/3204-Add-4.20-timespec-compat-fix.patch
+Next you need to patch /var/lib/dkms/zfs/0.
     </div>
   </div>
 </div>
@@ -347,7 +339,7 @@ My repo of files are located here
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Postfix 3.0 stable was released a few days ago (Feb 8). I run a few personal mailservers and decided it would be good if I were to upgrade the one running on Fedora21 (postfix + mysql + spamass-milter + greylisting), This would be a deviation as I would be compling it from source, and who knows what would break with 3.0! Here is a very brief update to what I did to get it working on Fedora 21: {% highlight bash %} yum remove postfix -y wget ftp://postfix.
+      Postfix 3.0 stable was released a few days ago (Feb 8). I run a few personal mailservers and decided it would be good if I were to upgrade the one running on Fedora21 (postfix + mysql + spamass-milter + greylisting), This would be a deviation as I would be compling it from source, and who knows what would break with 3.0! Here is a very brief update to what I did to get it working on Fedora 21: yum remove postfix -y wget ftp://postfix.
     </div>
   </div>
 </div>
@@ -392,7 +384,7 @@ My repo of files are located here
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      xhyve is essentially a port of FreeBSD&rsquo;s bhyve to OSX. The instructions show how to run Ubuntu (which you can dissect and figure out how to boot other linux distro&rsquo;s), but lack any documentation on how to run FreeBSD with it. Here is how to do it: Clone and build the latest xhyve {% highlight bash %} git clone git@github.com:mist64/xhyve.git cd hyve make mkdir freebsd cd freebsd {% endhighlight %}  Download latest FreeBSD virtual machine image {% highlight bash %} wget http://ftp10.
+      xhyve is essentially a port of FreeBSD&rsquo;s bhyve to OSX. The instructions show how to run Ubuntu (which you can dissect and figure out how to boot other linux distro&rsquo;s), but lack any documentation on how to run FreeBSD with it. Here is how to do it: Clone and build the latest xhyve git clone git@github.com:mist64/xhyve.git cd hyve make mkdir freebsd cd freebsd  Download latest FreeBSD virtual machine image wget http://ftp10.
     </div>
   </div>
 </div>

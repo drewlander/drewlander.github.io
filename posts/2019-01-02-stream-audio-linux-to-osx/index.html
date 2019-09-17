@@ -39,7 +39,7 @@ I have a Fedora box that I use as a home personal server. It runs various servic
 
 <meta itemprop="datePublished" content="2019-01-02T07:35:48&#43;00:00" />
 <meta itemprop="dateModified" content="2019-01-02T07:35:48&#43;00:00" />
-<meta itemprop="wordCount" content="197">
+<meta itemprop="wordCount" content="185">
 
 
 
@@ -114,25 +114,18 @@ on that server I wanted to play while I was working on my Macbook. I could mount
 Instead, why can&rsquo;t I just tell my computer where to send the audio to and have it work? Turns out, you can!</p>
 
 <p>Install Pulseaudio on OSX:
-{% highlight bash %}
-brew install pulseaudio
-{% endhighlight %}</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install pulseaudio</code></pre></div></p>
 
 <p>I am assuming X is running and some kind of DE is configured on the Linux box.</p>
 
 <p>Start Pulseaudio on OSX:</p>
 
-<p>{% highlight bash %}
-pulseaudio &ndash;load=module-native-protocol-tcp &ndash;exit-idle-time=-1 &ndash;daemon
-pactl load-module module-native-protocol-tcp auth-ip-acl=<ip of streaming client>
-{% endhighlight %}</p>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pulseaudio --load<span style="color:#f92672">=</span>module-native-protocol-tcp --exit-idle-time<span style="color:#f92672">=</span>-1 --daemon
+pactl load-module module-native-protocol-tcp auth-ip-acl<span style="color:#f92672">=</span>&lt;ip of streaming client&gt;</code></pre></div>
+Tell Linux where to send the audio:</p>
 
-<p>Tell Linux where to send the audio:
-{% highlight bash %}
-PULSE_SERVER=<ip of OSX BOx> vlc <filename>
-{% endhighlight %}</p>
-
-<p>PROFIT!</p>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">PULSE_SERVER<span style="color:#f92672">=</span>&lt;ip of OSX BOx&gt; vlc &lt;filename&gt;</code></pre></div>
+PROFIT!</p>
 <ul class="pa0">
   
 </ul>

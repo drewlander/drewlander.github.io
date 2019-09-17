@@ -37,7 +37,7 @@
 
 <meta itemprop="datePublished" content="2015-04-18T08:00:48&#43;00:00" />
 <meta itemprop="dateModified" content="2015-04-18T08:00:48&#43;00:00" />
-<meta itemprop="wordCount" content="606">
+<meta itemprop="wordCount" content="543">
 
 
 
@@ -114,25 +114,19 @@ applications (http, mysql, minecraft). I also did not see many tutorials specifi
 and older verson of systemd-nspawn/machinectl so some features are missing in those tools.</p>
 
 <p><h3> Create a basic centos 7 bootstrap</h3>
-{% highlight bash %}
-yum -y &ndash;releasever=7 &ndash;nogpg &ndash;installroot=/srv/yaystuff install systemd passwd yum fedora-release vim-minimal
-{% endhighlight %}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yum -y --releasever<span style="color:#f92672">=</span><span style="color:#ae81ff">7</span> --nogpg --installroot<span style="color:#f92672">=</span>/srv/yaystuff install systemd passwd yum fedora-release vim-minimal</code></pre></div>
 This will install a basic bootstrap centos 7 environment
 <h3> Reset the password in the container </h3>
 If you are a good person, you are running selinux in enforcing mode. However there is a known bug in centos 7 that will not
 let you change the password if you &ldquo;boot&rdquo; your container. So currently, you can be fancy and make modules, or be only a slightly
 bad person and disable selinux, change the password, re-enable (things work fine after this point with selinux enabled)
-{% highlight bash %}
-setenforce 0
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">setenforce <span style="color:#ae81ff">0</span>
 systemd-nspawn -D /srv/yaystuff
 passwd
 exit
-setenforce 1
-{% endhighlight %}
+setenforce <span style="color:#ae81ff">1</span></code></pre></div>
 <h3> Boot your container and install your fancypants stuff</h3>
-{% highlight bash %}
-systemd-nspawn -D /srv/yaystuff/ -b
-{% endhighlight %}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemd-nspawn -D /srv/yaystuff/ -b</code></pre></div>
 This will drop you into a shell, where you can yum install/configure to your hearts desire.</p>
 
 <p>Note: This will also by default make your &ldquo;container&rdquo; listen on your network interfaces. So if you have port 80
@@ -140,17 +134,12 @@ open in your firewall, and have httpd started and listening in your container (b
 are serving httpd on your host.</p>
 
 <p>When you are done installing fancy stuff, I just issue
-{% highlight bash %}
-halt
-{% endhighlight %}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">halt</code></pre></div>
 And it stops the container and takes you out of your chroot.</p>
 
 <p>You can also bind paths outside of your container into the container&rsquo;s chroot
-{% highlight bash %}
-systemd-nspawn -D /srv/yaystuff/ -b &ndash;bind=/path/on/host:/path/in/container
-{% endhighlight %}</p>
-
-<p><h3>Start your container with systemd </h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemd-nspawn -D /srv/yaystuff/ -b --bind<span style="color:#f92672">=</span>/path/on/host:/path/in/container</code></pre></div>
+<h3>Start your container with systemd </h3>
 edit the following file: /etc/systemd/system/yaystuff.service
 <pre>
 [Unit]
@@ -162,22 +151,17 @@ KillMode=process
 </pre>
 Then reload systemd and start the container</p>
 
-<p>{% highlight bash %}
-systemd start yaystuff.service
-{% endhighlight %}</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemd start yaystuff.service</code></pre></div>
 
 <p>Now the version of machinectl on centos 7.0 does not have a login feature. So you have to use nsenter. To use nsenter, you have to get the pid of your container.
 That is logged in /var/log/messages (or if you started your container from the cli)</p>
 
-<p>{% highlight bash %}
-grep -A 1 &ldquo;Spawning namespace container on /srv/yaystuff&rdquo; /var/log/messages
-{% endhighlight %}</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">grep -A <span style="color:#ae81ff">1</span> <span style="color:#e6db74">&#34;Spawning namespace container on /srv/yaystuff&#34;</span> /var/log/messages</code></pre></div>
 
 <p>Grab the pid there and then execute:
-{% highlight bash %}
-nsenter -m -u -i -n -p -t $PID
-{% endhighlight %}
-To leave just type exit.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nsenter -m -u -i -n -p -t $PID</code></pre></div></p>
+
+<p>To leave just type exit.</p>
 
 <p>Excellent reference: <a href="http://0pointer.de/blog/projects/changing-roots.html">http://0pointer.de/blog/projects/changing-roots.html</a></p>
 
@@ -185,20 +169,18 @@ To leave just type exit.</p>
 
 <p>Redhat 7.2 (CentOS Linux release 7.2.1511) has a newer version of machinectl that has login. No need to use nsenter anymore.</p>
 
-<p>{% highlight bash %}
-machinectl list
-MACHINE                          CONTAINER SERVICE<br />
-php-fpm                          container nspawn<br />
-mysql                            container nspawn<br />
-webstuff                         container nspawn</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">machinectl list
+MACHINE                          CONTAINER SERVICE
+php-fpm                          container nspawn
+mysql                            container nspawn
+webstuff                         container nspawn
 
-<p>machinectl login mysql
-Connected to container mysql. Press ^] three times within 1s to exit session.</p>
+machinectl login mysql
+Connected to container mysql. Press ^<span style="color:#f92672">]</span> three times within 1s to exit session.
 
-<p>Debian GNU/Linux stretch/sid drewstud.com pts/0</p>
+Debian GNU/Linux stretch/sid drewstud.com pts/0
 
-<p>drewstud login:
-{% endhighlight %}</p>
+drewstud login:</code></pre></div>
 <ul class="pa0">
   
 </ul>
