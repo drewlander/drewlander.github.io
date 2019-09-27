@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Drewskiwooskie Blogarooskie  | CentOS 8 and Spacewalk 2.9</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.58.3" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="CentOS 8 and Spacewalk 2.9" />
+<meta property="og:description" content="With CentOS 8 released, it is time to start integrating it and see what works and what doesnt! First was spacewalk.
+We are running 2.9 and there is no repository for 2.9 for that version. So we have to use their nightly repo. The following changes were needed to get it to work (assuming that the new centos 8 channel/keys/repo are setup in Spacewalk). I would paste the snippets from my faviorite automation tool, but if you can read this you can translate it :) dnf config-manager --add-repo https://copr-be." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://drewstud.com/posts/2019-09-27-centos-8-spacewalk/" />
+<meta property="article:published_time" content="2019-09-27T08:47:11+01:00" />
+<meta property="article:modified_time" content="2019-09-27T08:47:11+01:00" />
+<meta itemprop="name" content="CentOS 8 and Spacewalk 2.9">
+<meta itemprop="description" content="With CentOS 8 released, it is time to start integrating it and see what works and what doesnt! First was spacewalk.
+We are running 2.9 and there is no repository for 2.9 for that version. So we have to use their nightly repo. The following changes were needed to get it to work (assuming that the new centos 8 channel/keys/repo are setup in Spacewalk). I would paste the snippets from my faviorite automation tool, but if you can read this you can translate it :) dnf config-manager --add-repo https://copr-be.">
+
+
+<meta itemprop="datePublished" content="2019-09-27T08:47:11&#43;01:00" />
+<meta itemprop="dateModified" content="2019-09-27T08:47:11&#43;01:00" />
+<meta itemprop="wordCount" content="133">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CentOS 8 and Spacewalk 2.9"/>
+<meta name="twitter:description" content="With CentOS 8 released, it is time to start integrating it and see what works and what doesnt! First was spacewalk.
+We are running 2.9 and there is no repository for 2.9 for that version. So we have to use their nightly repo. The following changes were needed to get it to work (assuming that the new centos 8 channel/keys/repo are setup in Spacewalk). I would paste the snippets from my faviorite automation tool, but if you can read this you can translate it :) dnf config-manager --add-repo https://copr-be."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://drewstud.com/" class="f3 fw2 hover-white no-underline white-90 dib">
+      Drewskiwooskie Blogarooskie
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">CentOS 8 and Spacewalk 2.9</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-09-27T08:47:11&#43;01:00">September 27, 2019</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>With CentOS 8 released, it is time to start integrating it and see what works and what doesnt! First was spacewalk.</p>
+
+<p>We are running 2.9 and there is no repository for 2.9 for that version. So we have to use their nightly repo.
+The following changes were needed to get it to work (assuming that the new centos 8 channel/keys/repo are setup in Spacewalk).
+I would paste the snippets from my faviorite automation tool, but if you can read this you can translate it :)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dnf config-manager --add-repo https://copr-be.cloud.fedoraproject.org/results/%40spacewalkproject/nightly-client/epel-8-x86_64
+dnf -y install rhn-client-tools rhnpush  rhnsd dnf-plugin-spacewalk osad rhncfg spacewalk-oscap rhn-custom-info rhn-setup rhncfg-actions rhn-check</code></pre></div>
+Thats it! Previously, m2crypto was required. That was REMOVED in CentOS 8.
+I did not have to change any of the other commands to register with spacewalk. Even osad works!</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://drewstud.com/" >
+    &copy; 2019 Drewskiwooskie Blogarooskie
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

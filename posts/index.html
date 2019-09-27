@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://drewstud.com/posts/" />
 
-<meta property="og:updated_time" content="2019-01-29T07:35:48+00:00" />
+<meta property="og:updated_time" content="2019-09-27T08:47:11+01:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="">
 
@@ -89,6 +89,38 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/2019-09-27-centos-8-spacewalk/" class="link black dim">
+        CentOS 8 and Spacewalk 2.9
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      With CentOS 8 released, it is time to start integrating it and see what works and what doesnt! First was spacewalk.
+We are running 2.9 and there is no repository for 2.9 for that version. So we have to use their nightly repo. The following changes were needed to get it to work (assuming that the new centos 8 channel/keys/repo are setup in Spacewalk). I would paste the snippets from my faviorite automation tool, but if you can read this you can translate it :) dnf config-manager --add-repo https://copr-be.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/2019-09-27-centos-8-ad-authentication/" class="link black dim">
+        CentOS 8 and Active Directory Authentication
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      With CentOS 8 out, I attempted to see what, if anything would need changed with current automation scripts. A huge benefit is the AD authentication we have. It is largely a windows shop where I work, so integrating with AD there makes the most sense. (We could use FreeIPA but we are trying to KISS).
+The first changes was policycoreutils-python is now policycoreutils-python-utils. Seems like a rather redundant name change but I am sure they had good reasons.
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -214,36 +246,6 @@ You have to edit the password export service yourself via orca, instEd, etc&hell
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       Recently I saw the latest mailinabox, and man is it fancy. I looked, and there was nothing like that for centos. I wanted a way to help the lazy people out there setup a centos 7 box with postfixadmin, dovecot, spamasassin, clamav-milter, postgrey-milter, mariadb, and dkim with ease. So in very short time in between down time, I wrote mailonacircle. It uses chef-solo, and the attributes are basic and do not make a lot of sense at first glance, but it is a start.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2015-04-18-systemd-nspawn-centos-7/" class="link black dim">
-        Centos 7 and systemd-nspawn
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      With systemd, comes systemd-nspawn. (I will not talk about love/hate of systemd, not in this post at least. Let&rsquo;s just say if you start out saying you are writing an init system, why does your init system takeover acpi?). Anyway, part of the systemd monstrosity is something called nspawn. In short, its a &ldquo;more powerful&rdquo; chroot, but still should not be relied upon soley for security (think defense in depth people!
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2015-09-04-xhyve-freebsd/" class="link black dim">
-        FreeBSD on Xhyve
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      xhyve is essentially a port of FreeBSD&rsquo;s bhyve to OSX. The instructions show how to run Ubuntu (which you can dissect and figure out how to boot other linux distro&rsquo;s), but lack any documentation on how to run FreeBSD with it. Here is how to do it: Clone and build the latest xhyve git clone git@github.com:mist64/xhyve.git cd hyve make mkdir freebsd cd freebsd  Download latest FreeBSD virtual machine image wget http://ftp10.
     </div>
   </div>
 </div>

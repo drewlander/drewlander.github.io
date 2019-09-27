@@ -6,10 +6,30 @@
     <description>Recent content on Drewskiwooskie Blogarooskie</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 29 Jan 2019 07:35:48 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 27 Sep 2019 08:47:11 +0100</lastBuildDate>
     
 	<atom:link href="http://drewstud.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CentOS 8 and Spacewalk 2.9</title>
+      <link>http://drewstud.com/posts/2019-09-27-centos-8-spacewalk/</link>
+      <pubDate>Fri, 27 Sep 2019 08:47:11 +0100</pubDate>
+      
+      <guid>http://drewstud.com/posts/2019-09-27-centos-8-spacewalk/</guid>
+      <description>With CentOS 8 released, it is time to start integrating it and see what works and what doesnt! First was spacewalk.
+We are running 2.9 and there is no repository for 2.9 for that version. So we have to use their nightly repo. The following changes were needed to get it to work (assuming that the new centos 8 channel/keys/repo are setup in Spacewalk). I would paste the snippets from my faviorite automation tool, but if you can read this you can translate it :) dnf config-manager --add-repo https://copr-be.</description>
+    </item>
+    
+    <item>
+      <title>CentOS 8 and Active Directory Authentication</title>
+      <link>http://drewstud.com/posts/2019-09-27-centos-8-ad-authentication/</link>
+      <pubDate>Thu, 26 Sep 2019 09:47:11 +0100</pubDate>
+      
+      <guid>http://drewstud.com/posts/2019-09-27-centos-8-ad-authentication/</guid>
+      <description>With CentOS 8 out, I attempted to see what, if anything would need changed with current automation scripts. A huge benefit is the AD authentication we have. It is largely a windows shop where I work, so integrating with AD there makes the most sense. (We could use FreeIPA but we are trying to KISS).
+The first changes was policycoreutils-python is now policycoreutils-python-utils. Seems like a rather redundant name change but I am sure they had good reasons.</description>
+    </item>
     
     <item>
       <title>Get Pianobar Updates On Touchbar With MTMR</title>

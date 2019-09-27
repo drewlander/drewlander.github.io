@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://drewstud.com/" />
 
-<meta property="og:updated_time" content="2019-01-29T07:35:48+00:00" />
+<meta property="og:updated_time" content="2019-09-27T08:47:11+01:00" />
 <meta itemprop="name" content="Drewskiwooskie Blogarooskie">
 <meta itemprop="description" content="">
 
@@ -120,6 +120,56 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/2019-09-27-centos-8-spacewalk/" class="color-inherit dim link">
+            CentOS 8 and Spacewalk 2.9
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          With CentOS 8 released, it is time to start integrating it and see what works and what doesnt! First was spacewalk.
+We are running 2.9 and there is no repository for 2.9 for that version. So we have to use their nightly repo. The following changes were needed to get it to work (assuming that the new centos 8 channel/keys/repo are setup in Spacewalk). I would paste the snippets from my faviorite automation tool, but if you can read this you can translate it :) dnf config-manager --add-repo https://copr-be.
+        </div>
+          <a href="/posts/2019-09-27-centos-8-spacewalk/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/2019-09-27-centos-8-ad-authentication/" class="color-inherit dim link">
+            CentOS 8 and Active Directory Authentication
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          With CentOS 8 out, I attempted to see what, if anything would need changed with current automation scripts. A huge benefit is the AD authentication we have. It is largely a windows shop where I work, so integrating with AD there makes the most sense. (We could use FreeIPA but we are trying to KISS).
+The first changes was policycoreutils-python is now policycoreutils-python-utils. Seems like a rather redundant name change but I am sure they had good reasons.
+        </div>
+          <a href="/posts/2019-09-27-centos-8-ad-authentication/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/2019-07-12-2019-mtmr-with-pianobar/" class="color-inherit dim link">
             Get Pianobar Updates On Touchbar With MTMR
             </a>
@@ -137,64 +187,24 @@ My repo of files are located here
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/2019-01-29-2019-zfs-kernel-patch-fedora-kernel/" class="color-inherit dim link">
-            ZFS kmod Does Not Build On Fedora Kernel 4.20.4-200
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          After updating my Fedora box, I noticed that the ZFS kernel module was no longer loaded. Error from: /var/lib/dkms/zfs/0.7.12/build/make.log
-/var/lib/dkms/zfs/0.7.12/build/include/zpios-ctl.h:186:11: error: implicit declaration of function ‘current_kernel_time’; did you mean ‘current_kernel_time64’? [-Werror=implicit-function-declaration] ts_now = current_kernel_time(); ^~~~~~~~~~~~~~~~~~~ current_kernel_time64 /var/lib/dkms/zfs/0.7.12/build/include/zpios-ctl.h:186:9: error: incompatible types when assigning to type ‘struct timespec’ from type ‘int’ ts_now = current_kernel_time();  The easiest fix is to:
-Download zfs-linux_0.6.5.11-1ubuntu3.6.debian.tar.xz  extract and get debian/patches/3204-Add-4.20-timespec-compat-fix.patch
-Next you need to patch /var/lib/dkms/zfs/0.
-        </div>
-          <a href="/posts/2019-01-29-2019-zfs-kernel-patch-fedora-kernel/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/2019-01-02-stream-audio-linux-to-osx/" class="color-inherit dim link">
-            Streaming Audio from Linux to OSX with Pulseaudio
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          This is not for everyone, and I know that there are better things I can do (like hook up a pair of speakers). Let me explain.
-I have a Fedora box that I use as a home personal server. It runs various services. However because the more monitors the better, and I believe in having as many HUDS and graphs as humanly possible, it IS running X and has a monitor attached to it.
-        </div>
-          <a href="/posts/2019-01-02-stream-audio-linux-to-osx/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/2019-01-29-2019-zfs-kernel-patch-fedora-kernel/" class="link black dim">
+              ZFS kmod Does Not Build On Fedora Kernel 4.20.4-200
+            </a>
+          </h2>
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/2019-01-02-stream-audio-linux-to-osx/" class="link black dim">
+              Streaming Audio from Linux to OSX with Pulseaudio
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/2018-01-31-aws-api-lambda-sqs-celery/" class="link black dim">
@@ -205,18 +215,6 @@ I have a Fedora box that I use as a home personal server. It runs various servic
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/2016-09-01-openbsd-on-rackspace-public-cloud/" class="link black dim">
               Installing OpenBSD On Rackspace Public Cloud
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/2016-01-19-query-chef-rest-api/" class="link black dim">
-              Querying Chef REST Api With pure Ruby
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/2015-10-19-password-export-service-silent-install/" class="link black dim">
-              Active Directory Password Export Service Silent Install
             </a>
           </h2>
         
