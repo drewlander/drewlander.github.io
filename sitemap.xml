@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://drewstud.com/posts/2019-09-27-centos-8-spacewalk/</loc>
-    <lastmod>2019-09-27T08:47:11+01:00</lastmod>
+    <loc>http://drewstud.com/posts/2019-10-30-ansible_for_osx/</loc>
+    <lastmod>2019-10-30T08:47:11+01:00</lastmod>
   </url>
   
   <url>
     <loc>http://drewstud.com/</loc>
-    <lastmod>2019-09-27T08:47:11+01:00</lastmod>
+    <lastmod>2019-10-30T08:47:11+01:00</lastmod>
   </url>
   
   <url>
     <loc>http://drewstud.com/posts/</loc>
+    <lastmod>2019-10-30T08:47:11+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://drewstud.com/posts/2019-09-27-centos-8-spacewalk/</loc>
     <lastmod>2019-09-27T08:47:11+01:00</lastmod>
   </url>
   
