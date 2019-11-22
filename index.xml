@@ -6,10 +6,21 @@
     <description>Recent content on Drewskiwooskie Blogarooskie</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 30 Oct 2019 08:47:11 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 22 Nov 2019 08:47:11 +0100</lastBuildDate>
     
 	<atom:link href="http://drewstud.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Dymo Printer Framework for .NET 4.5&#43; and barcodes</title>
+      <link>http://drewstud.com/posts/2019-11-22-2019-dymo-printer-dotnet-4-5/</link>
+      <pubDate>Fri, 22 Nov 2019 08:47:11 +0100</pubDate>
+      
+      <guid>http://drewstud.com/posts/2019-11-22-2019-dymo-printer-dotnet-4-5/</guid>
+      <description>For a certain work project, I was uanble to print barcodes using C# and the dynmo .NET library. I could print text just fine. I just could not print barcodes for whatever reason. It was ALWAYS blank.
+This is out here so if anyone is looking for an answer, here it is.
+I googled and googled and the dymo forums are closed and there is NO Google cache for the forums either.</description>
+    </item>
     
     <item>
       <title>Ansible For OSX Install On My MBP Dual Booting With Fedora 31</title>
@@ -177,17 +188,6 @@ You have to edit the password export service yourself via orca, instEd, etc&amp;
       
       <guid>http://drewstud.com/posts/my-first-post/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>Dymo Printer Framework for .NET 4.5&#43; and barcodes</title>
-      <link>http://drewstud.com/posts/2019-11-22-2019-dymo-printer-dotnet-4-5/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://drewstud.com/posts/2019-11-22-2019-dymo-printer-dotnet-4-5/</guid>
-      <description>For a certain work project, I was uanble to print barcodes using C# and the dynmo .NET library. I could print text just fine. I just could not print barcodes for whatever reason. It was ALWAYS blank.
-This is out here so if anyone is looking for an answer, here it is.
-I googled and googled and the dymo forums are closed and there is NO Google cache for the forums either.</description>
     </item>
     
   </channel>
