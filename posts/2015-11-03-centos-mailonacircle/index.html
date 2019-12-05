@@ -6,15 +6,15 @@
     
     <title>Drewskiwooskie Blogarooskie  | Mailonacircle: Mailinabox(ish) for Centos 7 With Selinux=Enabled</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.60.1" />
     
     
-      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
     
 
     
     
-      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+      <link href="http://drewstud.com/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
     
 
     
@@ -33,22 +33,21 @@
 <meta property="article:modified_time" content="2015-10-19T08:00:48+00:00" />
 <meta itemprop="name" content="Mailonacircle: Mailinabox(ish) for Centos 7 With Selinux=Enabled">
 <meta itemprop="description" content="Recently I saw the latest mailinabox, and man is it fancy. I looked, and there was nothing like that for centos. I wanted a way to help the lazy people out there setup a centos 7 box with postfixadmin, dovecot, spamasassin, clamav-milter, postgrey-milter, mariadb, and dkim with ease. So in very short time in between down time, I wrote mailonacircle. It uses chef-solo, and the attributes are basic and do not make a lot of sense at first glance, but it is a start.">
-
-
 <meta itemprop="datePublished" content="2015-10-19T08:00:48&#43;00:00" />
 <meta itemprop="dateModified" content="2015-10-19T08:00:48&#43;00:00" />
 <meta itemprop="wordCount" content="328">
 
 
 
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Mailonacircle: Mailinabox(ish) for Centos 7 With Selinux=Enabled"/>
 <meta name="twitter:description" content="Recently I saw the latest mailinabox, and man is it fancy. I looked, and there was nothing like that for centos. I wanted a way to help the lazy people out there setup a centos 7 box with postfixadmin, dovecot, spamasassin, clamav-milter, postgrey-milter, mariadb, and dkim with ease. So in very short time in between down time, I wrote mailonacircle. It uses chef-solo, and the attributes are basic and do not make a lot of sense at first glance, but it is a start."/>
 
+      
+    
   </head>
 
-  <body class="ma0 avenir bg-near-white">
+  <body class="ma0 avenir bg-near-white production">
 
     
    
@@ -105,31 +104,30 @@
 
     <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>Recently I saw the latest mailinabox, and man is it fancy. I looked, and there was nothing like that for centos.
 I wanted a way to help the lazy people out there setup a centos 7 box with postfixadmin, dovecot, spamasassin, clamav-milter, postgrey-milter, mariadb, and dkim with ease. So in very short time in between down time, I wrote <a href="https://github.com/drewlander/mailonacircle">mailonacircle</a>. It uses chef-solo, and the attributes are basic and do not make a lot of sense at first glance, but it is a start. With a quick copy/pasta, you can take a fresh centos 7 server and install all of the above, with selinux enabled. By default, there is no default domain (and of course no open relay), do if someone were to just copy/pasta, no damage done. You have to add the domains and mailboxes in postfixadmin. Also smtpauth should work as well.</p>
-
 <p>Reasons I did it this way:</p>
-
 <ul>
 <li>Why Chef? Why not bash/ansible/fancypants thing:
-
 <ul>
 <li>I know Chef very well</li>
-<li>Because I have a hammer, everything looks like a nail</li>
+<li>Because I have a hammer, everything looks like a nail
+<ul>
 <li>To be fair, chef solo is perfect for this. Run it once, &ldquo;make this box look like X&rdquo;, and you can remove chef-solo if you wanted.</li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 <li>You did not use any community cookbooks! You should feel bad
-
 <ul>
 <li>I went for simplicity. Why do I need an entire separate cookbook to install mariadb, create a db and create a few users?</li>
-</ul></li>
-<li>Selinux enabled is hard
-
-<ul>
-<li><a href="http://stopdisablingselinux.com/">http://stopdisablingselinux.com/</a></li>
-</ul></li>
 </ul>
-
+</li>
+<li>Selinux enabled is hard
+<ul>
+<li><a href="http://stopdisablingselinux.com/"><a href="http://stopdisablingselinux.com/">http://stopdisablingselinux.com/</a></a></li>
+</ul>
+</li>
+</ul>
 <p>This is not as fancy as mailinabox, no fancy web ui, and this assumes at least basic troubleshooting/following directions. What is still left:</p>
-
 <ul>
 <li>Attributes need to make more sense</li>
 <li>There are some hardcoded references to the mail database (specifically called mail in the sql maps for postfix)</li>
@@ -180,7 +178,7 @@ I wanted a way to help the lazy people out there setup a centos 7 box with postf
 
     
 
-  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+  <script src="http://drewstud.com/dist/js/app.3fc0f988d21662902933.js"></script>
 
 
   </body>

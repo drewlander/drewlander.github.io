@@ -17,9 +17,7 @@
       <pubDate>Fri, 22 Nov 2019 08:47:11 +0100</pubDate>
       
       <guid>http://drewstud.com/posts/2019-11-22-2019-dymo-printer-dotnet-4-5/</guid>
-      <description>For a certain work project, I was uanble to print barcodes using C# and the dynmo .NET library. I could print text just fine. I just could not print barcodes for whatever reason. It was ALWAYS blank.
-This is out here so if anyone is looking for an answer, here it is.
-I googled and googled and the dymo forums are closed and there is NO Google cache for the forums either.</description>
+      <description>For a certain work project, I was uanble to print barcodes using C# and the dynmo .NET library. I could print text just fine. I just could not print barcodes for whatever reason. It was ALWAYS blank.This is out here so if anyone is looking for an answer, here it is.I googled and googled and the dymo forums are closed and there is NO Google cache for the forums either. I was stuck.</description>
     </item>
     
     <item>
@@ -28,10 +26,9 @@ I googled and googled and the dymo forums are closed and there is NO Google cach
       <pubDate>Wed, 30 Oct 2019 08:47:11 +0100</pubDate>
       
       <guid>http://drewstud.com/posts/2019-10-30-ansible_for_osx/</guid>
-      <description>I ended up erasing my Macbook Pro and reinstalling EVERYTHING. I ended up converting my chef-solo script to ansible.
-Drewlander Github Repository
-All that should need to be done is: bash bootstrap.sh As far as installing Fedora 31, I shrinked the partition to have 99GB free. I then installed Fedora 31. What did not work:
- Keyboard Touchbad Wireless Sound  I used an external mouse and keyboard to do the install.</description>
+      <description>I ended up erasing my Macbook Pro and reinstalling EVERYTHING. I ended up converting my chef-solo script to ansible.Drewlander Github RepositoryAll that should need to be done is: bash bootstrap.sh
+ Keyboard Touchbad Wireless Sound  I used an external mouse and keyboard to do the install.To get the touchbar and keyboard to work I followed: This.I followed the section titled: Keyboard/Touchpad/Touchbar.
+Wireless still does not work, even when setting the txpower to 10.</description>
     </item>
     
     <item>
@@ -71,9 +68,9 @@ My repo of files are located here</description>
       
       <guid>http://drewstud.com/posts/2019-01-29-2019-zfs-kernel-patch-fedora-kernel/</guid>
       <description>After updating my Fedora box, I noticed that the ZFS kernel module was no longer loaded. Error from: /var/lib/dkms/zfs/0.7.12/build/make.log
-/var/lib/dkms/zfs/0.7.12/build/include/zpios-ctl.h:186:11: error: implicit declaration of function ‘current_kernel_time’; did you mean ‘current_kernel_time64’? [-Werror=implicit-function-declaration] ts_now = current_kernel_time(); ^~~~~~~~~~~~~~~~~~~ current_kernel_time64 /var/lib/dkms/zfs/0.7.12/build/include/zpios-ctl.h:186:9: error: incompatible types when assigning to type ‘struct timespec’ from type ‘int’ ts_now = current_kernel_time();  The easiest fix is to:
+/var/lib/dkms/zfs/0.7.12/build/include/zpios-ctl.h:186:11: error: implicit declaration of function ‘current_kernel_time’; did you mean ‘current_kernel_time64’? [-Werror=implicit-function-declaration] ts_now = current_kernel_time(); ^~~~~~~~~~~~~~~~~~~ current_kernel_time64 /var/lib/dkms/zfs/0.7.12/build/include/zpios-ctl.h:186:9: error: incompatible types when assigning to type ‘struct timespec’ from type ‘int’ ts_now = current_kernel_time(); The easiest fix is to:
 Download zfs-linux_0.6.5.11-1ubuntu3.6.debian.tar.xz  extract and get debian/patches/3204-Add-4.20-timespec-compat-fix.patch
-Next you need to patch /var/lib/dkms/zfs/0.</description>
+Next you need to patch /var/lib/dkms/zfs/0.7.12/source/include/zpios-ctl.h with that patch dkms autoinstall modprobe zfs PROFIT!</description>
     </item>
     
     <item>
@@ -94,7 +91,7 @@ I have a Fedora box that I use as a home personal server. It runs various servic
       <guid>http://drewstud.com/posts/2018-01-31-aws-api-lambda-sqs-celery/</guid>
       <description>End Goal To have an api that sends SQS messages to a queue to be processed by workers.
 Flow api request -&amp;gt; AWS API Gateaway -&amp;gt; SQS -&amp;gt; Celery
-Why? Why manage an api for yourself when chalice and AWS can handle it quite easily for you. Yes the cloud is someone else&amp;rsquo;s computer, but I don&amp;rsquo;t want to be woken up because a server is down. I would rather be notified because a behemouth like Amazon is down.</description>
+Why? Why manage an api for yourself when chalice and AWS can handle it quite easily for you. Yes the cloud is someone else&#39;s computer, but I don&#39;t want to be woken up because a server is down. I would rather be notified because a behemouth like Amazon is down.</description>
     </item>
     
     <item>
@@ -141,7 +138,7 @@ You have to edit the password export service yourself via orca, instEd, etc&amp;
       <pubDate>Sat, 18 Apr 2015 08:00:48 +0000</pubDate>
       
       <guid>http://drewstud.com/posts/2015-04-18-systemd-nspawn-centos-7/</guid>
-      <description>With systemd, comes systemd-nspawn. (I will not talk about love/hate of systemd, not in this post at least. Let&amp;rsquo;s just say if you start out saying you are writing an init system, why does your init system takeover acpi?). Anyway, part of the systemd monstrosity is something called nspawn. In short, its a &amp;ldquo;more powerful&amp;rdquo; chroot, but still should not be relied upon soley for security (think defense in depth people!</description>
+      <description>With systemd, comes systemd-nspawn. (I will not talk about love/hate of systemd, not in this post at least. Let&#39;s just say if you start out saying you are writing an init system, why does your init system takeover acpi?). Anyway, part of the systemd monstrosity is something called nspawn. In short, its a &amp;ldquo;more powerful&amp;rdquo; chroot, but still should not be relied upon soley for security (think defense in depth people!</description>
     </item>
     
     <item>
@@ -150,7 +147,7 @@ You have to edit the password export service yourself via orca, instEd, etc&amp;
       <pubDate>Sat, 18 Apr 2015 08:00:48 +0000</pubDate>
       
       <guid>http://drewstud.com/posts/2015-09-04-xhyve-freebsd/</guid>
-      <description>xhyve is essentially a port of FreeBSD&amp;rsquo;s bhyve to OSX. The instructions show how to run Ubuntu (which you can dissect and figure out how to boot other linux distro&amp;rsquo;s), but lack any documentation on how to run FreeBSD with it. Here is how to do it: Clone and build the latest xhyve git clone git@github.com:mist64/xhyve.git cd hyve make mkdir freebsd cd freebsd  Download latest FreeBSD virtual machine image wget http://ftp10.</description>
+      <description>xhyve is essentially a port of FreeBSD&#39;s bhyve to OSX. The instructions show how to run Ubuntu (which you can dissect and figure out how to boot other linux distro&#39;s), but lack any documentation on how to run FreeBSD with it. Here is how to do it:</description>
     </item>
     
     <item>
@@ -169,7 +166,7 @@ You have to edit the password export service yourself via orca, instEd, etc&amp;
       
       <guid>http://drewstud.com/posts/2015-02-26-tuning-spamassassin/</guid>
       <description>For those of us who are not large companies where paying another company for spam protection is an option, combatting spam can be something both fun, and annoying. Hopefully, for any newbies, here are some things to do that can greatly reduce the amount of spam you receive, as well as minimize the amount of false positives of mail identified as spam.
- Have spamassassin learn ham and spam  Many people I have seen just install spamassassin, run sa-update, then complain that they are getting a ton of spam.</description>
+You MUST train both ham and spam to be effective.</description>
     </item>
     
     <item>
@@ -178,7 +175,7 @@ You have to edit the password export service yourself via orca, instEd, etc&amp;
       <pubDate>Thu, 12 Feb 2015 10:35:48 +0000</pubDate>
       
       <guid>http://drewstud.com/posts/2015-02-12-figuring-this-out/</guid>
-      <description>I have read many places that having a blog is a good thing. Even if you have on there something that you think anyone should know, there may be that one person out there who doesn&amp;rsquo;t know, who somehow finds your blog, and you help them. Anyway, this will be a technical blog. I am self taught (no collge) so I am sure there will be lots of people correcting me, which is good, because then I will learn :) Yes this blog is using Jekyll.</description>
+      <description>I have read many places that having a blog is a good thing. Even if you have on there something that you think anyone should know, there may be that one person out there who doesn&#39;t know, who somehow finds your blog, and you help them. Anyway, this will be a technical blog. I am self taught (no collge) so I am sure there will be lots of people correcting me, which is good, because then I will learn :) Yes this blog is using Jekyll.</description>
     </item>
     
     <item>

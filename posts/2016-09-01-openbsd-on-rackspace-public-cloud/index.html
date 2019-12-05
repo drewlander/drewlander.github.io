@@ -6,15 +6,15 @@
     
     <title>Drewskiwooskie Blogarooskie  | Installing OpenBSD On Rackspace Public Cloud</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.60.1" />
     
     
-      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
     
 
     
     
-      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+      <link href="http://drewstud.com/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
     
 
     
@@ -33,22 +33,21 @@
 <meta property="article:modified_time" content="2016-01-19T05:35:48+00:00" />
 <meta itemprop="name" content="Installing OpenBSD On Rackspace Public Cloud">
 <meta itemprop="description" content="For the longest time I wanted to see OpenBSD on Rackspace Public Cloud. With their boot.iso you are able to attempt to boot into a pxe environment and boot OpenBSD 5.7, but it lacks the necessary drivers for xen. I gave up for a while. but tried with the release of OpenBSD 6. I am happy to report, that you CAN and it WORKS! To do so, you boot into a linux distro, download bsd.">
-
-
 <meta itemprop="datePublished" content="2016-01-19T05:35:48&#43;00:00" />
 <meta itemprop="dateModified" content="2016-01-19T05:35:48&#43;00:00" />
 <meta itemprop="wordCount" content="398">
 
 
 
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Installing OpenBSD On Rackspace Public Cloud"/>
 <meta name="twitter:description" content="For the longest time I wanted to see OpenBSD on Rackspace Public Cloud. With their boot.iso you are able to attempt to boot into a pxe environment and boot OpenBSD 5.7, but it lacks the necessary drivers for xen. I gave up for a while. but tried with the release of OpenBSD 6. I am happy to report, that you CAN and it WORKS! To do so, you boot into a linux distro, download bsd."/>
 
+      
+    
   </head>
 
-  <body class="ma0 avenir bg-near-white">
+  <body class="ma0 avenir bg-near-white production">
 
     
    
@@ -107,14 +106,11 @@
 attempt to boot into a pxe environment and boot OpenBSD 5.7, but it lacks the necessary drivers for xen.
 I gave up for a while. but tried with the release of OpenBSD 6. I am happy to report, that you CAN and it WORKS!
 To do so, you boot into a linux distro, download bsd.rd, add it to grub, and boot off the RAM disk. Things to note:</p>
-
 <ul>
 <li>Get ALL the ip information from the box, you will need to setup IPs statically (I just copy /etc/sysconfig/network-settings eth0/eth1 configs to a temp file to read later)</li>
 <li>You will be doing this via a console session, which means you have to use a browser that supports java.</li>
 </ul>
-
 <p>For the purposes of this demonstration, I will be using their Fedora 24 PVHVM image using their General Purpose flavor.</p>
-
 <ul>
 <li>Boot a Fedora 24 image into the size that you want.</li>
 <li>Login to the server.</li>
@@ -123,7 +119,7 @@ To do so, you boot into a linux distro, download bsd.rd, add it to grub, and boo
 mv bsd.rd /openbsd.rd</code></pre></div></li>
 <li>Modify /etc/grub.d/40_custom and add:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  menuentry <span style="color:#e6db74">&#34;Install OpenBSD from RAM disk&#34;</span> <span style="color:#f92672">{</span>
-    set root<span style="color:#f92672">=(</span>hd0,1<span style="color:#f92672">)</span>
+    set root<span style="color:#f92672">=</span><span style="color:#f92672">(</span>hd0,1<span style="color:#f92672">)</span>
     kopenbsd /openbsd.rd
   <span style="color:#f92672">}</span></code></pre></div></li>
 <li>Edit /etc/default/grub and change GRUB_TIMEOUT=1 to GRUB_TIMEOUT=30</li>
@@ -139,7 +135,7 @@ grub2-mkconfig -o /boot/grub2/grub.cfg</code></pre></div></li>
 <li>default keyboard is fine</li>
 <li>set your hostname</li>
 <li>xnf0 will correspond to eth0 settings (public interface). Configure that interface
-<img src="/openbsd_network.png" alt="OpenBSD network config" /></li>
+<img src="http://drewstud.com/openbsd_network.png" alt="OpenBSD network config"></li>
 <li>enter the ip address and netmask. You can enter in your ipv6 info if you feel you can not typo anything (copy/paste does NOT work for me in this virtual console java session)</li>
 <li>choose done (you can configure xnf1 later)</li>
 <li>enter in your default route (gateway)</li>
@@ -149,7 +145,7 @@ grub2-mkconfig -o /boot/grub2/grub.cfg</code></pre></div></li>
 <li>I did the auto layout</li>
 <li>for name(s) sets, I did not do anything with X (use - to deselect). Choose done when done</li>
 <li>reboot and enjoy your new system!
-<img src="/openbsd_complete.png" alt="OpenBSD complete" /></li>
+<img src="http://drewstud.com/openbsd_complete.png" alt="OpenBSD complete"></li>
 </ul>
 <ul class="pa0">
   
@@ -192,7 +188,7 @@ grub2-mkconfig -o /boot/grub2/grub.cfg</code></pre></div></li>
 
     
 
-  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+  <script src="http://drewstud.com/dist/js/app.3fc0f988d21662902933.js"></script>
 
 
   </body>

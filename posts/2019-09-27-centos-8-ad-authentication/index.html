@@ -6,15 +6,15 @@
     
     <title>Drewskiwooskie Blogarooskie  | CentOS 8 and Active Directory Authentication</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.60.1" />
     
     
-      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
     
 
     
     
-      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+      <link href="http://drewstud.com/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
     
 
     
@@ -35,23 +35,22 @@ The first changes was policycoreutils-python is now policycoreutils-python-utils
 <meta itemprop="name" content="CentOS 8 and Active Directory Authentication">
 <meta itemprop="description" content="With CentOS 8 out, I attempted to see what, if anything would need changed with current automation scripts. A huge benefit is the AD authentication we have. It is largely a windows shop where I work, so integrating with AD there makes the most sense. (We could use FreeIPA but we are trying to KISS).
 The first changes was policycoreutils-python is now policycoreutils-python-utils. Seems like a rather redundant name change but I am sure they had good reasons.">
-
-
 <meta itemprop="datePublished" content="2019-09-26T09:47:11&#43;01:00" />
 <meta itemprop="dateModified" content="2019-09-26T09:47:11&#43;01:00" />
 <meta itemprop="wordCount" content="228">
 
 
 
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="CentOS 8 and Active Directory Authentication"/>
 <meta name="twitter:description" content="With CentOS 8 out, I attempted to see what, if anything would need changed with current automation scripts. A huge benefit is the AD authentication we have. It is largely a windows shop where I work, so integrating with AD there makes the most sense. (We could use FreeIPA but we are trying to KISS).
 The first changes was policycoreutils-python is now policycoreutils-python-utils. Seems like a rather redundant name change but I am sure they had good reasons."/>
 
+      
+    
   </head>
 
-  <body class="ma0 avenir bg-near-white">
+  <body class="ma0 avenir bg-near-white production">
 
     
    
@@ -109,18 +108,15 @@ The first changes was policycoreutils-python is now policycoreutils-python-utils
     <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>With CentOS 8 out, I attempted to see what, if anything would need changed with current automation scripts.
 A huge benefit is the AD authentication we have. It is largely a windows shop where I work, so integrating with AD there
 makes the most sense. (We could use FreeIPA but we are trying to KISS).</p>
-
 <p>The first changes was policycoreutils-python is now policycoreutils-python-utils. Seems like a rather redundant name change
 but I am sure they had good reasons.</p>
-
 <p>Everything else worked, except that realm join would no longer work. I would get the following error from adcli:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">00002083</span>: AtrErr: DSID-031513D7, <span style="color:#75715e">#2</span></code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">00002083: AtrErr: DSID-031513D7, <span style="color:#75715e">#2</span></code></pre></div>
 The reason was that hostname was not the fqdn. e.x. hostname was foo and it would give the error, but if hostname was foo.domain.local it would join.
 Note: I am not talking about the fqdn (hostname -f), I am talking what hostname returns. Unless I missed something in the documentation for realm, I did it not see it.
 adcli may have it, and then we could possibly split the join commands into different components, but I just want one command to do the work! Once I set the hostname via
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hostnamectl set-hostname foo.domain.local</code></pre></div>
 realm join worked great.</p>
-
 <p>If anyone knows of a fix or what I did wrong, feel free to reach me in #freenode (I am there as drewlander) or #efnet (I am there as drewski).</p>
 <ul class="pa0">
   
@@ -163,7 +159,7 @@ realm join worked great.</p>
 
     
 
-  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+  <script src="http://drewstud.com/dist/js/app.3fc0f988d21662902933.js"></script>
 
 
   </body>

@@ -6,15 +6,15 @@
     
     <title>Drewskiwooskie Blogarooskie  | Running postfix 3.0</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.60.1" />
     
     
-      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
     
 
     
     
-      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+      <link href="http://drewstud.com/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
     
 
     
@@ -33,22 +33,21 @@
 <meta property="article:modified_time" content="2015-02-13T07:35:48+00:00" />
 <meta itemprop="name" content="Running postfix 3.0">
 <meta itemprop="description" content="Postfix 3.0 stable was released a few days ago (Feb 8). I run a few personal mailservers and decided it would be good if I were to upgrade the one running on Fedora21 (postfix &#43; mysql &#43; spamass-milter &#43; greylisting), This would be a deviation as I would be compling it from source, and who knows what would break with 3.0! Here is a very brief update to what I did to get it working on Fedora 21: yum remove postfix -y wget ftp://postfix.">
-
-
 <meta itemprop="datePublished" content="2015-02-13T07:35:48&#43;00:00" />
 <meta itemprop="dateModified" content="2015-02-13T07:35:48&#43;00:00" />
 <meta itemprop="wordCount" content="310">
 
 
 
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Running postfix 3.0"/>
 <meta name="twitter:description" content="Postfix 3.0 stable was released a few days ago (Feb 8). I run a few personal mailservers and decided it would be good if I were to upgrade the one running on Fedora21 (postfix &#43; mysql &#43; spamass-milter &#43; greylisting), This would be a deviation as I would be compling it from source, and who knows what would break with 3.0! Here is a very brief update to what I did to get it working on Fedora 21: yum remove postfix -y wget ftp://postfix."/>
 
+      
+    
   </head>
 
-  <body class="ma0 avenir bg-near-white">
+  <body class="ma0 avenir bg-near-white production">
 
     
    
@@ -121,25 +120,22 @@ make
 make install</code></pre></div>
 For the install part, I used the default paths given.
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/usr/sbin/postfix start</code></pre></div></p>
-
 <p>Do not forget when testing with telnet (if using postscreen) to turn on crlf
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">telnet your.mailserver.com <span style="color:#ae81ff">25</span>
-Trying <span style="color:#ae81ff">127</span>.0.0.1...
+Trying 127.0.0.1...
 Connected to your.mailserver.com.
 Escape character is <span style="color:#e6db74">&#39;^]&#39;</span>.
 <span style="color:#ae81ff">220</span> your.mailserver.com ESMTP Postfix
 ^<span style="color:#f92672">]</span>
 telnet&gt; set crlf
 Will send carriage returns as telnet &lt;CR&gt;&lt;LF&gt;.</code></pre></div></p>
-
 <p>For fedora 21, (I do not recall off the top of my head) but these are the packages you need to build with mysql+tls:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mariadb-devel
 openssl-devel</code></pre></div>
-The nice thing too is that when I did a yum -y remove postfix, it left my main.cf intact, just saved it as main.cf.rpmsave. So before starting postfix don&rsquo;t foget to do:
+The nice thing too is that when I did a yum -y remove postfix, it left my main.cf intact, just saved it as main.cf.rpmsave. So before starting postfix don't foget to do:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cp /etc/postfix/main.cf.rpmsave /etc/postfix/main.cf</code></pre></div>
 Also, I left backwards compatability on with postfix, have not tried turning it off. When I do, I will take note of what I had and what needed to be changed.</p>
-
-<p>No idea how to do comments yet, so email <a href="mailto:drewski@drewstud.com">drewski@drewstud.com</a> with comments/questions</p>
+<p>No idea how to do comments yet, so email <a href="mailto:drewski@drewstud.com"><a href="mailto:drewski@drewstud.com">drewski@drewstud.com</a></a> with comments/questions</p>
 <ul class="pa0">
   
 </ul>
@@ -181,7 +177,7 @@ Also, I left backwards compatability on with postfix, have not tried turning it 
 
     
 
-  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+  <script src="http://drewstud.com/dist/js/app.3fc0f988d21662902933.js"></script>
 
 
   </body>

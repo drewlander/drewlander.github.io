@@ -17,7 +17,7 @@
       <pubDate>Sat, 18 Apr 2015 08:00:48 +0000</pubDate>
       
       <guid>http://drewstud.com/posts/2015-04-18-systemd-nspawn-centos-7/</guid>
-      <description>With systemd, comes systemd-nspawn. (I will not talk about love/hate of systemd, not in this post at least. Let&amp;rsquo;s just say if you start out saying you are writing an init system, why does your init system takeover acpi?). Anyway, part of the systemd monstrosity is something called nspawn. In short, its a &amp;ldquo;more powerful&amp;rdquo; chroot, but still should not be relied upon soley for security (think defense in depth people!</description>
+      <description>With systemd, comes systemd-nspawn. (I will not talk about love/hate of systemd, not in this post at least. Let&#39;s just say if you start out saying you are writing an init system, why does your init system takeover acpi?). Anyway, part of the systemd monstrosity is something called nspawn. In short, its a &amp;ldquo;more powerful&amp;rdquo; chroot, but still should not be relied upon soley for security (think defense in depth people!</description>
     </item>
     
   </channel>

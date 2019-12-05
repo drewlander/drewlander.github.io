@@ -18,7 +18,7 @@
       
       <guid>http://drewstud.com/posts/2015-02-26-tuning-spamassassin/</guid>
       <description>For those of us who are not large companies where paying another company for spam protection is an option, combatting spam can be something both fun, and annoying. Hopefully, for any newbies, here are some things to do that can greatly reduce the amount of spam you receive, as well as minimize the amount of false positives of mail identified as spam.
- Have spamassassin learn ham and spam  Many people I have seen just install spamassassin, run sa-update, then complain that they are getting a ton of spam.</description>
+You MUST train both ham and spam to be effective.</description>
     </item>
     
   </channel>

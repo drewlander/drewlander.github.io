@@ -6,15 +6,15 @@
     
     <title>Drewskiwooskie Blogarooskie  | Querying Chef REST Api With pure Ruby</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.59.1" />
+    <meta name="generator" content="Hugo 0.60.1" />
     
     
-      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
     
 
     
     
-      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+      <link href="http://drewstud.com/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
     
 
     
@@ -35,23 +35,22 @@ Note: This is taken from here but modified to use httparty require &#39;base64&#
 <meta itemprop="name" content="Querying Chef REST Api With pure Ruby">
 <meta itemprop="description" content="If you want to talk to the chef API without using some wrapper like Ridley, knife, etc.., this is how you do it:
 Note: This is taken from here but modified to use httparty require &#39;base64&#39; require &#39;time&#39; require &#39;digest/sha1&#39; require &#39;openssl&#39; require &#39;net/https&#39; require &#39;json&#39; require &#39;pry&#39; require &#39;httparty&#39; class ChefAPI # Public: Gets/Sets the String path for the HTTP request. attr_accessor :path # Public: Gets/Sets the String client_name containing the Chef client name.">
-
-
 <meta itemprop="datePublished" content="2016-01-19T05:35:48&#43;00:00" />
 <meta itemprop="dateModified" content="2016-01-19T05:35:48&#43;00:00" />
 <meta itemprop="wordCount" content="715">
 
 
 
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Querying Chef REST Api With pure Ruby"/>
 <meta name="twitter:description" content="If you want to talk to the chef API without using some wrapper like Ridley, knife, etc.., this is how you do it:
 Note: This is taken from here but modified to use httparty require &#39;base64&#39; require &#39;time&#39; require &#39;digest/sha1&#39; require &#39;openssl&#39; require &#39;net/https&#39; require &#39;json&#39; require &#39;pry&#39; require &#39;httparty&#39; class ChefAPI # Public: Gets/Sets the String path for the HTTP request. attr_accessor :path # Public: Gets/Sets the String client_name containing the Chef client name."/>
 
+      
+    
   </head>
 
-  <body class="ma0 avenir bg-near-white">
+  <body class="ma0 avenir bg-near-white production">
 
     
    
@@ -107,7 +106,6 @@ Note: This is taken from here but modified to use httparty require &#39;base64&#
     </header>
 
     <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>If you want to talk to the chef API without using some wrapper like Ridley, knife, etc.., this is how you do it:</p>
-
 <p>Note: This is taken from <a href="https://gist.github.com/gmcmillan/3184964">here</a> but modified to use httparty
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;base64&#39;</span>
 require <span style="color:#e6db74">&#39;time&#39;</span>
@@ -141,9 +139,9 @@ require <span style="color:#e6db74">&#39;httparty&#39;</span>
   <span style="color:#75715e">#                        client (required).</span>
   <span style="color:#75715e">#        :key_file     - The String key_file that is the path to the Chef client</span>
   <span style="color:#75715e">#                        PEM file (required).</span>
-  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">initialize</span>(opts <span style="color:#f92672">=</span> {})
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">initialize</span>(opts <span style="color:#f92672">=</span> {})
     @server            <span style="color:#f92672">=</span> opts<span style="color:#f92672">[</span><span style="color:#e6db74">:server</span><span style="color:#f92672">]</span>
-    port              <span style="color:#f92672">=</span> opts<span style="color:#f92672">.</span>fetch(<span style="color:#e6db74">:port</span>, <span style="color:#ae81ff">443</span>)
+    port              <span style="color:#f92672">=</span> opts<span style="color:#f92672">.</span>fetch(<span style="color:#e6db74">:port</span>, <span style="color:#ae81ff">443</span><span style="color:#f92672"></span>)
     use_ssl           <span style="color:#f92672">=</span> opts<span style="color:#f92672">.</span>fetch(<span style="color:#e6db74">:use_ssl</span>, <span style="color:#66d9ef">true</span>)
     ssl_insecure      <span style="color:#f92672">=</span> opts<span style="color:#f92672">[</span><span style="color:#e6db74">:ssl_insecure</span><span style="color:#f92672">]</span> ? <span style="color:#66d9ef">OpenSSL</span><span style="color:#f92672">::</span><span style="color:#66d9ef">SSL</span><span style="color:#f92672">::</span><span style="color:#66d9ef">VERIFY_NONE</span> : <span style="color:#66d9ef">OpenSSL</span><span style="color:#f92672">::</span><span style="color:#66d9ef">SSL</span><span style="color:#f92672">::</span><span style="color:#66d9ef">VERIFY_PEER</span>
     @client_name      <span style="color:#f92672">=</span> opts<span style="color:#f92672">[</span><span style="color:#e6db74">:client_name</span><span style="color:#f92672">]</span>
@@ -161,31 +159,31 @@ require <span style="color:#e6db74">&#39;httparty&#39;</span>
   <span style="color:#75715e">#   # =&gt; [&#34;server1.com&#34;,&#34;server2.com&#34;,&#34;server3.com&#34;]</span>
   <span style="color:#75715e">#</span>
   <span style="color:#75715e"># Returns different Object type depending on request.</span>
-  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_request</span>(req_path, body)
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">get_request</span>(req_path, body)
     @path <span style="color:#f92672">=</span> req_path
     reqpath <span style="color:#f92672">=</span> @server <span style="color:#f92672">+</span> req_path
     <span style="color:#66d9ef">begin</span>
       response <span style="color:#f92672">=</span> <span style="color:#66d9ef">HTTParty</span><span style="color:#f92672">.</span>get(reqpath, <span style="color:#e6db74">headers</span>: headers(body, <span style="color:#e6db74">&#39;GET&#39;</span>))
       response<span style="color:#f92672">.</span>parsed_response
       <span style="color:#75715e"># JSON.parse(response.body).keys</span>
-    <span style="color:#66d9ef">rescue</span> <span style="color:#66d9ef">OpenSSL</span><span style="color:#f92672">::</span><span style="color:#66d9ef">SSL</span><span style="color:#f92672">::</span><span style="color:#66d9ef">SSLError</span> <span style="color:#f92672">=&gt;</span> e
-      <span style="color:#66d9ef">raise</span> <span style="color:#e6db74">&#34;SSL error: </span><span style="color:#e6db74">#{</span>e<span style="color:#f92672">.</span>message<span style="color:#e6db74">}</span><span style="color:#e6db74">.&#34;</span>
+    <span style="color:#66d9ef">rescue</span> <span style="color:#66d9ef">OpenSSL</span><span style="color:#f92672">::</span><span style="color:#66d9ef">SSL</span><span style="color:#f92672">::</span><span style="color:#66d9ef">SSLError</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> e
+      <span style="color:#66d9ef">raise</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">SSL error: </span><span style="color:#e6db74">#{</span>e<span style="color:#f92672">.</span>message<span style="color:#e6db74">}</span><span style="color:#e6db74">.</span><span style="color:#e6db74">&#34;</span>
     <span style="color:#66d9ef">end</span>
   <span style="color:#66d9ef">end</span>
 
-  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">put_request</span>(req_path, body)
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">put_request</span>(req_path, body)
     @path <span style="color:#f92672">=</span> req_path
     reqpath <span style="color:#f92672">=</span> @server <span style="color:#f92672">+</span> req_path
     puts reqpath
     <span style="color:#66d9ef">begin</span>
       response <span style="color:#f92672">=</span> <span style="color:#66d9ef">HTTParty</span><span style="color:#f92672">.</span>put(reqpath, <span style="color:#e6db74">headers</span>: headers(body, <span style="color:#e6db74">&#39;PUT&#39;</span>), <span style="color:#e6db74">body</span>: body)
       response<span style="color:#f92672">.</span>parsed_response
-    <span style="color:#66d9ef">rescue</span> <span style="color:#66d9ef">OpenSSL</span><span style="color:#f92672">::</span><span style="color:#66d9ef">SSL</span><span style="color:#f92672">::</span><span style="color:#66d9ef">SSLError</span> <span style="color:#f92672">=&gt;</span> e
-      <span style="color:#66d9ef">raise</span> <span style="color:#e6db74">&#34;SSL error: </span><span style="color:#e6db74">#{</span>e<span style="color:#f92672">.</span>message<span style="color:#e6db74">}</span><span style="color:#e6db74">.&#34;</span>
+    <span style="color:#66d9ef">rescue</span> <span style="color:#66d9ef">OpenSSL</span><span style="color:#f92672">::</span><span style="color:#66d9ef">SSL</span><span style="color:#f92672">::</span><span style="color:#66d9ef">SSLError</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> e
+      <span style="color:#66d9ef">raise</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">SSL error: </span><span style="color:#e6db74">#{</span>e<span style="color:#f92672">.</span>message<span style="color:#e6db74">}</span><span style="color:#e6db74">.</span><span style="color:#e6db74">&#34;</span>
     <span style="color:#66d9ef">end</span>
   <span style="color:#66d9ef">end</span>
 
-  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">post_request</span>(req_path, body)
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">post_request</span>(req_path, body)
     @path <span style="color:#f92672">=</span> req_path
     reqpath <span style="color:#f92672">=</span> @server <span style="color:#f92672">+</span> req_path
     puts reqpath
@@ -193,20 +191,20 @@ require <span style="color:#e6db74">&#39;httparty&#39;</span>
       puts headers(body, <span style="color:#e6db74">&#39;POST&#39;</span>)
       response <span style="color:#f92672">=</span> <span style="color:#66d9ef">HTTParty</span><span style="color:#f92672">.</span>post(reqpath, <span style="color:#e6db74">headers</span>: headers(body, <span style="color:#e6db74">&#39;POST&#39;</span>), <span style="color:#e6db74">body</span>: body)
       response<span style="color:#f92672">.</span>parsed_response
-    <span style="color:#66d9ef">rescue</span> <span style="color:#66d9ef">OpenSSL</span><span style="color:#f92672">::</span><span style="color:#66d9ef">SSL</span><span style="color:#f92672">::</span><span style="color:#66d9ef">SSLError</span> <span style="color:#f92672">=&gt;</span> e
-      <span style="color:#66d9ef">raise</span> <span style="color:#e6db74">&#34;SSL error: </span><span style="color:#e6db74">#{</span>e<span style="color:#f92672">.</span>message<span style="color:#e6db74">}</span><span style="color:#e6db74">.&#34;</span>
+    <span style="color:#66d9ef">rescue</span> <span style="color:#66d9ef">OpenSSL</span><span style="color:#f92672">::</span><span style="color:#66d9ef">SSL</span><span style="color:#f92672">::</span><span style="color:#66d9ef">SSLError</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> e
+      <span style="color:#66d9ef">raise</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">SSL error: </span><span style="color:#e6db74">#{</span>e<span style="color:#f92672">.</span>message<span style="color:#e6db74">}</span><span style="color:#e6db74">.</span><span style="color:#e6db74">&#34;</span>
     <span style="color:#66d9ef">end</span>
   <span style="color:#66d9ef">end</span>
 
-  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">delete_request</span>(req_path, body)
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">delete_request</span>(req_path, body)
     @path <span style="color:#f92672">=</span> req_path
     reqpath <span style="color:#f92672">=</span> @server <span style="color:#f92672">+</span> req_path
     puts reqpath
     <span style="color:#66d9ef">begin</span>
       response <span style="color:#f92672">=</span> <span style="color:#66d9ef">HTTParty</span><span style="color:#f92672">.</span>delete(reqpath, <span style="color:#e6db74">headers</span>: headers(body, <span style="color:#e6db74">&#39;DELETE&#39;</span>), <span style="color:#e6db74">body</span>: body)
       response<span style="color:#f92672">.</span>parsed_response
-    <span style="color:#66d9ef">rescue</span> <span style="color:#66d9ef">OpenSSL</span><span style="color:#f92672">::</span><span style="color:#66d9ef">SSL</span><span style="color:#f92672">::</span><span style="color:#66d9ef">SSLError</span> <span style="color:#f92672">=&gt;</span> e
-      <span style="color:#66d9ef">raise</span> <span style="color:#e6db74">&#34;SSL error: </span><span style="color:#e6db74">#{</span>e<span style="color:#f92672">.</span>message<span style="color:#e6db74">}</span><span style="color:#e6db74">.&#34;</span>
+    <span style="color:#66d9ef">rescue</span> <span style="color:#66d9ef">OpenSSL</span><span style="color:#f92672">::</span><span style="color:#66d9ef">SSL</span><span style="color:#f92672">::</span><span style="color:#66d9ef">SSLError</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> e
+      <span style="color:#66d9ef">raise</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">SSL error: </span><span style="color:#e6db74">#{</span>e<span style="color:#f92672">.</span>message<span style="color:#e6db74">}</span><span style="color:#e6db74">.</span><span style="color:#e6db74">&#34;</span>
     <span style="color:#66d9ef">end</span>
     <span style="color:#66d9ef">end</span>
 
@@ -222,7 +220,7 @@ require <span style="color:#e6db74">&#39;httparty&#39;</span>
   <span style="color:#75715e">#   # =&gt; &#34;qvTGHdzF6KLavt4PO0gs2a6pQ00=&#34;</span>
   <span style="color:#75715e">#</span>
   <span style="color:#75715e"># Returns the hashed String.</span>
-  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">encode</span>(string)
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">encode</span>(string)
     <span style="color:#f92672">::</span><span style="color:#66d9ef">Base64</span><span style="color:#f92672">.</span>encode64(<span style="color:#66d9ef">Digest</span><span style="color:#f92672">::</span><span style="color:#66d9ef">SHA1</span><span style="color:#f92672">.</span>digest(string))<span style="color:#f92672">.</span>chomp
   <span style="color:#66d9ef">end</span>
 
@@ -247,26 +245,26 @@ require <span style="color:#e6db74">&#39;httparty&#39;</span>
   <span style="color:#75715e">#   }</span>
   <span style="color:#75715e">#</span>
   <span style="color:#75715e"># Returns a Hash with the necessary headers.</span>
-  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">headers</span>(body, method)
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">headers</span>(body, method)
     body      <span style="color:#f92672">=</span> body
     timestamp <span style="color:#f92672">=</span> <span style="color:#66d9ef">Time</span><span style="color:#f92672">.</span>now<span style="color:#f92672">.</span>utc<span style="color:#f92672">.</span>iso8601
     key       <span style="color:#f92672">=</span> <span style="color:#66d9ef">OpenSSL</span><span style="color:#f92672">::</span><span style="color:#66d9ef">PKey</span><span style="color:#f92672">::</span><span style="color:#66d9ef">RSA</span><span style="color:#f92672">.</span>new(<span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>read(key_file))
-    canonical <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Method:</span><span style="color:#e6db74">#{</span>method<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Hashed Path:</span><span style="color:#e6db74">#{</span>encode(path)<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">X-Ops-Content-Hash:</span><span style="color:#e6db74">#{</span>encode(body)<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">X-Ops-Timestamp:</span><span style="color:#e6db74">#{</span>timestamp<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">X-Ops-UserId:</span><span style="color:#e6db74">#{</span>client_name<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+    canonical <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Method:</span><span style="color:#e6db74">#{</span>method<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Hashed Path:</span><span style="color:#e6db74">#{</span>encode(path)<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">X-Ops-Content-Hash:</span><span style="color:#e6db74">#{</span>encode(body)<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">X-Ops-Timestamp:</span><span style="color:#e6db74">#{</span>timestamp<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">X-Ops-UserId:</span><span style="color:#e6db74">#{</span>client_name<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
 
     header_hash <span style="color:#f92672">=</span> {
-      <span style="color:#e6db74">&#39;Accept&#39;</span>             <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;application/json&#39;</span>,
-      <span style="color:#e6db74">&#39;X-Ops-Sign&#39;</span>         <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;version=1.0&#39;</span>,
-      <span style="color:#e6db74">&#39;X-Chef-Version&#39;</span>     <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;12.3.1&#39;</span>,
-      <span style="color:#e6db74">&#39;X-Ops-Userid&#39;</span>       <span style="color:#f92672">=&gt;</span> client_name,
-      <span style="color:#e6db74">&#39;X-Ops-Timestamp&#39;</span>    <span style="color:#f92672">=&gt;</span> timestamp,
-      <span style="color:#e6db74">&#39;X-Ops-Content-Hash&#39;</span> <span style="color:#f92672">=&gt;</span> encode(body),
-      <span style="color:#e6db74">&#39;Content-Type&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;application/json&#39;</span>
+      <span style="color:#e6db74">&#39;Accept&#39;</span>             <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;application/json&#39;</span>,
+      <span style="color:#e6db74">&#39;X-Ops-Sign&#39;</span>         <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;version=1.0&#39;</span>,
+      <span style="color:#e6db74">&#39;X-Chef-Version&#39;</span>     <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;12.3.1&#39;</span>,
+      <span style="color:#e6db74">&#39;X-Ops-Userid&#39;</span>       <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> client_name,
+      <span style="color:#e6db74">&#39;X-Ops-Timestamp&#39;</span>    <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> timestamp,
+      <span style="color:#e6db74">&#39;X-Ops-Content-Hash&#39;</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> encode(body),
+      <span style="color:#e6db74">&#39;Content-Type&#39;</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;application/json&#39;</span>
     }
 
     signature <span style="color:#f92672">=</span> <span style="color:#66d9ef">Base64</span><span style="color:#f92672">.</span>encode64(key<span style="color:#f92672">.</span>private_encrypt(canonical))
-    signature_lines <span style="color:#f92672">=</span> signature<span style="color:#f92672">.</span>split(<span style="color:#e6db74">/\n/</span>)
+    signature_lines <span style="color:#f92672">=</span> signature<span style="color:#f92672">.</span>split(<span style="color:#e6db74">/</span><span style="color:#e6db74">\</span><span style="color:#e6db74">n</span><span style="color:#e6db74">/</span>)
     signature_lines<span style="color:#f92672">.</span>each_index <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>idx<span style="color:#f92672">|</span>
-      key <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;X-Ops-Authorization-</span><span style="color:#e6db74">#{</span>idx <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+      key <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">X-Ops-Authorization-</span><span style="color:#e6db74">#{</span>idx <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#f92672"></span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
       header_hash<span style="color:#f92672">[</span>key<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> signature_lines<span style="color:#f92672">[</span>idx<span style="color:#f92672">]</span>
     <span style="color:#66d9ef">end</span>
 
@@ -275,7 +273,7 @@ require <span style="color:#e6db74">&#39;httparty&#39;</span>
 <span style="color:#66d9ef">end</span>
 <span style="color:#75715e"># chef_url = &#39;https://&lt;ip&gt;/organizations/default&#39;</span>
 chef_url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://&lt;ip&gt;&#39;</span>
-chef <span style="color:#f92672">=</span> <span style="color:#66d9ef">ChefAPI</span><span style="color:#f92672">.</span>new(<span style="color:#e6db74">server</span>: chef_url, <span style="color:#e6db74">port</span>: <span style="color:#ae81ff">443</span>, <span style="color:#e6db74">ssl_insecure</span>: <span style="color:#66d9ef">true</span>, <span style="color:#e6db74">client_name</span>: <span style="color:#e6db74">&#39;pivotal&#39;</span>, <span style="color:#e6db74">key_file</span>: <span style="color:#e6db74">&#39;/etc/opscode/pivotal.pem&#39;</span>)
+chef <span style="color:#f92672">=</span> <span style="color:#66d9ef">ChefAPI</span><span style="color:#f92672">.</span>new(<span style="color:#e6db74">server</span>: chef_url, <span style="color:#e6db74">port</span>: <span style="color:#ae81ff">443</span><span style="color:#f92672"></span>, <span style="color:#e6db74">ssl_insecure</span>: <span style="color:#66d9ef">true</span>, <span style="color:#e6db74">client_name</span>: <span style="color:#e6db74">&#39;pivotal&#39;</span>, <span style="color:#e6db74">key_file</span>: <span style="color:#e6db74">&#39;/etc/opscode/pivotal.pem&#39;</span>)
 
 puts chef<span style="color:#f92672">.</span>delete_request(<span style="color:#e6db74">&#39;/organizations/test1&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)
 <span style="color:#75715e"># puts chef.delete_request(&#39;/organizations/secure&#39;, &#34;&#34;)</span>
@@ -283,17 +281,17 @@ puts chef<span style="color:#f92672">.</span>delete_request(<span style="color:#
 <span style="color:#75715e"># puts chef.get_request(&#39;/organizations/default/cookbooks&#39;, &#34;&#34;)</span>
 <span style="color:#75715e"># puts chef.get_request(&#39;/organizations/test1/nodes&#39;, &#34;&#34;)</span>
 
-test <span style="color:#f92672">=</span> { <span style="color:#e6db74">&#39;name&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;test1&#39;</span>, <span style="color:#e6db74">&#39;full_name&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;major test1&#39;</span> }
+test <span style="color:#f92672">=</span> { <span style="color:#e6db74">&#39;name&#39;</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;test1&#39;</span>, <span style="color:#e6db74">&#39;full_name&#39;</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;major test1&#39;</span> }
 resp <span style="color:#f92672">=</span>  chef<span style="color:#f92672">.</span>post_request(<span style="color:#e6db74">&#39;/organizations&#39;</span>, test<span style="color:#f92672">.</span>to_json)
 puts resp
-<span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>resp<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;clientname&#39;</span><span style="color:#f92672">]</span><span style="color:#e6db74">}</span><span style="color:#e6db74">.pem&#34;</span>, <span style="color:#e6db74">&#39;w&#39;</span>) { <span style="color:#f92672">|</span>file<span style="color:#f92672">|</span> file<span style="color:#f92672">.</span>write(resp<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;private_key&#39;</span><span style="color:#f92672">]</span>) }
+<span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>resp<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;clientname&#39;</span><span style="color:#f92672">]</span><span style="color:#e6db74">}</span><span style="color:#e6db74">.pem</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#39;w&#39;</span>) { <span style="color:#f92672">|</span>file<span style="color:#f92672">|</span> file<span style="color:#f92672">.</span>write(resp<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;private_key&#39;</span><span style="color:#f92672">]</span>) }
 
 puts <span style="color:#e6db74">&#39;Users in org: &#39;</span>
 puts chef<span style="color:#f92672">.</span>get_request(<span style="color:#e6db74">&#39;/organizations/test1/users&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)
-puts chef<span style="color:#f92672">.</span>post_request(<span style="color:#e6db74">&#39;/organizations/test1/association_requests&#39;</span>, { <span style="color:#e6db74">&#39;user&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;admin&#39;</span> }<span style="color:#f92672">.</span>to_json)
+puts chef<span style="color:#f92672">.</span>post_request(<span style="color:#e6db74">&#39;/organizations/test1/association_requests&#39;</span>, { <span style="color:#e6db74">&#39;user&#39;</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;admin&#39;</span> }<span style="color:#f92672">.</span>to_json)
 resp <span style="color:#f92672">=</span>  chef<span style="color:#f92672">.</span>get_request(<span style="color:#e6db74">&#39;/organizations/test1/association_requests&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)
 id <span style="color:#f92672">=</span> resp<span style="color:#f92672">.</span>find { <span style="color:#f92672">|</span>x<span style="color:#f92672">|</span> x<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;username&#39;</span><span style="color:#f92672">]</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;admin&#39;</span> }<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;id&#39;</span><span style="color:#f92672">]</span>
-puts chef<span style="color:#f92672">.</span>put_request(<span style="color:#e6db74">&#34;/users/admin/association_requests/</span><span style="color:#e6db74">#{</span>id<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>, { <span style="color:#e6db74">&#39;response&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;accept&#39;</span> }<span style="color:#f92672">.</span>to_json)
+puts chef<span style="color:#f92672">.</span>put_request(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">/users/admin/association_requests/</span><span style="color:#e6db74">#{</span>id<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>, { <span style="color:#e6db74">&#39;response&#39;</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;accept&#39;</span> }<span style="color:#f92672">.</span>to_json)
 puts <span style="color:#e6db74">&#39;Users in org: &#39;</span>
 puts chef<span style="color:#f92672">.</span>get_request(<span style="color:#e6db74">&#39;/organizations/test1/users&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)
 
@@ -339,7 +337,7 @@ puts chef<span style="color:#f92672">.</span>get_request(<span style="color:#e6d
 
     
 
-  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+  <script src="http://drewstud.com/dist/js/app.3fc0f988d21662902933.js"></script>
 
 
   </body>
