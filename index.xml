@@ -6,10 +6,21 @@
     <description>Recent content on Drewskiwooskie Blogarooskie</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Nov 2019 08:47:11 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jan 2020 08:47:11 +0100</lastBuildDate>
     
 	<atom:link href="http://drewstud.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Run Nextcloud with Docker Compose with Nginx Proxying using dynamic ip</title>
+      <link>http://drewstud.com/posts/2020-01-03-self-hosted-nextcloud-nginx-dnyamic-ip/</link>
+      <pubDate>Fri, 03 Jan 2020 08:47:11 +0100</pubDate>
+      
+      <guid>http://drewstud.com/posts/2020-01-03-self-hosted-nextcloud-nginx-dnyamic-ip/</guid>
+      <description>I decided to self host nextcloud. I figured why not, whats the harm. I like things. I probably should at least describe my desired setup before I continue.
+My requirements were:
+ Run with some sort of container technology (like most other things I am self hosting, may as well be consistent!) Be able to be proxied from the only box I am exposing directly to the public internet. I prefer only one entry point not several.</description>
+    </item>
     
     <item>
       <title>Dymo Printer Framework for .NET 4.5&#43; and barcodes</title>

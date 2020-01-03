@@ -6,7 +6,7 @@
     
     <title>Drewskiwooskie Blogarooskie  | Centos 7 and systemd-nspawn</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.60.1" />
+    <meta name="generator" content="Hugo 0.62.1" />
     
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -131,7 +131,7 @@ That is logged in /var/log/messages (or if you started your container from the c
 <p>Grab the pid there and then execute:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nsenter -m -u -i -n -p -t $PID</code></pre></div></p>
 <p>To leave just type exit.</p>
-<p>Excellent reference: <a href="http://0pointer.de/blog/projects/changing-roots.html"><a href="http://0pointer.de/blog/projects/changing-roots.html">http://0pointer.de/blog/projects/changing-roots.html</a></a></p>
+<p>Excellent reference: <a href="http://0pointer.de/blog/projects/changing-roots.html">http://0pointer.de/blog/projects/changing-roots.html</a></p>
 <h2 id="update">UPDATE:</h2>
 <p>Redhat 7.2 (CentOS Linux release 7.2.1511) has a newer version of machinectl that has login. No need to use nsenter anymore.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">machinectl list
@@ -168,7 +168,7 @@ drewstud login:</code></pre></div>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://drewstud.com/" >
-    &copy; 2019 Drewskiwooskie Blogarooskie
+    &copy; 2020 Drewskiwooskie Blogarooskie
   </a>
     <div>
 
