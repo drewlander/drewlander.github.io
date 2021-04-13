@@ -6,15 +6,15 @@
     
     <title>Drewskiwooskie Blogarooskie </title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.62.2" />
+    <meta name="generator" content="Hugo 0.82.0" />
     
     
-      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
     
 
     
     
-      <link href="http://drewstud.com/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
     
 
     
@@ -32,17 +32,15 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://drewstud.com/posts/" />
-<meta property="og:updated_time" content="2020-01-07T07:47:11+01:00" />
+
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Posts"/>
 <meta name="twitter:description" content=""/>
 
-      
-    
   </head>
 
-  <body class="ma0 avenir bg-near-white production">
+  <body class="ma0 avenir bg-near-white">
 
     
 
@@ -93,89 +91,14 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="http://drewstud.com/posts/2016-09-01-openbsd-on-rackspace-public-cloud/" class="link black dim">
-        Installing OpenBSD On Rackspace Public Cloud
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      For the longest time I wanted to see OpenBSD on Rackspace Public Cloud. With their boot.iso you are able to attempt to boot into a pxe environment and boot OpenBSD 5.7, but it lacks the necessary drivers for xen. I gave up for a while. but tried with the release of OpenBSD 6. I am happy to report, that you CAN and it WORKS! To do so, you boot into a linux distro, download bsd.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="http://drewstud.com/posts/2016-01-19-query-chef-rest-api/" class="link black dim">
-        Querying Chef REST Api With pure Ruby
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      If you want to talk to the chef API without using some wrapper like Ridley, knife, etc.., this is how you do it:
-Note: This is taken from here but modified to use httparty require &#39;base64&#39; require &#39;time&#39; require &#39;digest/sha1&#39; require &#39;openssl&#39; require &#39;net/https&#39; require &#39;json&#39; require &#39;pry&#39; require &#39;httparty&#39; class ChefAPI # Public: Gets/Sets the String path for the HTTP request. attr_accessor :path # Public: Gets/Sets the String client_name containing the Chef client name.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="http://drewstud.com/posts/2015-10-19-password-export-service-silent-install/" class="link black dim">
-        Active Directory Password Export Service Silent Install
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Password Export Service allows you to export users and passwords from one active directory domain to another. All the guides I found show how to install it graphically. It took a bit but eventually I was able to install the service AND import the key created with ADMT all automatically. I used chef but any automation tool will work. It did require some hacking.
-You have to edit the password export service yourself via orca, instEd, etc&hellip; Something has to alter a datbase table, or else it will ALWAYS prompt and ask if you who you want to run the service as.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="http://drewstud.com/posts/2015-11-03-centos-mailonacircle/" class="link black dim">
-        Mailonacircle: Mailinabox(ish) for Centos 7 With Selinux=Enabled
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Recently I saw the latest mailinabox, and man is it fancy. I looked, and there was nothing like that for centos. I wanted a way to help the lazy people out there setup a centos 7 box with postfixadmin, dovecot, spamasassin, clamav-milter, postgrey-milter, mariadb, and dkim with ease. So in very short time in between down time, I wrote mailonacircle. It uses chef-solo, and the attributes are basic and do not make a lot of sense at first glance, but it is a start.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="http://drewstud.com/posts/2015-04-18-systemd-nspawn-centos-7/" class="link black dim">
-        Centos 7 and systemd-nspawn
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      With systemd, comes systemd-nspawn. (I will not talk about love/hate of systemd, not in this post at least. Let's just say if you start out saying you are writing an init system, why does your init system takeover acpi?). Anyway, part of the systemd monstrosity is something called nspawn. In short, its a &ldquo;more powerful&rdquo; chroot, but still should not be relied upon soley for security (think defense in depth people!
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="http://drewstud.com/posts/2015-09-04-xhyve-freebsd/" class="link black dim">
+      <a href="/posts/2015-09-04-xhyve-freebsd/" class="link black dim">
         FreeBSD on Xhyve
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      xhyve is essentially a port of FreeBSD's bhyve to OSX. The instructions show how to run Ubuntu (which you can dissect and figure out how to boot other linux distro's), but lack any documentation on how to run FreeBSD with it. Here is how to do it:
+      xhyve is essentially a port of FreeBSD&rsquo;s bhyve to OSX. The instructions show how to run Ubuntu (which you can dissect and figure out how to boot other linux distro&rsquo;s), but lack any documentation on how to run FreeBSD with it. Here is how to do it:
+FreeBSD this is provided in the xhyve sources USERBOOT=&ldquo;test/userboot.so&rdquo; BOOTVOLUME=&ldquo;freebsd/FreeBSD-10.2-RELEASE-amd64.raw&rdquo; KERNELENV=&quot;&quot;
+MEM=&quot;-m 4G&quot; #SMP=&quot;-c 2&quot; NET=&quot;-s 2:0,virtio-net&quot; IMG_HDD=&quot;-s 4,virtio-blk,freebsd/FreeBSD-10.2-RELEASE-amd64.raw&quot; PCI_DEV=&quot;-s 0:0,hostbridge -s 31,lpc&quot; LPC_DEV=&quot;-l com1,stdio&quot; ACPI=&quot;-A&quot;
     </div>
   </div>
 </div>
@@ -185,12 +108,12 @@ You have to edit the password export service yourself via orca, instEd, etc&hell
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="http://drewstud.com/posts/2015-02-13-running-postfix-3.0/" class="link black dim">
+      <a href="/posts/2015-02-13-running-postfix-3.0/" class="link black dim">
         Running postfix 3.0
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Postfix 3.0 stable was released a few days ago (Feb 8). I run a few personal mailservers and decided it would be good if I were to upgrade the one running on Fedora21 (postfix + mysql + spamass-milter + greylisting), This would be a deviation as I would be compling it from source, and who knows what would break with 3.0! Here is a very brief update to what I did to get it working on Fedora 21: yum remove postfix -y wget ftp://postfix.
+      Postfix 3.0 stable was released a few days ago (Feb 8). I run a few personal mailservers and decided it would be good if I were to upgrade the one running on Fedora21 (postfix + mysql + spamass-milter + greylisting), This would be a deviation as I would be compling it from source, and who knows what would break with 3.0! Here is a very brief update to what I did to get it working on Fedora 21: {% highlight bash %} yum remove postfix -y wget ftp://postfix.
     </div>
   </div>
 </div>
@@ -200,13 +123,13 @@ You have to edit the password export service yourself via orca, instEd, etc&hell
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="http://drewstud.com/posts/2015-02-26-tuning-spamassassin/" class="link black dim">
+      <a href="/posts/2015-02-26-tuning-spamassassin/" class="link black dim">
         Tuning Spamassassin
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       For those of us who are not large companies where paying another company for spam protection is an option, combatting spam can be something both fun, and annoying. Hopefully, for any newbies, here are some things to do that can greatly reduce the amount of spam you receive, as well as minimize the amount of false positives of mail identified as spam.
-You MUST train both ham and spam to be effective.
+A nice thing to do is to report mail that you have found to be spam.
     </div>
   </div>
 </div>
@@ -216,12 +139,12 @@ You MUST train both ham and spam to be effective.
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="http://drewstud.com/posts/2015-02-12-figuring-this-out/" class="link black dim">
+      <a href="/posts/2015-02-12-figuring-this-out/" class="link black dim">
         Figuring this jekyll thing out!
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      I have read many places that having a blog is a good thing. Even if you have on there something that you think anyone should know, there may be that one person out there who doesn't know, who somehow finds your blog, and you help them. Anyway, this will be a technical blog. I am self taught (no collge) so I am sure there will be lots of people correcting me, which is good, because then I will learn :) Yes this blog is using Jekyll.
+      I have read many places that having a blog is a good thing. Even if you have on there something that you think anyone should know, there may be that one person out there who doesn&rsquo;t know, who somehow finds your blog, and you help them. Anyway, this will be a technical blog. I am self taught (no collge) so I am sure there will be lots of people correcting me, which is good, because then I will learn :) Yes this blog is using Jekyll.
     </div>
   </div>
 </div>
@@ -231,7 +154,7 @@ You MUST train both ham and spam to be effective.
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="http://drewstud.com/posts/my-first-post/" class="link black dim">
+      <a href="/posts/my-first-post/" class="link black dim">
         
       </a>
     </h1>
@@ -243,49 +166,25 @@ You MUST train both ham and spam to be effective.
 </div>
       
     </section>
-
 <ul class="pagination">
-    
-    <li class="page-item">
-        <a href="http://drewstud.com/posts/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
-    </li>
-    
-    <li class="page-item">
-    <a href="http://drewstud.com/posts/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-    </li>
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="http://drewstud.com/posts/">1</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item active"><a class="page-link" href="http://drewstud.com/posts/page/2/">2</a></li>
-    
-    
-    <li class="page-item disabled">
+  <li class="page-item">
+    <a href="/posts/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+  </li>
+  <li class="page-item">
+    <a href="/posts/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+  </li>
+  <li class="page-item">
+    <a class="page-link" href="/posts/">1</a>
+  </li>
+  <li class="page-item active">
+    <a class="page-link" href="/posts/page/2/">2</a>
+  </li>
+  <li class="page-item disabled">
     <a  class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-    </li>
-    
-    <li class="page-item">
-        <a href="http://drewstud.com/posts/page/2/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
-    </li>
-    
+  </li>
+  <li class="page-item">
+    <a href="/posts/page/2/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+  </li>
 </ul>
 
 </article>
@@ -294,7 +193,7 @@ You MUST train both ham and spam to be effective.
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://drewstud.com/" >
-    &copy; 2020 Drewskiwooskie Blogarooskie
+    &copy; 2021 Drewskiwooskie Blogarooskie
   </a>
     <div>
 
@@ -313,7 +212,7 @@ You MUST train both ham and spam to be effective.
 
     
 
-  <script src="http://drewstud.com/dist/js/app.3fc0f988d21662902933.js"></script>
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
 
 
   </body>

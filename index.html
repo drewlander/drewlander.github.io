@@ -6,15 +6,15 @@
     
     <title>Drewskiwooskie Blogarooskie </title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.62.2" />
+    <meta name="generator" content="Hugo 0.82.0" />
     
     
-      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
     
 
     
     
-      <link href="http://drewstud.com/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
     
 
     
@@ -32,17 +32,15 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://drewstud.com/" />
-<meta property="og:updated_time" content="2020-01-07T07:47:11+01:00" />
+
 <meta itemprop="name" content="Drewskiwooskie Blogarooskie">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Drewskiwooskie Blogarooskie"/>
 <meta name="twitter:description" content=""/>
 
-      
-    
   </head>
 
-  <body class="ma0 avenir bg-near-white production">
+  <body class="ma0 avenir bg-near-white">
 
     
 
@@ -119,16 +117,17 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="http://drewstud.com/posts/2020-01-07-wndr3400v3-with-freshtomato/" class="color-inherit dim link">
-            wndr3400v3 Open Source Firmware: freshtomato
+          <a href="/posts/2021-04-13-freebsd-dualboot-zfs/" class="color-inherit dim link">
+            Dual boot Windows 10 and FreeBSD with ZFS
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          For a while I was looking for a good open source firmware to run on my old WNDR3400v3. And I finally found it in freshtomato
-The upgrade was easy. I just uploaded this image (unzipped). I used the ipv6 since I do not need vpn capabilities for the build and am running ipv6 inhouse.
-Afterwards, I set it up as a wireless repeater using this guide. Works like a charm as a repeater for my Ubiquity AC-Pro.
+          I followed the guide located here
+I am currently dual booting FreeBSD 13.RC5 (13-RELEASE should be out extremely soon as of this post) and Windows 10. I have had no issues.
+But can you watch DRM enabled content like Netflix? You bet you can! Download and run https://github.com/mrclksr/linux-browser-installer. Works like a charm. It actually loads faster than native Firefox.
+In addition, I have bhyve with an Ubuntu 20.04 guest. I am using the tool vm to manage virtual machines.
         </div>
-          <a href="http://drewstud.com/posts/2020-01-07-wndr3400v3-with-freshtomato/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+          <a href="/posts/2021-04-13-freebsd-dualboot-zfs/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
         
       </div>
     </div>
@@ -145,16 +144,15 @@ Afterwards, I set it up as a wireless repeater using this guide. Works like a ch
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="http://drewstud.com/posts/2020-01-03-self-hosted-nextcloud-nginx-dnyamic-ip/" class="color-inherit dim link">
-            Run Nextcloud with Docker Compose with Nginx Proxying using dynamic ip
+          <a href="/posts/2019-07-12-2019-mtmr-with-pianobar/" class="color-inherit dim link">
+            Get Pianobar Updates On Touchbar With MTMR
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          I decided to self host nextcloud. I figured why not, whats the harm. I like things. I probably should at least describe my desired setup before I continue.
-My requirements were:
- Run with some sort of container technology (like most other things I am self hosting, may as well be consistent!) Be able to be proxied from the only box I am exposing directly to the public internet. I prefer only one entry point not several.
+          I found MTMR and am really liking it so far. However I also enjoy listening to music with Pianobar but saw there was no love to make the current song playing show in the touchbar. The following is what I did to make it work. Mac OSX 10.14.5 is what I am using, but this can also be made to work on any *nix distro as well.
+My repo of files are located here
         </div>
-          <a href="http://drewstud.com/posts/2020-01-03-self-hosted-nextcloud-nginx-dnyamic-ip/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+          <a href="/posts/2019-07-12-2019-mtmr-with-pianobar/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
         
       </div>
     </div>
@@ -171,14 +169,18 @@ My requirements were:
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="http://drewstud.com/posts/2019-11-22-2019-dymo-printer-dotnet-4-5/" class="color-inherit dim link">
-            Dymo Printer Framework for .NET 4.5&#43; and barcodes
+          <a href="/posts/2019-01-29-2019-zfs-kernel-patch-fedora-kernel/" class="color-inherit dim link">
+            ZFS kmod Does Not Build On Fedora Kernel 4.20.4-200
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          For a certain work project, I was uanble to print barcodes using C# and the dynmo .NET library. I could print text just fine. I just could not print barcodes for whatever reason. It was ALWAYS blank.This is out here so if anyone is looking for an answer, here it is.I googled and googled and the dymo forums are closed and there is NO Google cache for the forums either. I was stuck.
+          After updating my Fedora box, I noticed that the ZFS kernel module was no longer loaded. The error (from /var/lib/dkms/zfs/0.7.12/build/make.log) was:
+{% highlight bash %} /var/lib/dkms/zfs/0.7.12/build/include/zpios-ctl.h:186:11: error: implicit declaration of function ‘current_kernel_time’; did you mean ‘current_kernel_time64’? [-Werror=implicit-function-declaration] ts_now = current_kernel_time(); ^~~~~~~~~~~~~~~~~~~ current_kernel_time64 /var/lib/dkms/zfs/0.7.12/build/include/zpios-ctl.h:186:9: error: incompatible types when assigning to type ‘struct timespec’ from type ‘int’ ts_now = current_kernel_time();
+{% endhighlight %}
+The easiest fix is to:
+Download zfs-linux_0.6.5.11-1ubuntu3.6.debian.tar.xz  extract and get debian/patches/3204-Add-4.
         </div>
-          <a href="http://drewstud.com/posts/2019-11-22-2019-dymo-printer-dotnet-4-5/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+          <a href="/posts/2019-01-29-2019-zfs-kernel-patch-fedora-kernel/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
         
       </div>
     </div>
@@ -195,33 +197,33 @@ My requirements were:
         
         
           <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="http://drewstud.com/posts/2019-10-30-ansible_for_osx/" class="link black dim">
-              Ansible For OSX Install On My MBP Dual Booting With Fedora 31
+            <a href="/posts/2019-01-02-stream-audio-linux-to-osx/" class="link black dim">
+              Streaming Audio from Linux to OSX with Pulseaudio
             </a>
           </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="http://drewstud.com/posts/2019-09-27-centos-8-spacewalk/" class="link black dim">
-              CentOS 8 and Spacewalk 2.9
+            <a href="/posts/2018-01-31-aws-api-lambda-sqs-celery/" class="link black dim">
+              Setting up AWS API Gateway using Chalice, SQS and Celery
             </a>
           </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="http://drewstud.com/posts/2019-09-27-centos-8-ad-authentication/" class="link black dim">
-              CentOS 8 and Active Directory Authentication
+            <a href="/posts/2016-09-01-openbsd-on-rackspace-public-cloud/" class="link black dim">
+              Installing OpenBSD On Rackspace Public Cloud
             </a>
           </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="http://drewstud.com/posts/2019-07-12-2019-mtmr-with-pianobar/" class="link black dim">
-              Get Pianobar Updates On Touchbar With MTMR
+            <a href="/posts/2016-01-19-query-chef-rest-api/" class="link black dim">
+              Querying Chef REST Api With pure Ruby
             </a>
           </h2>
         
 
         
         
-          <a href="http://drewstud.com/posts/" class="link db f6 pa2 br3 bg-mid-gray white dim w4 tc">All Posts</a>
+          <a href="/posts/" class="link db f6 pa2 br3 bg-mid-gray white dim w4 tc">All Posts</a>
         
         </section>
       
@@ -233,7 +235,7 @@ My requirements were:
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://drewstud.com/" >
-    &copy; 2020 Drewskiwooskie Blogarooskie
+    &copy; 2021 Drewskiwooskie Blogarooskie
   </a>
     <div>
 
@@ -252,7 +254,7 @@ My requirements were:
 
     
 
-  <script src="http://drewstud.com/dist/js/app.3fc0f988d21662902933.js"></script>
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
 
 
   </body>

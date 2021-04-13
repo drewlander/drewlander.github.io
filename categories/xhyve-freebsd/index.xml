@@ -6,18 +6,16 @@
     <description>Recent content in xhyve freebsd on Drewskiwooskie Blogarooskie</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 18 Apr 2015 08:00:48 +0000</lastBuildDate>
-    
-	<atom:link href="http://drewstud.com/categories/xhyve-freebsd/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 18 Apr 2015 08:00:48 +0000</lastBuildDate><atom:link href="http://drewstud.com/categories/xhyve-freebsd/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>FreeBSD on Xhyve</title>
       <link>http://drewstud.com/posts/2015-09-04-xhyve-freebsd/</link>
       <pubDate>Sat, 18 Apr 2015 08:00:48 +0000</pubDate>
       
       <guid>http://drewstud.com/posts/2015-09-04-xhyve-freebsd/</guid>
-      <description>xhyve is essentially a port of FreeBSD&#39;s bhyve to OSX. The instructions show how to run Ubuntu (which you can dissect and figure out how to boot other linux distro&#39;s), but lack any documentation on how to run FreeBSD with it. Here is how to do it:</description>
+      <description>xhyve is essentially a port of FreeBSD&amp;rsquo;s bhyve to OSX. The instructions show how to run Ubuntu (which you can dissect and figure out how to boot other linux distro&amp;rsquo;s), but lack any documentation on how to run FreeBSD with it. Here is how to do it:
+FreeBSD this is provided in the xhyve sources USERBOOT=&amp;ldquo;test/userboot.so&amp;rdquo; BOOTVOLUME=&amp;ldquo;freebsd/FreeBSD-10.2-RELEASE-amd64.raw&amp;rdquo; KERNELENV=&amp;quot;&amp;quot;
+MEM=&amp;quot;-m 4G&amp;quot; #SMP=&amp;quot;-c 2&amp;quot; NET=&amp;quot;-s 2:0,virtio-net&amp;quot; IMG_HDD=&amp;quot;-s 4,virtio-blk,freebsd/FreeBSD-10.2-RELEASE-amd64.raw&amp;quot; PCI_DEV=&amp;quot;-s 0:0,hostbridge -s 31,lpc&amp;quot; LPC_DEV=&amp;quot;-l com1,stdio&amp;quot; ACPI=&amp;quot;-A&amp;quot;</description>
     </item>
     
   </channel>

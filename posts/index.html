@@ -6,15 +6,15 @@
     
     <title>Drewskiwooskie Blogarooskie </title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.62.2" />
+    <meta name="generator" content="Hugo 0.82.0" />
     
     
-      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
     
 
     
     
-      <link href="http://drewstud.com/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
     
 
     
@@ -32,17 +32,15 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://drewstud.com/posts/" />
-<meta property="og:updated_time" content="2020-01-07T07:47:11+01:00" />
+
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Posts"/>
 <meta name="twitter:description" content=""/>
 
-      
-    
   </head>
 
-  <body class="ma0 avenir bg-near-white production">
+  <body class="ma0 avenir bg-near-white">
 
     
 
@@ -93,14 +91,15 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="http://drewstud.com/posts/2020-01-07-wndr3400v3-with-freshtomato/" class="link black dim">
-        wndr3400v3 Open Source Firmware: freshtomato
+      <a href="/posts/2021-04-13-freebsd-dualboot-zfs/" class="link black dim">
+        Dual boot Windows 10 and FreeBSD with ZFS
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      For a while I was looking for a good open source firmware to run on my old WNDR3400v3. And I finally found it in freshtomato
-The upgrade was easy. I just uploaded this image (unzipped). I used the ipv6 since I do not need vpn capabilities for the build and am running ipv6 inhouse.
-Afterwards, I set it up as a wireless repeater using this guide. Works like a charm as a repeater for my Ubiquity AC-Pro.
+      I followed the guide located here
+I am currently dual booting FreeBSD 13.RC5 (13-RELEASE should be out extremely soon as of this post) and Windows 10. I have had no issues.
+But can you watch DRM enabled content like Netflix? You bet you can! Download and run https://github.com/mrclksr/linux-browser-installer. Works like a charm. It actually loads faster than native Firefox.
+In addition, I have bhyve with an Ubuntu 20.04 guest. I am using the tool vm to manage virtual machines.
     </div>
   </div>
 </div>
@@ -110,88 +109,7 @@ Afterwards, I set it up as a wireless repeater using this guide. Works like a ch
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="http://drewstud.com/posts/2020-01-03-self-hosted-nextcloud-nginx-dnyamic-ip/" class="link black dim">
-        Run Nextcloud with Docker Compose with Nginx Proxying using dynamic ip
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      I decided to self host nextcloud. I figured why not, whats the harm. I like things. I probably should at least describe my desired setup before I continue.
-My requirements were:
- Run with some sort of container technology (like most other things I am self hosting, may as well be consistent!) Be able to be proxied from the only box I am exposing directly to the public internet. I prefer only one entry point not several.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="http://drewstud.com/posts/2019-11-22-2019-dymo-printer-dotnet-4-5/" class="link black dim">
-        Dymo Printer Framework for .NET 4.5&#43; and barcodes
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      For a certain work project, I was uanble to print barcodes using C# and the dynmo .NET library. I could print text just fine. I just could not print barcodes for whatever reason. It was ALWAYS blank.This is out here so if anyone is looking for an answer, here it is.I googled and googled and the dymo forums are closed and there is NO Google cache for the forums either. I was stuck.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="http://drewstud.com/posts/2019-10-30-ansible_for_osx/" class="link black dim">
-        Ansible For OSX Install On My MBP Dual Booting With Fedora 31
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      I ended up erasing my Macbook Pro and reinstalling EVERYTHING. I ended up converting my chef-solo script to ansible.Drewlander Github RepositoryAll that should need to be done is: bash bootstrap.sh
- Keyboard Touchbad Wireless Sound  I used an external mouse and keyboard to do the install.To get the touchbar and keyboard to work I followed: This.I followed the section titled: Keyboard/Touchpad/Touchbar.
-Wireless still does not work, even when setting the txpower to 10.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="http://drewstud.com/posts/2019-09-27-centos-8-spacewalk/" class="link black dim">
-        CentOS 8 and Spacewalk 2.9
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      With CentOS 8 released, it is time to start integrating it and see what works and what doesnt! First was spacewalk.
-We are running 2.9 and there is no repository for 2.9 for that version. So we have to use their nightly repo. The following changes were needed to get it to work (assuming that the new centos 8 channel/keys/repo are setup in Spacewalk). I would paste the snippets from my faviorite automation tool, but if you can read this you can translate it :) dnf config-manager --add-repo https://copr-be.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="http://drewstud.com/posts/2019-09-27-centos-8-ad-authentication/" class="link black dim">
-        CentOS 8 and Active Directory Authentication
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      With CentOS 8 out, I attempted to see what, if anything would need changed with current automation scripts. A huge benefit is the AD authentication we have. It is largely a windows shop where I work, so integrating with AD there makes the most sense. (We could use FreeIPA but we are trying to KISS).
-The first changes was policycoreutils-python is now policycoreutils-python-utils. Seems like a rather redundant name change but I am sure they had good reasons.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="http://drewstud.com/posts/2019-07-12-2019-mtmr-with-pianobar/" class="link black dim">
+      <a href="/posts/2019-07-12-2019-mtmr-with-pianobar/" class="link black dim">
         Get Pianobar Updates On Touchbar With MTMR
       </a>
     </h1>
@@ -207,15 +125,16 @@ My repo of files are located here
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="http://drewstud.com/posts/2019-01-29-2019-zfs-kernel-patch-fedora-kernel/" class="link black dim">
+      <a href="/posts/2019-01-29-2019-zfs-kernel-patch-fedora-kernel/" class="link black dim">
         ZFS kmod Does Not Build On Fedora Kernel 4.20.4-200
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      After updating my Fedora box, I noticed that the ZFS kernel module was no longer loaded. Error from: /var/lib/dkms/zfs/0.7.12/build/make.log
-/var/lib/dkms/zfs/0.7.12/build/include/zpios-ctl.h:186:11: error: implicit declaration of function ‘current_kernel_time’; did you mean ‘current_kernel_time64’? [-Werror=implicit-function-declaration] ts_now = current_kernel_time(); ^~~~~~~~~~~~~~~~~~~ current_kernel_time64 /var/lib/dkms/zfs/0.7.12/build/include/zpios-ctl.h:186:9: error: incompatible types when assigning to type ‘struct timespec’ from type ‘int’ ts_now = current_kernel_time(); The easiest fix is to:
-Download zfs-linux_0.6.5.11-1ubuntu3.6.debian.tar.xz  extract and get debian/patches/3204-Add-4.20-timespec-compat-fix.patch
-Next you need to patch /var/lib/dkms/zfs/0.7.12/source/include/zpios-ctl.h with that patch dkms autoinstall modprobe zfs PROFIT!
+      After updating my Fedora box, I noticed that the ZFS kernel module was no longer loaded. The error (from /var/lib/dkms/zfs/0.7.12/build/make.log) was:
+{% highlight bash %} /var/lib/dkms/zfs/0.7.12/build/include/zpios-ctl.h:186:11: error: implicit declaration of function ‘current_kernel_time’; did you mean ‘current_kernel_time64’? [-Werror=implicit-function-declaration] ts_now = current_kernel_time(); ^~~~~~~~~~~~~~~~~~~ current_kernel_time64 /var/lib/dkms/zfs/0.7.12/build/include/zpios-ctl.h:186:9: error: incompatible types when assigning to type ‘struct timespec’ from type ‘int’ ts_now = current_kernel_time();
+{% endhighlight %}
+The easiest fix is to:
+Download zfs-linux_0.6.5.11-1ubuntu3.6.debian.tar.xz  extract and get debian/patches/3204-Add-4.
     </div>
   </div>
 </div>
@@ -225,7 +144,7 @@ Next you need to patch /var/lib/dkms/zfs/0.7.12/source/include/zpios-ctl.h with 
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="http://drewstud.com/posts/2019-01-02-stream-audio-linux-to-osx/" class="link black dim">
+      <a href="/posts/2019-01-02-stream-audio-linux-to-osx/" class="link black dim">
         Streaming Audio from Linux to OSX with Pulseaudio
       </a>
     </h1>
@@ -241,63 +160,119 @@ I have a Fedora box that I use as a home personal server. It runs various servic
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="http://drewstud.com/posts/2018-01-31-aws-api-lambda-sqs-celery/" class="link black dim">
+      <a href="/posts/2018-01-31-aws-api-lambda-sqs-celery/" class="link black dim">
         Setting up AWS API Gateway using Chalice, SQS and Celery
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       End Goal To have an api that sends SQS messages to a queue to be processed by workers.
 Flow api request -&gt; AWS API Gateaway -&gt; SQS -&gt; Celery
-Why? Why manage an api for yourself when chalice and AWS can handle it quite easily for you. Yes the cloud is someone else's computer, but I don't want to be woken up because a server is down. I would rather be notified because a behemouth like Amazon is down.
+Why? Why manage an api for yourself when chalice and AWS can handle it quite easily for you. Yes the cloud is someone else&rsquo;s computer, but I don&rsquo;t want to be woken up because a server is down. I would rather be notified because a behemouth like Amazon is down.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/2016-09-01-openbsd-on-rackspace-public-cloud/" class="link black dim">
+        Installing OpenBSD On Rackspace Public Cloud
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      For the longest time I wanted to see OpenBSD on Rackspace Public Cloud. With their boot.iso you are able to attempt to boot into a pxe environment and boot OpenBSD 5.7, but it lacks the necessary drivers for xen. I gave up for a while. but tried with the release of OpenBSD 6. I am happy to report, that you CAN and it WORKS! To do so, you boot into a linux distro, download bsd.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/2016-01-19-query-chef-rest-api/" class="link black dim">
+        Querying Chef REST Api With pure Ruby
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      If you want to talk to the chef API without using some wrapper like Ridley, knife, etc.., this is how you do it:
+Note: This is taken from here but modified to use httparty {% highlight ruby %} require &lsquo;base64&rsquo; require &lsquo;time&rsquo; require &lsquo;digest/sha1&rsquo; require &lsquo;openssl&rsquo; require &lsquo;net/https&rsquo; require &lsquo;json&rsquo; require &lsquo;pry&rsquo; require &lsquo;httparty&rsquo;
+class ChefAPI
+Public: Gets/Sets the String path for the HTTP request. attr_accessor :path
+Public: Gets/Sets the String client_name containing the Chef client name.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/2015-10-19-password-export-service-silent-install/" class="link black dim">
+        Active Directory Password Export Service Silent Install
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Password Export Service allows you to export users and passwords from one active directory domain to another. All the guides I found show how to install it graphically. It took a bit but eventually I was able to install the service AND import the key created with ADMT all automatically. I used chef but any automation tool will work. It did require some hacking.
+You have to edit the password export service yourself via orca, instEd, etc&hellip; Something has to alter a datbase table, or else it will ALWAYS prompt and ask if you who you want to run the service as.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/2015-11-03-centos-mailonacircle/" class="link black dim">
+        Mailonacircle: Mailinabox(ish) for Centos 7 With Selinux=Enabled
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Recently I saw the latest mailinabox, and man is it fancy. I looked, and there was nothing like that for centos. I wanted a way to help the lazy people out there setup a centos 7 box with postfixadmin, dovecot, spamasassin, clamav-milter, postgrey-milter, mariadb, and dkim with ease. So in very short time in between down time, I wrote mailonacircle. It uses chef-solo, and the attributes are basic and do not make a lot of sense at first glance, but it is a start.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/2015-04-18-systemd-nspawn-centos-7/" class="link black dim">
+        Centos 7 and systemd-nspawn
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      With systemd, comes systemd-nspawn. (I will not talk about love/hate of systemd, not in this post at least. Let&rsquo;s just say if you start out saying you are writing an init system, why does your init system takeover acpi?). Anyway, part of the systemd monstrosity is something called nspawn. In short, its a &ldquo;more powerful&rdquo; chroot, but still should not be relied upon soley for security (think defense in depth people!
     </div>
   </div>
 </div>
 </div>
       
     </section>
-
 <ul class="pagination">
-    
-    <li class="page-item">
-        <a href="http://drewstud.com/posts/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
-    </li>
-    
-    <li class="page-item disabled">
+  <li class="page-item">
+    <a href="/posts/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+  </li>
+  <li class="page-item disabled">
     <a  class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-    </li>
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item active"><a class="page-link" href="http://drewstud.com/posts/">1</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="http://drewstud.com/posts/page/2/">2</a></li>
-    
-    
-    <li class="page-item">
-    <a href="http://drewstud.com/posts/page/2/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-    </li>
-    
-    <li class="page-item">
-        <a href="http://drewstud.com/posts/page/2/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
-    </li>
-    
+  </li>
+  <li class="page-item active">
+    <a class="page-link" href="/posts/">1</a>
+  </li>
+  <li class="page-item">
+    <a class="page-link" href="/posts/page/2/">2</a>
+  </li>
+  <li class="page-item">
+    <a href="/posts/page/2/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+  </li>
+  <li class="page-item">
+    <a href="/posts/page/2/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+  </li>
 </ul>
 
 </article>
@@ -306,7 +281,7 @@ Why? Why manage an api for yourself when chalice and AWS can handle it quite eas
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://drewstud.com/" >
-    &copy; 2020 Drewskiwooskie Blogarooskie
+    &copy; 2021 Drewskiwooskie Blogarooskie
   </a>
     <div>
 
@@ -325,7 +300,7 @@ Why? Why manage an api for yourself when chalice and AWS can handle it quite eas
 
     
 
-  <script src="http://drewstud.com/dist/js/app.3fc0f988d21662902933.js"></script>
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
 
 
   </body>

@@ -6,71 +6,17 @@
     <description>Recent content in Posts on Drewskiwooskie Blogarooskie</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Jan 2020 07:47:11 +0100</lastBuildDate>
-    
-	<atom:link href="http://drewstud.com/posts/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 13 Apr 2020 06:00:00 +0000</lastBuildDate><atom:link href="http://drewstud.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>wndr3400v3 Open Source Firmware: freshtomato</title>
-      <link>http://drewstud.com/posts/2020-01-07-wndr3400v3-with-freshtomato/</link>
-      <pubDate>Tue, 07 Jan 2020 07:47:11 +0100</pubDate>
+      <title>Dual boot Windows 10 and FreeBSD with ZFS</title>
+      <link>http://drewstud.com/posts/2021-04-13-freebsd-dualboot-zfs/</link>
+      <pubDate>Mon, 13 Apr 2020 06:00:00 +0000</pubDate>
       
-      <guid>http://drewstud.com/posts/2020-01-07-wndr3400v3-with-freshtomato/</guid>
-      <description>For a while I was looking for a good open source firmware to run on my old WNDR3400v3. And I finally found it in freshtomato
-The upgrade was easy. I just uploaded this image (unzipped). I used the ipv6 since I do not need vpn capabilities for the build and am running ipv6 inhouse.
-Afterwards, I set it up as a wireless repeater using this guide. Works like a charm as a repeater for my Ubiquity AC-Pro.</description>
-    </item>
-    
-    <item>
-      <title>Run Nextcloud with Docker Compose with Nginx Proxying using dynamic ip</title>
-      <link>http://drewstud.com/posts/2020-01-03-self-hosted-nextcloud-nginx-dnyamic-ip/</link>
-      <pubDate>Fri, 03 Jan 2020 08:47:11 +0100</pubDate>
-      
-      <guid>http://drewstud.com/posts/2020-01-03-self-hosted-nextcloud-nginx-dnyamic-ip/</guid>
-      <description>I decided to self host nextcloud. I figured why not, whats the harm. I like things. I probably should at least describe my desired setup before I continue.
-My requirements were:
- Run with some sort of container technology (like most other things I am self hosting, may as well be consistent!) Be able to be proxied from the only box I am exposing directly to the public internet. I prefer only one entry point not several.</description>
-    </item>
-    
-    <item>
-      <title>Dymo Printer Framework for .NET 4.5&#43; and barcodes</title>
-      <link>http://drewstud.com/posts/2019-11-22-2019-dymo-printer-dotnet-4-5/</link>
-      <pubDate>Fri, 22 Nov 2019 08:47:11 +0100</pubDate>
-      
-      <guid>http://drewstud.com/posts/2019-11-22-2019-dymo-printer-dotnet-4-5/</guid>
-      <description>For a certain work project, I was uanble to print barcodes using C# and the dynmo .NET library. I could print text just fine. I just could not print barcodes for whatever reason. It was ALWAYS blank.This is out here so if anyone is looking for an answer, here it is.I googled and googled and the dymo forums are closed and there is NO Google cache for the forums either. I was stuck.</description>
-    </item>
-    
-    <item>
-      <title>Ansible For OSX Install On My MBP Dual Booting With Fedora 31</title>
-      <link>http://drewstud.com/posts/2019-10-30-ansible_for_osx/</link>
-      <pubDate>Wed, 30 Oct 2019 08:47:11 +0100</pubDate>
-      
-      <guid>http://drewstud.com/posts/2019-10-30-ansible_for_osx/</guid>
-      <description>I ended up erasing my Macbook Pro and reinstalling EVERYTHING. I ended up converting my chef-solo script to ansible.Drewlander Github RepositoryAll that should need to be done is: bash bootstrap.sh
- Keyboard Touchbad Wireless Sound  I used an external mouse and keyboard to do the install.To get the touchbar and keyboard to work I followed: This.I followed the section titled: Keyboard/Touchpad/Touchbar.
-Wireless still does not work, even when setting the txpower to 10.</description>
-    </item>
-    
-    <item>
-      <title>CentOS 8 and Spacewalk 2.9</title>
-      <link>http://drewstud.com/posts/2019-09-27-centos-8-spacewalk/</link>
-      <pubDate>Fri, 27 Sep 2019 08:47:11 +0100</pubDate>
-      
-      <guid>http://drewstud.com/posts/2019-09-27-centos-8-spacewalk/</guid>
-      <description>With CentOS 8 released, it is time to start integrating it and see what works and what doesnt! First was spacewalk.
-We are running 2.9 and there is no repository for 2.9 for that version. So we have to use their nightly repo. The following changes were needed to get it to work (assuming that the new centos 8 channel/keys/repo are setup in Spacewalk). I would paste the snippets from my faviorite automation tool, but if you can read this you can translate it :) dnf config-manager --add-repo https://copr-be.</description>
-    </item>
-    
-    <item>
-      <title>CentOS 8 and Active Directory Authentication</title>
-      <link>http://drewstud.com/posts/2019-09-27-centos-8-ad-authentication/</link>
-      <pubDate>Thu, 26 Sep 2019 09:47:11 +0100</pubDate>
-      
-      <guid>http://drewstud.com/posts/2019-09-27-centos-8-ad-authentication/</guid>
-      <description>With CentOS 8 out, I attempted to see what, if anything would need changed with current automation scripts. A huge benefit is the AD authentication we have. It is largely a windows shop where I work, so integrating with AD there makes the most sense. (We could use FreeIPA but we are trying to KISS).
-The first changes was policycoreutils-python is now policycoreutils-python-utils. Seems like a rather redundant name change but I am sure they had good reasons.</description>
+      <guid>http://drewstud.com/posts/2021-04-13-freebsd-dualboot-zfs/</guid>
+      <description>I followed the guide located here
+I am currently dual booting FreeBSD 13.RC5 (13-RELEASE should be out extremely soon as of this post) and Windows 10. I have had no issues.
+But can you watch DRM enabled content like Netflix? You bet you can! Download and run https://github.com/mrclksr/linux-browser-installer. Works like a charm. It actually loads faster than native Firefox.
+In addition, I have bhyve with an Ubuntu 20.04 guest. I am using the tool vm to manage virtual machines.</description>
     </item>
     
     <item>
@@ -89,10 +35,11 @@ My repo of files are located here</description>
       <pubDate>Tue, 29 Jan 2019 07:35:48 +0000</pubDate>
       
       <guid>http://drewstud.com/posts/2019-01-29-2019-zfs-kernel-patch-fedora-kernel/</guid>
-      <description>After updating my Fedora box, I noticed that the ZFS kernel module was no longer loaded. Error from: /var/lib/dkms/zfs/0.7.12/build/make.log
-/var/lib/dkms/zfs/0.7.12/build/include/zpios-ctl.h:186:11: error: implicit declaration of function ‘current_kernel_time’; did you mean ‘current_kernel_time64’? [-Werror=implicit-function-declaration] ts_now = current_kernel_time(); ^~~~~~~~~~~~~~~~~~~ current_kernel_time64 /var/lib/dkms/zfs/0.7.12/build/include/zpios-ctl.h:186:9: error: incompatible types when assigning to type ‘struct timespec’ from type ‘int’ ts_now = current_kernel_time(); The easiest fix is to:
-Download zfs-linux_0.6.5.11-1ubuntu3.6.debian.tar.xz  extract and get debian/patches/3204-Add-4.20-timespec-compat-fix.patch
-Next you need to patch /var/lib/dkms/zfs/0.7.12/source/include/zpios-ctl.h with that patch dkms autoinstall modprobe zfs PROFIT!</description>
+      <description>After updating my Fedora box, I noticed that the ZFS kernel module was no longer loaded. The error (from /var/lib/dkms/zfs/0.7.12/build/make.log) was:
+{% highlight bash %} /var/lib/dkms/zfs/0.7.12/build/include/zpios-ctl.h:186:11: error: implicit declaration of function ‘current_kernel_time’; did you mean ‘current_kernel_time64’? [-Werror=implicit-function-declaration] ts_now = current_kernel_time(); ^~~~~~~~~~~~~~~~~~~ current_kernel_time64 /var/lib/dkms/zfs/0.7.12/build/include/zpios-ctl.h:186:9: error: incompatible types when assigning to type ‘struct timespec’ from type ‘int’ ts_now = current_kernel_time();
+{% endhighlight %}
+The easiest fix is to:
+Download zfs-linux_0.6.5.11-1ubuntu3.6.debian.tar.xz  extract and get debian/patches/3204-Add-4.</description>
     </item>
     
     <item>
@@ -113,7 +60,7 @@ I have a Fedora box that I use as a home personal server. It runs various servic
       <guid>http://drewstud.com/posts/2018-01-31-aws-api-lambda-sqs-celery/</guid>
       <description>End Goal To have an api that sends SQS messages to a queue to be processed by workers.
 Flow api request -&amp;gt; AWS API Gateaway -&amp;gt; SQS -&amp;gt; Celery
-Why? Why manage an api for yourself when chalice and AWS can handle it quite easily for you. Yes the cloud is someone else&#39;s computer, but I don&#39;t want to be woken up because a server is down. I would rather be notified because a behemouth like Amazon is down.</description>
+Why? Why manage an api for yourself when chalice and AWS can handle it quite easily for you. Yes the cloud is someone else&amp;rsquo;s computer, but I don&amp;rsquo;t want to be woken up because a server is down. I would rather be notified because a behemouth like Amazon is down.</description>
     </item>
     
     <item>
@@ -132,7 +79,10 @@ Why? Why manage an api for yourself when chalice and AWS can handle it quite eas
       
       <guid>http://drewstud.com/posts/2016-01-19-query-chef-rest-api/</guid>
       <description>If you want to talk to the chef API without using some wrapper like Ridley, knife, etc.., this is how you do it:
-Note: This is taken from here but modified to use httparty require &amp;#39;base64&amp;#39; require &amp;#39;time&amp;#39; require &amp;#39;digest/sha1&amp;#39; require &amp;#39;openssl&amp;#39; require &amp;#39;net/https&amp;#39; require &amp;#39;json&amp;#39; require &amp;#39;pry&amp;#39; require &amp;#39;httparty&amp;#39; class ChefAPI # Public: Gets/Sets the String path for the HTTP request. attr_accessor :path # Public: Gets/Sets the String client_name containing the Chef client name.</description>
+Note: This is taken from here but modified to use httparty {% highlight ruby %} require &amp;lsquo;base64&amp;rsquo; require &amp;lsquo;time&amp;rsquo; require &amp;lsquo;digest/sha1&amp;rsquo; require &amp;lsquo;openssl&amp;rsquo; require &amp;lsquo;net/https&amp;rsquo; require &amp;lsquo;json&amp;rsquo; require &amp;lsquo;pry&amp;rsquo; require &amp;lsquo;httparty&amp;rsquo;
+class ChefAPI
+Public: Gets/Sets the String path for the HTTP request. attr_accessor :path
+Public: Gets/Sets the String client_name containing the Chef client name.</description>
     </item>
     
     <item>
@@ -160,7 +110,7 @@ You have to edit the password export service yourself via orca, instEd, etc&amp;
       <pubDate>Sat, 18 Apr 2015 08:00:48 +0000</pubDate>
       
       <guid>http://drewstud.com/posts/2015-04-18-systemd-nspawn-centos-7/</guid>
-      <description>With systemd, comes systemd-nspawn. (I will not talk about love/hate of systemd, not in this post at least. Let&#39;s just say if you start out saying you are writing an init system, why does your init system takeover acpi?). Anyway, part of the systemd monstrosity is something called nspawn. In short, its a &amp;ldquo;more powerful&amp;rdquo; chroot, but still should not be relied upon soley for security (think defense in depth people!</description>
+      <description>With systemd, comes systemd-nspawn. (I will not talk about love/hate of systemd, not in this post at least. Let&amp;rsquo;s just say if you start out saying you are writing an init system, why does your init system takeover acpi?). Anyway, part of the systemd monstrosity is something called nspawn. In short, its a &amp;ldquo;more powerful&amp;rdquo; chroot, but still should not be relied upon soley for security (think defense in depth people!</description>
     </item>
     
     <item>
@@ -169,7 +119,9 @@ You have to edit the password export service yourself via orca, instEd, etc&amp;
       <pubDate>Sat, 18 Apr 2015 08:00:48 +0000</pubDate>
       
       <guid>http://drewstud.com/posts/2015-09-04-xhyve-freebsd/</guid>
-      <description>xhyve is essentially a port of FreeBSD&#39;s bhyve to OSX. The instructions show how to run Ubuntu (which you can dissect and figure out how to boot other linux distro&#39;s), but lack any documentation on how to run FreeBSD with it. Here is how to do it:</description>
+      <description>xhyve is essentially a port of FreeBSD&amp;rsquo;s bhyve to OSX. The instructions show how to run Ubuntu (which you can dissect and figure out how to boot other linux distro&amp;rsquo;s), but lack any documentation on how to run FreeBSD with it. Here is how to do it:
+FreeBSD this is provided in the xhyve sources USERBOOT=&amp;ldquo;test/userboot.so&amp;rdquo; BOOTVOLUME=&amp;ldquo;freebsd/FreeBSD-10.2-RELEASE-amd64.raw&amp;rdquo; KERNELENV=&amp;quot;&amp;quot;
+MEM=&amp;quot;-m 4G&amp;quot; #SMP=&amp;quot;-c 2&amp;quot; NET=&amp;quot;-s 2:0,virtio-net&amp;quot; IMG_HDD=&amp;quot;-s 4,virtio-blk,freebsd/FreeBSD-10.2-RELEASE-amd64.raw&amp;quot; PCI_DEV=&amp;quot;-s 0:0,hostbridge -s 31,lpc&amp;quot; LPC_DEV=&amp;quot;-l com1,stdio&amp;quot; ACPI=&amp;quot;-A&amp;quot;</description>
     </item>
     
     <item>
@@ -178,7 +130,7 @@ You have to edit the password export service yourself via orca, instEd, etc&amp;
       <pubDate>Fri, 13 Feb 2015 07:35:48 +0000</pubDate>
       
       <guid>http://drewstud.com/posts/2015-02-13-running-postfix-3.0/</guid>
-      <description>Postfix 3.0 stable was released a few days ago (Feb 8). I run a few personal mailservers and decided it would be good if I were to upgrade the one running on Fedora21 (postfix + mysql + spamass-milter + greylisting), This would be a deviation as I would be compling it from source, and who knows what would break with 3.0! Here is a very brief update to what I did to get it working on Fedora 21: yum remove postfix -y wget ftp://postfix.</description>
+      <description>Postfix 3.0 stable was released a few days ago (Feb 8). I run a few personal mailservers and decided it would be good if I were to upgrade the one running on Fedora21 (postfix + mysql + spamass-milter + greylisting), This would be a deviation as I would be compling it from source, and who knows what would break with 3.0! Here is a very brief update to what I did to get it working on Fedora 21: {% highlight bash %} yum remove postfix -y wget ftp://postfix.</description>
     </item>
     
     <item>
@@ -188,7 +140,7 @@ You have to edit the password export service yourself via orca, instEd, etc&amp;
       
       <guid>http://drewstud.com/posts/2015-02-26-tuning-spamassassin/</guid>
       <description>For those of us who are not large companies where paying another company for spam protection is an option, combatting spam can be something both fun, and annoying. Hopefully, for any newbies, here are some things to do that can greatly reduce the amount of spam you receive, as well as minimize the amount of false positives of mail identified as spam.
-You MUST train both ham and spam to be effective.</description>
+A nice thing to do is to report mail that you have found to be spam.</description>
     </item>
     
     <item>
@@ -197,7 +149,7 @@ You MUST train both ham and spam to be effective.</description>
       <pubDate>Thu, 12 Feb 2015 10:35:48 +0000</pubDate>
       
       <guid>http://drewstud.com/posts/2015-02-12-figuring-this-out/</guid>
-      <description>I have read many places that having a blog is a good thing. Even if you have on there something that you think anyone should know, there may be that one person out there who doesn&#39;t know, who somehow finds your blog, and you help them. Anyway, this will be a technical blog. I am self taught (no collge) so I am sure there will be lots of people correcting me, which is good, because then I will learn :) Yes this blog is using Jekyll.</description>
+      <description>I have read many places that having a blog is a good thing. Even if you have on there something that you think anyone should know, there may be that one person out there who doesn&amp;rsquo;t know, who somehow finds your blog, and you help them. Anyway, this will be a technical blog. I am self taught (no collge) so I am sure there will be lots of people correcting me, which is good, because then I will learn :) Yes this blog is using Jekyll.</description>
     </item>
     
     <item>

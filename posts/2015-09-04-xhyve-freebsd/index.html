@@ -6,15 +6,15 @@
     
     <title>Drewskiwooskie Blogarooskie  | FreeBSD on Xhyve</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.62.2" />
+    <meta name="generator" content="Hugo 0.82.0" />
     
     
-      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
     
 
     
     
-      <link href="http://drewstud.com/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
     
 
     
@@ -26,28 +26,29 @@
     
 
     <meta property="og:title" content="FreeBSD on Xhyve" />
-<meta property="og:description" content="xhyve is essentially a port of FreeBSD&#39;s bhyve to OSX. The instructions show how to run Ubuntu (which you can dissect and figure out how to boot other linux distro&#39;s), but lack any documentation on how to run FreeBSD with it. Here is how to do it:" />
+<meta property="og:description" content="xhyve is essentially a port of FreeBSD&rsquo;s bhyve to OSX. The instructions show how to run Ubuntu (which you can dissect and figure out how to boot other linux distro&rsquo;s), but lack any documentation on how to run FreeBSD with it. Here is how to do it:
+FreeBSD this is provided in the xhyve sources USERBOOT=&ldquo;test/userboot.so&rdquo; BOOTVOLUME=&ldquo;freebsd/FreeBSD-10.2-RELEASE-amd64.raw&rdquo; KERNELENV=&quot;&quot;
+MEM=&quot;-m 4G&quot; #SMP=&quot;-c 2&quot; NET=&quot;-s 2:0,virtio-net&quot; IMG_HDD=&quot;-s 4,virtio-blk,freebsd/FreeBSD-10.2-RELEASE-amd64.raw&quot; PCI_DEV=&quot;-s 0:0,hostbridge -s 31,lpc&quot; LPC_DEV=&quot;-l com1,stdio&quot; ACPI=&quot;-A&quot;" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://drewstud.com/posts/2015-09-04-xhyve-freebsd/" />
-<meta property="article:published_time" content="2015-04-18T08:00:48+00:00" />
-<meta property="article:modified_time" content="2015-04-18T08:00:48+00:00" />
+<meta property="og:url" content="http://drewstud.com/posts/2015-09-04-xhyve-freebsd/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2015-04-18T08:00:48&#43;00:00" />
+<meta property="article:modified_time" content="2015-04-18T08:00:48&#43;00:00" />
+
 <meta itemprop="name" content="FreeBSD on Xhyve">
-<meta itemprop="description" content="xhyve is essentially a port of FreeBSD&#39;s bhyve to OSX. The instructions show how to run Ubuntu (which you can dissect and figure out how to boot other linux distro&#39;s), but lack any documentation on how to run FreeBSD with it. Here is how to do it:">
-<meta itemprop="datePublished" content="2015-04-18T08:00:48&#43;00:00" />
+<meta itemprop="description" content="xhyve is essentially a port of FreeBSD&rsquo;s bhyve to OSX. The instructions show how to run Ubuntu (which you can dissect and figure out how to boot other linux distro&rsquo;s), but lack any documentation on how to run FreeBSD with it. Here is how to do it:
+FreeBSD this is provided in the xhyve sources USERBOOT=&ldquo;test/userboot.so&rdquo; BOOTVOLUME=&ldquo;freebsd/FreeBSD-10.2-RELEASE-amd64.raw&rdquo; KERNELENV=&quot;&quot;
+MEM=&quot;-m 4G&quot; #SMP=&quot;-c 2&quot; NET=&quot;-s 2:0,virtio-net&quot; IMG_HDD=&quot;-s 4,virtio-blk,freebsd/FreeBSD-10.2-RELEASE-amd64.raw&quot; PCI_DEV=&quot;-s 0:0,hostbridge -s 31,lpc&quot; LPC_DEV=&quot;-l com1,stdio&quot; ACPI=&quot;-A&quot;"><meta itemprop="datePublished" content="2015-04-18T08:00:48&#43;00:00" />
 <meta itemprop="dateModified" content="2015-04-18T08:00:48&#43;00:00" />
-<meta itemprop="wordCount" content="47">
-
-
-
+<meta itemprop="wordCount" content="86">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="FreeBSD on Xhyve"/>
-<meta name="twitter:description" content="xhyve is essentially a port of FreeBSD&#39;s bhyve to OSX. The instructions show how to run Ubuntu (which you can dissect and figure out how to boot other linux distro&#39;s), but lack any documentation on how to run FreeBSD with it. Here is how to do it:"/>
+<meta name="twitter:description" content="xhyve is essentially a port of FreeBSD&rsquo;s bhyve to OSX. The instructions show how to run Ubuntu (which you can dissect and figure out how to boot other linux distro&rsquo;s), but lack any documentation on how to run FreeBSD with it. Here is how to do it:
+FreeBSD this is provided in the xhyve sources USERBOOT=&ldquo;test/userboot.so&rdquo; BOOTVOLUME=&ldquo;freebsd/FreeBSD-10.2-RELEASE-amd64.raw&rdquo; KERNELENV=&quot;&quot;
+MEM=&quot;-m 4G&quot; #SMP=&quot;-c 2&quot; NET=&quot;-s 2:0,virtio-net&quot; IMG_HDD=&quot;-s 4,virtio-blk,freebsd/FreeBSD-10.2-RELEASE-amd64.raw&quot; PCI_DEV=&quot;-s 0:0,hostbridge -s 31,lpc&quot; LPC_DEV=&quot;-l com1,stdio&quot; ACPI=&quot;-A&quot;"/>
 
-      
-    
   </head>
 
-  <body class="ma0 avenir bg-near-white production">
+  <body class="ma0 avenir bg-near-white">
 
     
    
@@ -102,8 +103,24 @@
       
     </header>
 
-    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p><a href="https://github.com/mist64/xhyve">xhyve</a> is essentially a port of FreeBSD's <a href="http://bhyve.org">bhyve</a> to OSX. The instructions
-show how to run Ubuntu (which you can dissect and figure out how to boot other linux distro's), but lack any documentation on how to run FreeBSD with it. Here is how to do it:</p>
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p><a href="https://github.com/mist64/xhyve">xhyve</a> is essentially a port of FreeBSD&rsquo;s <a href="http://bhyve.org">bhyve</a> to OSX. The instructions
+show how to run Ubuntu (which you can dissect and figure out how to boot other linux distro&rsquo;s), but lack any documentation on how to run FreeBSD with it. Here is how to do it:</p>
+<!-- raw HTML omitted -->
+<h1 id="freebsd">FreeBSD</h1>
+<h1 id="this-is-provided-in-the-xhyve-sources">this is provided in the xhyve sources</h1>
+<p>USERBOOT=&ldquo;test/userboot.so&rdquo;
+BOOTVOLUME=&ldquo;freebsd/FreeBSD-10.2-RELEASE-amd64.raw&rdquo;
+KERNELENV=&quot;&quot;</p>
+<p>MEM=&quot;-m 4G&quot;
+#SMP=&quot;-c 2&quot;
+NET=&quot;-s 2:0,virtio-net&quot;
+IMG_HDD=&quot;-s 4,virtio-blk,freebsd/FreeBSD-10.2-RELEASE-amd64.raw&quot;
+PCI_DEV=&quot;-s 0:0,hostbridge -s 31,lpc&quot;
+LPC_DEV=&quot;-l com1,stdio&quot;
+ACPI=&quot;-A&quot;</p>
+<h1 id="freebsd-1">FreeBSD</h1>
+<p>build/xhyve $ACPI $MEM $SMP $PCI_DEV $LPC_DEV $NET $IMG_CD $IMG_HDD $UUID -f fbsd,$USERBOOT,$BOOTVOLUME,&quot;$KERNELENV&quot;
+<!-- raw HTML omitted --></p>
 <!-- raw HTML omitted -->
 <ul class="pa0">
   
@@ -127,7 +144,7 @@ show how to run Ubuntu (which you can dissect and figure out how to boot other l
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://drewstud.com/" >
-    &copy; 2020 Drewskiwooskie Blogarooskie
+    &copy; 2021 Drewskiwooskie Blogarooskie
   </a>
     <div>
 
@@ -146,7 +163,7 @@ show how to run Ubuntu (which you can dissect and figure out how to boot other l
 
     
 
-  <script src="http://drewstud.com/dist/js/app.3fc0f988d21662902933.js"></script>
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
 
 
   </body>

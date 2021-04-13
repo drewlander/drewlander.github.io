@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Drewskiwooskie Blogarooskie  | Dual boot Windows 10 and FreeBSD with ZFS</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.82.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="Dual boot Windows 10 and FreeBSD with ZFS" />
+<meta property="og:description" content="I followed the guide located here
+I am currently dual booting FreeBSD 13.RC5 (13-RELEASE should be out extremely soon as of this post) and Windows 10. I have had no issues.
+But can you watch DRM enabled content like Netflix? You bet you can! Download and run https://github.com/mrclksr/linux-browser-installer. Works like a charm. It actually loads faster than native Firefox.
+In addition, I have bhyve with an Ubuntu 20.04 guest. I am using the tool vm to manage virtual machines." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://drewstud.com/posts/2021-04-13-freebsd-dualboot-zfs/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-04-13T06:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2020-04-13T06:00:00&#43;00:00" />
+
+<meta itemprop="name" content="Dual boot Windows 10 and FreeBSD with ZFS">
+<meta itemprop="description" content="I followed the guide located here
+I am currently dual booting FreeBSD 13.RC5 (13-RELEASE should be out extremely soon as of this post) and Windows 10. I have had no issues.
+But can you watch DRM enabled content like Netflix? You bet you can! Download and run https://github.com/mrclksr/linux-browser-installer. Works like a charm. It actually loads faster than native Firefox.
+In addition, I have bhyve with an Ubuntu 20.04 guest. I am using the tool vm to manage virtual machines."><meta itemprop="datePublished" content="2020-04-13T06:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-04-13T06:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="172">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Dual boot Windows 10 and FreeBSD with ZFS"/>
+<meta name="twitter:description" content="I followed the guide located here
+I am currently dual booting FreeBSD 13.RC5 (13-RELEASE should be out extremely soon as of this post) and Windows 10. I have had no issues.
+But can you watch DRM enabled content like Netflix? You bet you can! Download and run https://github.com/mrclksr/linux-browser-installer. Works like a charm. It actually loads faster than native Firefox.
+In addition, I have bhyve with an Ubuntu 20.04 guest. I am using the tool vm to manage virtual machines."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://drewstud.com/" class="f3 fw2 hover-white no-underline white-90 dib">
+      Drewskiwooskie Blogarooskie
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">Dual boot Windows 10 and FreeBSD with ZFS</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-04-13T06:00:00Z">April 13, 2020</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>I followed the guide located <a href="https://forums.freebsd.org/threads/uefi-gpt-dual-boot-how-to-install-freebsd-with-zfs-alongside-another-os-sharing-the-same-disk.75734/#post-493993">here</a></p>
+<p>I am currently dual booting FreeBSD 13.RC5 (13-RELEASE should be out extremely soon as of this post) and Windows 10. I have had no issues.</p>
+<p>But can you watch DRM enabled content like Netflix? You bet you can! Download and run <a href="https://github.com/mrclksr/linux-browser-installer">https://github.com/mrclksr/linux-browser-installer</a>. Works like a charm. It actually loads faster than native Firefox.</p>
+<p>In addition, I have bhyve with an Ubuntu 20.04 guest. I am using the tool vm to manage virtual machines. I will make that another post.</p>
+<p>All in all, I can say I am quite pleased. My laptop has the dual graphics, and if I previously did have it using the Nvidia graphics card, but I just have it using the built in Intel graphics and it works great. Most of the games I like are pre-2010 so the card handles it great!</p>
+<p>Hardware of note:</p>
+<ul>
+<li>Intel Wireless 3165</li>
+<li>GP107M [GeForce GTX 1050 Mobile]</li>
+<li>Intel HD Graphics 630</li>
+</ul>
+<p>The one regret is that it <a href="https://wiki.freebsd.org/dev/ath(4)">does NOT support</a> my ALFA AR9271. Maybe one day.</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://drewstud.com/" >
+    &copy; 2021 Drewskiwooskie Blogarooskie
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

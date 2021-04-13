@@ -6,15 +6,15 @@
     
     <title>Drewskiwooskie Blogarooskie  | linux fedora zfs kernel</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.62.2" />
+    <meta name="generator" content="Hugo 0.82.0" />
     
     
-      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
     
 
     
     
-      <link href="http://drewstud.com/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
     
 
     
@@ -32,17 +32,15 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://drewstud.com/categories/linux-fedora-zfs-kernel/" />
-<meta property="og:updated_time" content="2019-01-29T07:35:48+00:00" />
+
 <meta itemprop="name" content="linux fedora zfs kernel">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="linux fedora zfs kernel"/>
 <meta name="twitter:description" content=""/>
 
-      
-    
   </head>
 
-  <body class="ma0 avenir bg-near-white production">
+  <body class="ma0 avenir bg-near-white">
 
     
 
@@ -98,15 +96,16 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="http://drewstud.com/posts/2019-01-29-2019-zfs-kernel-patch-fedora-kernel/" class="link black dim">
+      <a href="/posts/2019-01-29-2019-zfs-kernel-patch-fedora-kernel/" class="link black dim">
         ZFS kmod Does Not Build On Fedora Kernel 4.20.4-200
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      After updating my Fedora box, I noticed that the ZFS kernel module was no longer loaded. Error from: /var/lib/dkms/zfs/0.7.12/build/make.log
-/var/lib/dkms/zfs/0.7.12/build/include/zpios-ctl.h:186:11: error: implicit declaration of function ‘current_kernel_time’; did you mean ‘current_kernel_time64’? [-Werror=implicit-function-declaration] ts_now = current_kernel_time(); ^~~~~~~~~~~~~~~~~~~ current_kernel_time64 /var/lib/dkms/zfs/0.7.12/build/include/zpios-ctl.h:186:9: error: incompatible types when assigning to type ‘struct timespec’ from type ‘int’ ts_now = current_kernel_time(); The easiest fix is to:
-Download zfs-linux_0.6.5.11-1ubuntu3.6.debian.tar.xz  extract and get debian/patches/3204-Add-4.20-timespec-compat-fix.patch
-Next you need to patch /var/lib/dkms/zfs/0.7.12/source/include/zpios-ctl.h with that patch dkms autoinstall modprobe zfs PROFIT!
+      After updating my Fedora box, I noticed that the ZFS kernel module was no longer loaded. The error (from /var/lib/dkms/zfs/0.7.12/build/make.log) was:
+{% highlight bash %} /var/lib/dkms/zfs/0.7.12/build/include/zpios-ctl.h:186:11: error: implicit declaration of function ‘current_kernel_time’; did you mean ‘current_kernel_time64’? [-Werror=implicit-function-declaration] ts_now = current_kernel_time(); ^~~~~~~~~~~~~~~~~~~ current_kernel_time64 /var/lib/dkms/zfs/0.7.12/build/include/zpios-ctl.h:186:9: error: incompatible types when assigning to type ‘struct timespec’ from type ‘int’ ts_now = current_kernel_time();
+{% endhighlight %}
+The easiest fix is to:
+Download zfs-linux_0.6.5.11-1ubuntu3.6.debian.tar.xz  extract and get debian/patches/3204-Add-4.
     </div>
   </div>
 </div>
@@ -120,7 +119,7 @@ Next you need to patch /var/lib/dkms/zfs/0.7.12/source/include/zpios-ctl.h with 
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://drewstud.com/" >
-    &copy; 2020 Drewskiwooskie Blogarooskie
+    &copy; 2021 Drewskiwooskie Blogarooskie
   </a>
     <div>
 
@@ -139,7 +138,7 @@ Next you need to patch /var/lib/dkms/zfs/0.7.12/source/include/zpios-ctl.h with 
 
     
 
-  <script src="http://drewstud.com/dist/js/app.3fc0f988d21662902933.js"></script>
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
 
 
   </body>

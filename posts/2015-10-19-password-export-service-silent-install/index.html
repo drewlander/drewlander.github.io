@@ -6,15 +6,15 @@
     
     <title>Drewskiwooskie Blogarooskie  | Active Directory Password Export Service Silent Install</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.62.2" />
+    <meta name="generator" content="Hugo 0.82.0" />
     
     
-      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
     
 
     
     
-      <link href="http://drewstud.com/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
     
 
     
@@ -29,28 +29,23 @@
 <meta property="og:description" content="Password Export Service allows you to export users and passwords from one active directory domain to another. All the guides I found show how to install it graphically. It took a bit but eventually I was able to install the service AND import the key created with ADMT all automatically. I used chef but any automation tool will work. It did require some hacking.
 You have to edit the password export service yourself via orca, instEd, etc&hellip; Something has to alter a datbase table, or else it will ALWAYS prompt and ask if you who you want to run the service as." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://drewstud.com/posts/2015-10-19-password-export-service-silent-install/" />
-<meta property="article:published_time" content="2015-10-19T08:00:48+00:00" />
-<meta property="article:modified_time" content="2015-10-19T08:00:48+00:00" />
+<meta property="og:url" content="http://drewstud.com/posts/2015-10-19-password-export-service-silent-install/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2015-10-19T08:00:48&#43;00:00" />
+<meta property="article:modified_time" content="2015-10-19T08:00:48&#43;00:00" />
+
 <meta itemprop="name" content="Active Directory Password Export Service Silent Install">
 <meta itemprop="description" content="Password Export Service allows you to export users and passwords from one active directory domain to another. All the guides I found show how to install it graphically. It took a bit but eventually I was able to install the service AND import the key created with ADMT all automatically. I used chef but any automation tool will work. It did require some hacking.
-You have to edit the password export service yourself via orca, instEd, etc&hellip; Something has to alter a datbase table, or else it will ALWAYS prompt and ask if you who you want to run the service as.">
-<meta itemprop="datePublished" content="2015-10-19T08:00:48&#43;00:00" />
+You have to edit the password export service yourself via orca, instEd, etc&hellip; Something has to alter a datbase table, or else it will ALWAYS prompt and ask if you who you want to run the service as."><meta itemprop="datePublished" content="2015-10-19T08:00:48&#43;00:00" />
 <meta itemprop="dateModified" content="2015-10-19T08:00:48&#43;00:00" />
-<meta itemprop="wordCount" content="225">
-
-
-
+<meta itemprop="wordCount" content="239">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Active Directory Password Export Service Silent Install"/>
 <meta name="twitter:description" content="Password Export Service allows you to export users and passwords from one active directory domain to another. All the guides I found show how to install it graphically. It took a bit but eventually I was able to install the service AND import the key created with ADMT all automatically. I used chef but any automation tool will work. It did require some hacking.
 You have to edit the password export service yourself via orca, instEd, etc&hellip; Something has to alter a datbase table, or else it will ALWAYS prompt and ask if you who you want to run the service as."/>
 
-      
-    
   </head>
 
-  <body class="ma0 avenir bg-near-white production">
+  <body class="ma0 avenir bg-near-white">
 
     
    
@@ -114,11 +109,15 @@ you who you want to run the service as. You have to edit under InstallExecuteSeq
 <!-- raw HTML omitted -->
 <p>Then you can use this msi (or save a transform) and it will no longer prompt as a user to login as.</p>
 <p>Run the following
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">msiexec /i <span style="color:#e6db74">&#34;c:\password_export_server.msi&#34;</span> /l*v <span style="color:#e6db74">&#34;c:\install.log&#34;</span> /qn REBOOT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ReallySuppress&#34;</span> SENCRYPTIONFILEPATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;c:\key.pes&#34;</span> sKeyPassword<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span> sConfPassword<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span></code></pre></div>
+{% highlight bash %}
+msiexec /i &ldquo;c:\password_export_server.msi&rdquo; /l*v &ldquo;c:\install.log&rdquo; /qn REBOOT=&ldquo;ReallySuppress&rdquo; SENCRYPTIONFILEPATH=&ldquo;c:\key.pes&rdquo; sKeyPassword=&ldquo;password&rdquo; sConfPassword=&ldquo;password&rdquo;
+{% endhighlight %}
 Though, you really do not need anything after REBOOT. It will NOT import any key at all. Also, you have to reboot anyway to get the service to start properly, otherwise
 you will get RPC errors connecting from the destination domain. After you install the service, reboot, then start the Password Export Service. Then run the following
 to actually have the key imported:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#e6db74">&#34;C:\Windows\system32\PesKey.exe C:\key.pes &#34;</span>password<span style="color:#e6db74">&#34;</span></code></pre></div>
+{% highlight bash %}
+&ldquo;C:\Windows\system32\PesKey.exe C:\key.pes &ldquo;password&rdquo;
+{% endhighlight %}
 Now ADMT <em>should</em> let you migrate the user, and you can do it all automatically. Yay!</p>
 <ul class="pa0">
   
@@ -142,7 +141,7 @@ Now ADMT <em>should</em> let you migrate the user, and you can do it all automat
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://drewstud.com/" >
-    &copy; 2020 Drewskiwooskie Blogarooskie
+    &copy; 2021 Drewskiwooskie Blogarooskie
   </a>
     <div>
 
@@ -161,7 +160,7 @@ Now ADMT <em>should</em> let you migrate the user, and you can do it all automat
 
     
 
-  <script src="http://drewstud.com/dist/js/app.3fc0f988d21662902933.js"></script>
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
 
 
   </body>

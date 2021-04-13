@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>FreeBSD Windows ZFS on Drewskiwooskie Blogarooskie</title>
+    <link>http://drewstud.com/categories/freebsd-windows-zfs/</link>
+    <description>Recent content in FreeBSD Windows ZFS on Drewskiwooskie Blogarooskie</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 13 Apr 2020 06:00:00 +0000</lastBuildDate><atom:link href="http://drewstud.com/categories/freebsd-windows-zfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dual boot Windows 10 and FreeBSD with ZFS</title>
+      <link>http://drewstud.com/posts/2021-04-13-freebsd-dualboot-zfs/</link>
+      <pubDate>Mon, 13 Apr 2020 06:00:00 +0000</pubDate>
+      
+      <guid>http://drewstud.com/posts/2021-04-13-freebsd-dualboot-zfs/</guid>
+      <description>I followed the guide located here
+I am currently dual booting FreeBSD 13.RC5 (13-RELEASE should be out extremely soon as of this post) and Windows 10. I have had no issues.
+But can you watch DRM enabled content like Netflix? You bet you can! Download and run https://github.com/mrclksr/linux-browser-installer. Works like a charm. It actually loads faster than native Firefox.
+In addition, I have bhyve with an Ubuntu 20.04 guest. I am using the tool vm to manage virtual machines.</description>
+    </item>
+    
+  </channel>
+</rss>

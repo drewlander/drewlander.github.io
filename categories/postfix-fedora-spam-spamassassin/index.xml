@@ -6,11 +6,7 @@
     <description>Recent content in postfix fedora spam spamassassin on Drewskiwooskie Blogarooskie</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Feb 2015 07:35:48 +0000</lastBuildDate>
-    
-	<atom:link href="http://drewstud.com/categories/postfix-fedora-spam-spamassassin/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 13 Feb 2015 07:35:48 +0000</lastBuildDate><atom:link href="http://drewstud.com/categories/postfix-fedora-spam-spamassassin/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tuning Spamassassin</title>
       <link>http://drewstud.com/posts/2015-02-26-tuning-spamassassin/</link>
@@ -18,7 +14,7 @@
       
       <guid>http://drewstud.com/posts/2015-02-26-tuning-spamassassin/</guid>
       <description>For those of us who are not large companies where paying another company for spam protection is an option, combatting spam can be something both fun, and annoying. Hopefully, for any newbies, here are some things to do that can greatly reduce the amount of spam you receive, as well as minimize the amount of false positives of mail identified as spam.
-You MUST train both ham and spam to be effective.</description>
+A nice thing to do is to report mail that you have found to be spam.</description>
     </item>
     
   </channel>

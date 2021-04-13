@@ -6,15 +6,15 @@
     
     <title>Drewskiwooskie Blogarooskie  | Streaming Audio from Linux to OSX with Pulseaudio</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.62.2" />
+    <meta name="generator" content="Hugo 0.82.0" />
     
     
-      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
     
 
     
     
-      <link href="http://drewstud.com/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
     
 
     
@@ -29,28 +29,23 @@
 <meta property="og:description" content="This is not for everyone, and I know that there are better things I can do (like hook up a pair of speakers). Let me explain.
 I have a Fedora box that I use as a home personal server. It runs various services. However because the more monitors the better, and I believe in having as many HUDS and graphs as humanly possible, it IS running X and has a monitor attached to it." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://drewstud.com/posts/2019-01-02-stream-audio-linux-to-osx/" />
-<meta property="article:published_time" content="2019-01-02T07:35:48+00:00" />
-<meta property="article:modified_time" content="2019-01-02T07:35:48+00:00" />
+<meta property="og:url" content="http://drewstud.com/posts/2019-01-02-stream-audio-linux-to-osx/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-01-02T07:35:48&#43;00:00" />
+<meta property="article:modified_time" content="2019-01-02T07:35:48&#43;00:00" />
+
 <meta itemprop="name" content="Streaming Audio from Linux to OSX with Pulseaudio">
 <meta itemprop="description" content="This is not for everyone, and I know that there are better things I can do (like hook up a pair of speakers). Let me explain.
-I have a Fedora box that I use as a home personal server. It runs various services. However because the more monitors the better, and I believe in having as many HUDS and graphs as humanly possible, it IS running X and has a monitor attached to it.">
-<meta itemprop="datePublished" content="2019-01-02T07:35:48&#43;00:00" />
+I have a Fedora box that I use as a home personal server. It runs various services. However because the more monitors the better, and I believe in having as many HUDS and graphs as humanly possible, it IS running X and has a monitor attached to it."><meta itemprop="datePublished" content="2019-01-02T07:35:48&#43;00:00" />
 <meta itemprop="dateModified" content="2019-01-02T07:35:48&#43;00:00" />
-<meta itemprop="wordCount" content="185">
-
-
-
+<meta itemprop="wordCount" content="197">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Streaming Audio from Linux to OSX with Pulseaudio"/>
 <meta name="twitter:description" content="This is not for everyone, and I know that there are better things I can do (like hook up a pair of speakers). Let me explain.
 I have a Fedora box that I use as a home personal server. It runs various services. However because the more monitors the better, and I believe in having as many HUDS and graphs as humanly possible, it IS running X and has a monitor attached to it."/>
 
-      
-    
   </head>
 
-  <body class="ma0 avenir bg-near-white production">
+  <body class="ma0 avenir bg-near-white">
 
     
    
@@ -109,16 +104,22 @@ I have a Fedora box that I use as a home personal server. It runs various servic
 <p>I have a Fedora box that I use as a home personal server. It runs various services. However because the more monitors the better, and
 I believe in having as many HUDS and graphs as humanly possible, it IS running X and has a monitor attached to it. I had some music files
 on that server I wanted to play while I was working on my Macbook. I could mount the filesystem from my Macbook and play the file, but what fun is that?
-Instead, why can't I just tell my computer where to send the audio to and have it work? Turns out, you can!</p>
+Instead, why can&rsquo;t I just tell my computer where to send the audio to and have it work? Turns out, you can!</p>
 <p>Install Pulseaudio on OSX:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install pulseaudio</code></pre></div></p>
+{% highlight bash %}
+brew install pulseaudio
+{% endhighlight %}</p>
 <p>I am assuming X is running and some kind of DE is configured on the Linux box.</p>
 <p>Start Pulseaudio on OSX:</p>
-<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pulseaudio --load<span style="color:#f92672">=</span>module-native-protocol-tcp --exit-idle-time<span style="color:#f92672">=</span>-1 --daemon
-pactl load-module module-native-protocol-tcp auth-ip-acl<span style="color:#f92672">=</span>&lt;ip of streaming client&gt;</code></pre></div>
-Tell Linux where to send the audio:</p>
-<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">PULSE_SERVER<span style="color:#f92672">=</span>&lt;ip of OSX BOx&gt; vlc &lt;filename&gt;</code></pre></div>
-PROFIT!</p>
+<p>{% highlight bash %}
+pulseaudio &ndash;load=module-native-protocol-tcp &ndash;exit-idle-time=-1 &ndash;daemon
+pactl load-module module-native-protocol-tcp auth-ip-acl=<!-- raw HTML omitted -->
+{% endhighlight %}</p>
+<p>Tell Linux where to send the audio:
+{% highlight bash %}
+PULSE_SERVER=<!-- raw HTML omitted --> vlc <!-- raw HTML omitted -->
+{% endhighlight %}</p>
+<p>PROFIT!</p>
 <ul class="pa0">
   
 </ul>
@@ -141,7 +142,7 @@ PROFIT!</p>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://drewstud.com/" >
-    &copy; 2020 Drewskiwooskie Blogarooskie
+    &copy; 2021 Drewskiwooskie Blogarooskie
   </a>
     <div>
 
@@ -160,7 +161,7 @@ PROFIT!</p>
 
     
 
-  <script src="http://drewstud.com/dist/js/app.3fc0f988d21662902933.js"></script>
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
 
 
   </body>
